@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>跨境电商英语 · 专业核心词</title>
+<style>
+  :root{
+    --bg:#FBF7EF;
+    --card:#FFFFFF;
+    --ink:#1F2937;
+    --muted:#6B7280;
+    --line:#EAD9BF;
+    --teal:#0F766E;
+    --teal-dark:#0B5D57;
+    --teal-soft:#E4F2F0;
+    --amber:#E8A93C;
+    --amber-soft:#FBEED4;
+    --rose:#D9536B;
+    --shadow:0 10px 30px rgba(31,41,55,.08);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Segoe UI",system-ui,-apple-system,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* ===== Header ===== */
+  header.top{
+    background:linear-gradient(135deg,#0F766E 0%,#0B5D57 55%,#12534E 100%);
+    color:#fff;
+    padding:40px 24px 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.top::after{
+    content:"";
+    position:absolute;right:-60px;top:-60px;width:260px;height:260px;
+    background:radial-gradient(circle,#F7C860 0%,rgba(247,200,96,0) 70%);
+    opacity:.28;
+  }
+  header.top::before{
+    content:"";
+    position:absolute;left:-40px;bottom:-120px;width:300px;height:300px;
+    border-radius:50%;border:26px solid rgba(255,255,255,.06);
+  }
+  .head-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+  .top-tag{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.28);
+    padding:4px 14px;border-radius:999px;font-size:13px;letter-spacing:.5px;
+  }
+  h1.title{font-size:34px;margin:14px 0 6px;font-weight:700;letter-spacing:.5px;}
+  .subtitle{font-size:16px;opacity:.92;max-width:680px;}
+  .stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;}
+  .stat{display:flex;flex-direction:column;gap:2px;}
+  .stat b{font-size:28px;font-weight:700;color:#F7C860;}
+  .stat span{font-size:13px;opacity:.85;}
+  /* ===== Sticky bar ===== */
+  .toolbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,247,239,.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .toolbar-inner{
+    max-width:1100px;margin:0 auto;padding:12px 24px;
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;}
+  .tab{
+    border:1px solid var(--line);background:#fff;color:var(--muted);
+    padding:7px 16px;border-radius:999px;font-size:14px;cursor:pointer;
+    transition:all .18s ease;
+  }
+  .tab:hover{border-color:var(--teal);color:var(--teal);}
+  .tab.active{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:600;}
+  .search-wrap{flex:1;min-width:200px;position:relative;}
+  .search-wrap input{
+    width:100%;padding:9px 14px 9px 38px;border:1px solid var(--line);
+    border-radius:999px;font-size:14px;outline:none;background:#fff;color:var(--ink);
+    transition:border-color .18s ease;
+  }
+  .search-wrap input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,118,110,.12);}
+  .search-wrap .s-ico{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);}
+  .btn-listenall{
+    background:var(--amber);border:none;color:#4A3A10;
+    padding:9px 16px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;
+    display:inline-flex;align-items:center;gap:6px;transition:transform .12s ease;
+  }
+  .btn-listenall:hover{transform:translateY(-1px);}
+  /* ===== Sections ===== */
+  main{max-width:1100px;margin:0 auto;padding:34px 24px 80px;}
+  .sec{margin-bottom:44px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;}
+  .sec-badge{
+    font-size:12px;color:#fff;background:var(--teal);padding:4px 12px;border-radius:6px;
+    letter-spacing:1px;flex:none;
+  }
+  .sec-badge.b2{background:var(--amber);color:#4A3A10;}
+  .sec-title{font-size:26px;font-weight:700;letter-spacing:.3px;}
+  .sec-sub{color:var(--muted);font-size:14px;margin:0 0 20px;}
+  /* ===== Cards ===== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:20px 20px 16px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:10px;
+    transition:transform .16s ease, box-shadow .16s ease;
+    opacity:0;transform:translateY(8px);
+  }
+  .card.show{opacity:1;transform:translateY(0);}
+  .card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(31,41,55,.12);}
+  .card.hidden{display:none;}
+  .row-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
+  .word-zone{display:flex;flex-direction:column;gap:4px;}
+  .word{font-size:26px;font-weight:800;color:var(--teal-dark);letter-spacing:.2px;line-height:1.1;}
+  .ipa{font-size:14px;color:#8A8F98;font-family:"Segoe UI",Arial,sans-serif;}
+  .pos{font-size:12px;color:var(--amber);font-weight:700;margin-top:2px;}
+  .play{
+    flex:none;width:42px;height:42px;border-radius:50%;
+    background:var(--teal-soft);border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--teal);transition:all .15s ease;
+  }
+  .play:hover{background:var(--teal);color:#fff;transform:scale(1.05);}
+  .play:active{transform:scale(.96);}
+  .play svg{width:18px;height:18px;}
+  .divider{height:1px;background:var(--line);margin:2px 0;}
+  .cn{font-size:16px;font-weight:700;color:var(--ink);}
+  .en{font-size:14px;color:var(--muted);}
+  /* 例句区：两句 */
+  .ex-block{
+    background:#FDFAF4;border:1px solid var(--line);border-radius:12px;
+    padding:12px 14px;margin-top:2px;
+  }
+  .ex-label{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12px;color:var(--rose);font-weight:700;letter-spacing:.5px;margin-bottom:8px;
+  }
+  .ex-label .dot{width:6px;height:6px;border-radius:50%;background:var(--rose);}
+  .ex-item{display:flex;gap:10px;align-items:flex-start;}
+  .ex-item + .ex-item{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);}
+  .ex-body{flex:1;min-width:0;}
+  .ex-no{
+    display:inline-block;font-size:11px;color:var(--teal);background:var(--teal-soft);
+    border-radius:4px;padding:0 6px;margin-right:6px;font-weight:700;vertical-align:1px;
+  }
+  .ex-en{font-size:14px;color:#374151;font-style:italic;}
+  .ex-cn{font-size:13px;color:var(--muted);margin-top:2px;}
+  .ex-play{
+    flex:none;width:30px;height:30px;border-radius:50%;
+    background:var(--teal-soft);border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--teal);transition:all .15s ease;
+  }
+  .ex-play:hover{background:var(--teal);color:#fff;}
+  .ex-play svg{width:14px;height:14px;}
+  /* empty */
+  .empty{text-align:center;color:var(--muted);padding:60px 20px;display:none;}
+  .empty.show{display:block;}
+  .empty .big{font-size:40px;}
+  /* footer */
+  footer{
+    border-top:1px solid var(--line);text-align:center;color:var(--muted);
+    padding:26px 20px;font-size:13px;
+  }
+  footer b{color:var(--teal-dark);}
+  @media(max-width:640px){
+    h1.title{font-size:26px;}
+    .grid{grid-template-columns:1fr;}
+    .toolbar-inner{padding:10px 14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="head-inner">
+    <span class="top-tag">Cross-border E-commerce English · 教学课件</span>
+    <h1 class="title">跨境电商英语 · 专业核心词</h1>
+    <p class="subtitle">按课本顺序整理的核心词汇，每词含中英文注释、国际音标，以及<b>一短一长两句跨境电商 / 商科领域例句</b>，点击喇叭即可朗读。</p>
+    <div class="stats">
+      <div class="stat"><b id="total">0</b><span>核心单词</span></div>
+      <div class="stat"><b>2</b><span>词汇小节</span></div>
+      <div class="stat"><b>90</b><span>领域例句</span></div>
+      <div class="stat"><b>▶</b><span>点击朗读</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-f="all">全部词汇</button>
+      <button class="tab" data-f="core">核心词汇</button>
+      <button class="tab" data-f="terms">跨境实务</button>
+    </div>
+    <div class="search-wrap">
+      <span class="s-ico">🔍</span>
+      <input id="search" type="text" placeholder="搜索英文单词 / 中文释义…" autocomplete="off" />
+    </div>
+    <button class="btn-listenall" id="listenAll">🔊 朗读本页</button>
+  </div>
+</div>
+
+<main>
+  <section class="sec" id="sec-core">
+    <div class="sec-head">
+      <span class="sec-badge">SECTION 1</span>
+      <h2 class="sec-title">New Core Vocabularies</h2>
+    </div>
+    <p class="sec-sub">跨境电商核心词汇（图 1）· 31 词 · 每词两条例句</p>
+    <div class="grid" id="grid-core"></div>
+  </section>
+
+  <section class="sec" id="sec-terms">
+    <div class="sec-head">
+      <span class="sec-badge b2">SECTION 2</span>
+      <h2 class="sec-title">跨境电商英语（附音频）</h2>
+    </div>
+    <p class="sec-sub">跨境实务术语（图 2）· 14 词 · 每词两条例句</p>
+    <div class="grid" id="grid-terms"></div>
+  </section>
+
+  <div class="empty" id="empty">
+    <div class="big">🔎</div>
+    <p>没有匹配的单词，换个关键词试试。</p>
+  </div>
+</main>
+
+<footer>
+  <b>跨境电商英语 · 专业核心词</b> · 共 <span id="footCount">0</span> 词 · 例句均取材跨境电商与商科场景 · 点击喇叭可朗读单词 / 例句 · 建议使用 Chrome / Edge 浏览器获得最佳读音体验
+</footer>
+
+<script>
+/* ================= 数据：id 顺序 = 课本顺序；ex=短例句，ex2=长例句（跨境电商/商科语境） ================= */
+const DATA = [
+ /* ---- Section 1 : New Core Vocabularies (31) ---- */
+ {sec:"core", w:"custom", ipa:"/ˈkʌstəm/", pos:"n.", cn:"海关，关税",
+  en:"the government department that collects taxes on goods coming into a country; the duties themselves.",
+  ex:"All parcels from overseas must pass through customs.", excn:"所有海外包裹都必须通过海关。",
+  ex2:"Before releasing a parcel, customs officers will inspect the goods and collect duties based on their declared value and category.", excn2:"海关放行包裹前，会查验货物并按其申报价值和品类征收关税。"},
+ {sec:"core", w:"transaction", ipa:"/trænˈzækʃən/", pos:"n.", cn:"交易，业务，事务；办理，处理",
+  en:"a business deal; the act of carrying out a commercial exchange.",
+  ex:"Each transaction on the platform is recorded automatically.", excn:"平台上的每笔交易都会自动记录。",
+  ex2:"To protect both buyers and sellers, every cross-border transaction goes through an escrow account until the buyer confirms receipt of the goods.", excn2:"为保护买卖双方，每笔跨境交易都要通过第三方托管账户，直到买家确认收货。"},
+ {sec:"core", w:"intermediary", ipa:"/ˌɪntərˈmiːdiəri/", pos:"n.", cn:"中介；中间人",
+  en:"a person or organization that acts as a link between two parties to help reach an agreement.",
+  ex:"A payment platform acts as an intermediary in cross-border deals.", excn:"支付平台在跨境交易中充当中间人。",
+  ex2:"Instead of dealing directly with foreign suppliers, many small retailers prefer to buy through an intermediary who handles negotiation, quality checks, and currency settlement.", excn2:"许多小零售商不愿直接与外国供应商打交道，而是通过中间商采购，由其负责谈判、质检和货币结算。"},
+ {sec:"core", w:"logistics", ipa:"/ləˈdʒɪstɪks/", pos:"n.", cn:"物流",
+  en:"the process of planning and organizing the movement and storage of goods.",
+  ex:"Efficient logistics shorten delivery times.", excn:"高效的物流能缩短配送时间。",
+  ex2:"Overseas warehouses have become a key part of cross-border logistics, allowing sellers to store goods close to their customers and deliver orders within days.", excn2:"海外仓已成为跨境物流的关键环节，卖家可以把货物存放在离消费者更近的地方，几天内即可送达订单。"},
+ {sec:"core", w:"definition", ipa:"/ˌdefɪˈnɪʃən/", pos:"n.", cn:"定义；解释",
+  en:"an exact statement of the meaning of a word or phrase.",
+  ex:"The report gives a clear definition of cross-border e-commerce.", excn:"报告给出了跨境电商的清晰定义。",
+  ex2:"Although there is no single legal definition of cross-border e-commerce, it is generally understood as online trade in which the buyer and the seller are located in different countries.", excn2:"尽管跨境电商没有统一的法律定义，但通常被理解为买卖双方位于不同国家的在线贸易。"},
+ {sec:"core", w:"argument", ipa:"/ˈɑːrɡjumənt/", pos:"n.", cn:"争论，争吵；论据",
+  en:"a reason or set of reasons given to support an idea; a disagreement.",
+  ex:"She made a strong argument for opening an overseas warehouse.", excn:"她为开设海外仓提出了有力的论据。",
+  ex2:"His argument that the company should enter the Southeast Asian market first was supported by data on the region's fast-growing young consumers.", excn2:"他主张公司应率先进入东南亚市场，这一论点得到了该地区年轻消费群体快速增长的数据支持。"},
+ {sec:"core", w:"cost", ipa:"/kɔːst/", pos:"n.", cn:"成本；代价；花费，费用",
+  en:"the amount of money needed to buy, produce, or do something.",
+  ex:"Free shipping increases the seller's cost.", excn:"包邮会增加卖家的成本。",
+  ex2:"Rising logistics costs, including international freight and last-mile delivery, have pushed many small sellers to raise prices or switch to lighter products.", excn2:"不断上涨的物流成本——包括国际运费和末端配送——迫使许多小卖家提价或改卖更轻的商品。"},
+ {sec:"core", w:"distribution", ipa:"/ˌdɪstrɪˈbjuːʃən/", pos:"n.", cn:"分配，分布",
+  en:"the act of supplying goods to different places, shops, or people.",
+  ex:"The brand built a global distribution network.", excn:"该品牌建立了全球配送网络。",
+  ex2:"Through its overseas distribution centers in Europe and North America, the company can deliver most international orders within a week.", excn2:"凭借设在欧洲和北美的海外配送中心，公司可以在一周内交付大部分国际订单。"},
+ {sec:"core", w:"clearance", ipa:"/ˈklɪərəns/", pos:"n.", cn:"通过；放行；清关",
+  en:"official permission for goods to enter a country; the process of clearing customs.",
+  ex:"Customs clearance may take several days.", excn:"清关可能需要好几天。",
+  ex2:"Smooth customs clearance depends on accurate paperwork; even a small error in the product's HS code can delay a shipment for days.", excn2:"顺利清关取决于单证的准确性，哪怕商品 HS 编码出现一个小错误，也可能让货物延误好几天。"},
+ {sec:"core", w:"process", ipa:"/ˈprəʊses/", pos:"n. / v.", cn:"n. 过程；v. 加工，处理",
+  en:"a series of actions to achieve a result; to treat or handle something (data, orders, etc.).",
+  ex:"We process every order within 24 hours.", excn:"我们在24小时内处理每一笔订单。",
+  ex2:"The platform uses automation to process thousands of orders per hour, matching each one with the nearest warehouse and the cheapest carrier.", excn2:"平台利用自动化技术每小时处理数千笔订单，为每笔订单匹配最近的仓库和运费最低的承运商。"},
+ {sec:"core", w:"import", ipa:"/ˈɪmpɔːrt/", pos:"n. / v.", cn:"n. 进口；进口货；v. 进口，引进",
+  en:"to bring goods into a country from abroad; goods that are brought in.",
+  ex:"The store imports cosmetics from Korea.", excn:"这家店从韩国进口化妆品。",
+  ex2:"Companies that import large quantities must watch exchange rates closely, because a weaker home currency can quickly wipe out their profit margin.", excn2:"大批量进口的企业必须密切关注汇率，因为本币一旦贬值，利润空间可能很快被吞噬。"},
+ {sec:"core", w:"cumbersome", ipa:"/ˈkʌmbəsəm/", pos:"adj.", cn:"大而笨重的；难以携带的；缓慢复杂的；冗长的",
+  en:"heavy, awkward, and difficult to carry, use, or manage.",
+  ex:"The old customs procedures were slow and cumbersome.", excn:"旧的海关流程缓慢又繁琐。",
+  ex2:"Some traders still find cross-border documentation cumbersome, as they must fill in separate forms for customs, tax refunds, and foreign-exchange settlement.", excn2:"一些贸易商仍觉得跨境单证十分繁琐，因为要分别填写报关、退税和外汇结算的不同表格。"},
+ {sec:"core", w:"exhibition", ipa:"/ˌeksɪˈbɪʃən/", pos:"n.", cn:"展览；展出；(一批)展览品",
+  en:"a public display of goods, works, or products.",
+  ex:"We met new suppliers at the trade exhibition.", excn:"我们在贸易展览会上认识了新供应商。",
+  ex2:"At the Canton Fair, one of the largest trade exhibitions in the world, exporters display samples and negotiate deals with buyers from dozens of countries.", excn2:"在广交会这一全球最大的贸易展会之一上，出口商展示样品，与来自数十个国家的采购商洽谈生意。"},
+ {sec:"core", w:"disseminate", ipa:"/dɪˈsemɪneɪt/", pos:"v.", cn:"传播；散布；扩散",
+  en:"to spread information or ideas widely.",
+  ex:"The platform helps disseminate product information globally.", excn:"平台帮助把产品信息传播到全球。",
+  ex2:"Social media influencers have become a powerful channel to disseminate brand stories and drive traffic to independent cross-border online stores.", excn2:"社交媒体网红已成为传播品牌故事的有力渠道，为跨境独立站源源不断地引流。"},
+ {sec:"core", w:"qualification", ipa:"/ˌkwɒlɪfɪˈkeɪʃən/", pos:"n.", cn:"合格；学历；资历；限定条件",
+  en:"an official record of achievement; the skills or experience needed for a job.",
+  ex:"Sellers need certain qualifications to list health products.", excn:"卖家上架健康类产品需要相应资质。",
+  ex2:"Before selling health food or cosmetics abroad, a company must obtain the required qualifications and certifications for each target market.", excn2:"企业在海外销售保健食品或化妆品之前，必须取得每个目标市场所要求的资质与认证。"},
+ {sec:"core", w:"retail", ipa:"/ˈriːteɪl/", pos:"n.", cn:"零售",
+  en:"the sale of goods to the public in small quantities.",
+  ex:"Cross-border retail is growing rapidly.", excn:"跨境零售正在快速增长。",
+  ex2:"Online retail sales across borders now account for a growing share of international trade, as consumers increasingly buy directly from foreign online stores.", excn2:"跨境网络零售额如今在国际贸易中的占比不断上升，因为消费者越来越多地直接从国外网店购物。"},
+ {sec:"core", w:"self-operated", ipa:"/ˌself ˈɒpəreɪtɪd/", pos:"adj.", cn:"自营的",
+  en:"run and managed by oneself rather than by a third party.",
+  ex:"The brand runs a self-operated store on the platform.", excn:"该品牌在平台上开设了自营店铺。",
+  ex2:"Unlike third-party sellers, a self-operated store is managed by the platform itself, which controls pricing, inventory, and after-sales service.", excn2:"与第三方卖家不同，自营店由平台亲自运营，统一管理定价、库存和售后服务。"},
+ {sec:"core", w:"warehousing", ipa:"/ˈweəhaʊzɪŋ/", pos:"n.", cn:"仓储；仓储业",
+  en:"the business of storing goods in a warehouse.",
+  ex:"Smart warehousing reduces labor costs.", excn:"智能仓储降低了人力成本。",
+  ex2:"Third-party warehousing services allow small sellers to store goods overseas without investing in their own facilities or hiring local staff.", excn2:"第三方仓储服务让小卖家无需自建仓库或雇佣当地员工，就能把货物存放在海外。"},
+ {sec:"core", w:"facilitate", ipa:"/fəˈsɪlɪteɪt/", pos:"v.", cn:"促进；促使；使便利",
+  en:"to make a process or action easier.",
+  ex:"Digital payments facilitate cross-border trade.", excn:"数字支付促进了跨境贸易。",
+  ex2:"Government initiatives such as simplified tax rules and faster customs checks are designed to facilitate the growth of small businesses trading online.", excn2:"简化税收规则、加快通关查验等政府举措，旨在促进小微企业的线上贸易发展。"},
+ {sec:"core", w:"core", ipa:"/kɔːr/", pos:"n.", cn:"核心",
+  en:"the central or most important part of something.",
+  ex:"Logistics is the core of cross-border e-commerce.", excn:"物流是跨境电商的核心。",
+  ex2:"At the core of every successful cross-border store is a deep understanding of local consumer preferences and shopping habits.", excn2:"每一家成功的跨境店铺，其核心都在于对当地消费者偏好和购物习惯的深刻理解。"},
+ {sec:"core", w:"wholesaler", ipa:"/ˈhəʊlseɪlər/", pos:"n.", cn:"批发商",
+  en:"a person or company that sells goods in large quantities to retailers.",
+  ex:"They buy goods directly from a wholesaler.", excn:"他们直接从批发商处进货。",
+  ex2:"By cutting out the wholesaler and sourcing straight from factories, the company lowered its purchasing cost by nearly twenty percent.", excn2:"通过绕过批发商、直接从工厂采购，公司把采购成本降低了近百分之二十。"},
+ {sec:"core", w:"retailer", ipa:"/ˈriːteɪlər/", pos:"n.", cn:"零售商；零售店",
+  en:"a person or business that sells goods directly to the public.",
+  ex:"The retailer ships to customers worldwide.", excn:"这家零售商向全球客户发货。",
+  ex2:"Traditional brick-and-mortar retailers are racing to build online channels as more consumers shift their spending to cross-border shopping platforms.", excn2:"随着越来越多消费者把支出转向跨境电商平台，传统实体零售商正竞相布局线上渠道。"},
+ {sec:"core", w:"operational", ipa:"/ˌɒpəˈreɪʃənəl/", pos:"adj.", cn:"可使用；操作的；运转的；运营的",
+  en:"ready for use; relating to how a system or business works or runs.",
+  ex:"The overseas warehouse is now fully operational.", excn:"海外仓现已全面投入运营。",
+  ex2:"Once the new fulfillment center becomes operational, delivery times for European customers are expected to drop from ten days to three.", excn2:"新的履约中心投入运营后，欧洲客户的配送时效有望从十天缩短到三天。"},
+ {sec:"core", w:"community", ipa:"/kəˈmjuːnəti/", pos:"n.", cn:"社区；社团；公众；社会团体",
+  en:"the people living in one area; a group of people with shared interests.",
+  ex:"The seller community shares practical experience.", excn:"卖家社群分享实战经验。",
+  ex2:"In online seller communities, beginners can learn store registration, product selection, and advertising from experienced cross-border practitioners.", excn2:"在在线卖家社群里，新手可以向资深跨境从业者学习店铺注册、选品和广告投放。"},
+ {sec:"core", w:"ecosystem", ipa:"/ˈiːkəʊsɪstəm/", pos:"n.", cn:"生态系统",
+  en:"all the living and non-living things in an area and their relationships.",
+  ex:"A healthy ecosystem serves both sellers and buyers.", excn:"健康的生态系统同时服务买卖双方。",
+  ex2:"Payment providers, logistics firms, marketing agencies, and software developers together form the ecosystem that supports millions of cross-border sellers.", excn2:"支付机构、物流企业、营销代理和软件开发商共同构成了支撑数百万跨境卖家的生态系统。"},
+ {sec:"core", w:"small-scale", ipa:"/ˌsmɔːl ˈskeɪl/", pos:"adj.", cn:"小型的；小范围的；小规模的",
+  en:"involving a small size, amount, or number.",
+  ex:"Many small-scale sellers start with one product.", excn:"许多小规模卖家从单一产品起步。",
+  ex2:"Because they lack capital and brand recognition, small-scale sellers often begin with a single niche product and expand step by step.", excn2:"由于缺乏资金和品牌知名度，小规模卖家往往从一款利基产品做起，再逐步扩张。"},
+ {sec:"core", w:"dilemma", ipa:"/dɪˈlemə/", pos:"n.", cn:"(进退两难的)窘境",
+  en:"a situation in which a difficult choice has to be made between two alternatives.",
+  ex:"The seller faces a dilemma between price and quality.", excn:"卖家在价格与质量之间陷入两难。",
+  ex2:"Many new sellers face the dilemma of whether to compete on low prices in crowded markets or to invest more in product quality and branding.", excn2:"许多新卖家都面临两难：是在竞争激烈的市场里打价格战，还是在产品质量和品牌上加大投入。"},
+ {sec:"core", w:"integration", ipa:"/ˌɪntɪˈɡreɪʃən/", pos:"n.", cn:"一体化；结合；融入",
+  en:"the act of combining separate parts into a whole, or becoming part of a group.",
+  ex:"The integration of systems improves efficiency.", excn:"系统的一体化提升了效率。",
+  ex2:"The integration of online and offline channels — known as new retail — allows customers to order online and pick up goods in nearby stores.", excn2:"线上线下渠道的融合——即所谓新零售——让顾客可以线上下单、到附近门店取货。"},
+ {sec:"core", w:"procurement", ipa:"/prəˈkjʊəmənt/", pos:"n.", cn:"(尤指为政府或机构)采购",
+  en:"the process of buying goods or services, especially for an organization.",
+  ex:"The team is responsible for global procurement.", excn:"该团队负责全球采购。",
+  ex2:"Digital procurement platforms help companies compare prices, track orders, and manage suppliers across different countries and time zones.", excn2:"数字化采购平台帮助企业跨国家、跨时区比价、跟踪订单并管理供应商。"},
+ {sec:"core", w:"utmost", ipa:"/ˈʌtməʊst/", pos:"n. / adj.", cn:"n. 极限；最大限度；adj. 最大的；极度的",
+  en:"the greatest possible amount or degree; the most extreme.",
+  ex:"Product safety is of the utmost importance.", excn:"产品安全至关重要。",
+  ex2:"When exporting consumer goods, sellers must treat product compliance with the utmost seriousness, since a single recall can destroy a brand's reputation overseas.", excn2:"出口消费品时，卖家必须以最严肃的态度对待产品合规，因为一次召回就可能毁掉品牌在海外的声誉。"},
+ {sec:"core", w:"constraint", ipa:"/kənˈstreɪnt/", pos:"n.", cn:"约束；限制；限定；严管",
+  en:"a limitation or restriction that limits what you can do.",
+  ex:"Budget constraints limited the marketing plan.", excn:"预算限制制约了营销方案。",
+  ex2:"Storage constraints at overseas warehouses during peak seasons force sellers to forecast demand carefully and stock bestsellers first.", excn2:"旺季海外仓的库容限制，迫使卖家认真预测需求、优先备货爆款。"},
+
+ /* ---- Section 2 : 跨境电商英语 (14) ---- */
+ {sec:"terms", w:"bottleneck", ipa:"/ˈbɒtlnek/", pos:"n. / v. / adj.", cn:"n. 障碍；瓶颈路段；v. 限制，阻塞；adj. (街道)狭隘的",
+  en:"a point where progress is slowed or blocked; a narrow restriction.",
+  ex:"Slow customs is a bottleneck for sellers.", excn:"通关缓慢是卖家的一大瓶颈。",
+  ex2:"During shopping festivals, the surge in parcels turns international shipping into a bottleneck, with some orders stuck at sorting centers for more than a week.", excn2:"购物节期间，包裹量激增使国际运输成为瓶颈，部分订单在分拣中心滞留超过一周。"},
+ {sec:"terms", w:"restriction", ipa:"/rɪˈstrɪkʃən/", pos:"n.", cn:"限制；约束；制约因素；限制规定",
+  en:"a rule or condition that limits what you can do.",
+  ex:"Some countries impose restrictions on imported food.", excn:"一些国家对进口食品设有限制。",
+  ex2:"Exporters must study each market's restrictions carefully; for example, some countries ban the import of used electronics to protect local consumers.", excn2:"出口商必须仔细研究各市场的限制规定，例如有的国家为保护本地消费者而禁止进口二手电子产品。"},
+ {sec:"terms", w:"shipment", ipa:"/ˈʃɪpmənt/", pos:"n.", cn:"运输的货物；运输；装运",
+  en:"the act of sending goods, or a load of goods being sent.",
+  ex:"The shipment left the port yesterday.", excn:"这批货昨天离港。",
+  ex2:"Because the shipment contained batteries, the store had to use a special logistics channel and attach extra safety documents for air transport.", excn2:"由于这批货含有电池，店铺不得不走特殊物流渠道，并为空运附加安全证明文件。"},
+ {sec:"terms", w:"undeniably", ipa:"/ˌʌndɪˈnaɪəbli/", pos:"adv.", cn:"不可否认地",
+  en:"in a way that is certainly true; without doubt.",
+  ex:"Undeniably, cross-border e-commerce is reshaping trade.", excn:"不可否认，跨境电商正在重塑贸易格局。",
+  ex2:"Undeniably, live-stream shopping has changed the way brands reach overseas customers, allowing them to demonstrate products and answer questions in real time.", excn2:"不可否认，直播购物改变了品牌触达海外消费者的方式，让品牌可以实时展示产品并解答疑问。"},
+ {sec:"terms", w:"settlement", ipa:"/ˈsetlmənt/", pos:"n.", cn:"结算",
+  en:"the payment of money to settle an account; the act of resolving a deal.",
+  ex:"The platform offers weekly settlement.", excn:"平台每周结算一次。",
+  ex2:"After the buyer confirms delivery, the platform transfers the money to the seller's account, and cross-border settlement usually takes a few extra business days.", excn2:"买家确认收货后，平台将货款打入卖家账户，跨境结算通常还需额外几个工作日。"},
+ {sec:"terms", w:"convert", ipa:"/kənˈvɜːrt/", pos:"v. / n.", cn:"v. 转换，转变；(使)改变(宗教或信仰)；n. 改变信仰的人",
+  en:"to change something from one form or use into another.",
+  ex:"The store converts payments into RMB.", excn:"店铺把货款兑换成人民币。",
+  ex2:"Sellers who price goods in US dollars must convert their revenue into local currency, and a sudden exchange-rate change can affect their real income.", excn2:"以美元定价的卖家必须把收入兑换成本币，汇率一旦突变，就会影响实际收入。"},
+ {sec:"terms", w:"vigorous", ipa:"/ˈvɪɡərəs/", pos:"adj.", cn:"充满活力的；充满激情的；激烈的；精力旺盛的",
+  en:"strong, energetic, and active.",
+  ex:"The brand launched a vigorous promotion.", excn:"该品牌发起了一场声势浩大的促销。",
+  ex2:"Facing fierce competition, the store ran a vigorous holiday campaign combining discounts, coupons, and influencer marketing to boost its rankings.", excn2:"面对激烈竞争，店铺在大促期间发起强势营销，把折扣、优惠券与网红推广结合起来提升排名。"},
+ {sec:"terms", w:"boldly", ipa:"/ˈbəʊldli/", pos:"adv.", cn:"大胆地；大模大样地；理直气壮地",
+  en:"in a confident and brave way, without fear.",
+  ex:"She boldly entered the Japanese market.", excn:"她大胆地进入了日本市场。",
+  ex2:"When most rivals stayed in familiar markets, the company boldly invested in a localized website, local staff, and local warehouses in Brazil.", excn2:"当多数同行还停留在熟悉的市场时，公司大胆地在巴西投入本地化网站、本地团队和本地仓库。"},
+ {sec:"terms", w:"reshuffle", ipa:"/ˌriːˈʃʌfəl/", pos:"v. / n.", cn:"v. 改组；进行岗位调整；更改职责配置；n. 改组；重新配置",
+  en:"to reorganize positions, teams, or responsibilities.",
+  ex:"The firm reshuffled its management team.", excn:"公司改组了管理团队。",
+  ex2:"As profits shifted from Europe to Southeast Asia, the company reshuffled its regional teams and moved more resources to fast-growing emerging markets.", excn2:"随着利润重心从欧洲转向东南亚，公司对各区域团队进行了调整，把更多资源投向增长迅速的新兴市场。"},
+ {sec:"terms", w:"vertical", ipa:"/ˈvɜːrtɪkəl/", pos:"adj. / n.", cn:"adj. 垂直的；直立的；纵向的；n. 垂直线",
+  en:"going straight up; relating to one specific industry (vertical platform).",
+  ex:"They run a vertical platform for pet products.", excn:"他们经营一家宠物用品垂直平台。",
+  ex2:"Unlike general marketplaces, a vertical e-commerce platform focuses on one industry, such as fashion or electronics, and offers deeper expertise and service.", excn2:"与综合性电商不同，垂直电商平台深耕单一行业（如服装或电子），能提供更专业的服务。"},
+ {sec:"terms", w:"subdivide", ipa:"/ˌsʌbdɪˈvaɪd/", pos:"v.", cn:"再分；超级细分；把……再分",
+  en:"to divide something into smaller parts.",
+  ex:"The market is subdivided into segments.", excn:"市场被细分为多个板块。",
+  ex2:"Marketing teams often subdivide overseas consumers by age, income, and shopping habits so that each group receives suitable products and advertisements.", excn2:"营销团队常按年龄、收入和购物习惯对海外消费者做进一步细分，让每类人群都能收到合适的产品和广告。"},
+ {sec:"terms", w:"complementary", ipa:"/ˌkɒmplɪˈmentri/", pos:"adj.", cn:"互补的",
+  en:"combining well together to form a complete whole.",
+  ex:"The two product lines are complementary.", excn:"这两条产品线是互补的。",
+  ex2:"Bundling complementary products — a phone case with a screen protector, for example — is a common tactic to raise the average order value.", excn2:"把互补商品捆绑销售（比如手机壳配钢化膜）是提升客单价的常用策略。"},
+ {sec:"terms", w:"practitioner", ipa:"/prækˈtɪʃənər/", pos:"n.", cn:"(尤指医学或法律界的)从业人员；习艺者；专门人才",
+  en:"a person who works in a professional field, such as law or medicine.",
+  ex:"Experienced practitioners share tips online.", excn:"资深从业者在网上分享经验。",
+  ex2:"A seasoned practitioner in cross-border e-commerce will tell you that success depends more on supply-chain control than on short-term advertising tricks.", excn2:"资深的跨境电商从业者会告诉你：成功更多取决于供应链掌控，而不是短期的广告技巧。"},
+ {sec:"terms", w:"rationalization", ipa:"/ˌræʃnəlaɪˈzeɪʃən/", pos:"n.", cn:"(尤指事业等的)合理化；文饰(作用)；理论解释",
+  en:"the act of making an organization or process more efficient and sensible.",
+  ex:"The company cut costs through process rationalization.", excn:"公司通过流程合理化降低了成本。",
+  ex2:"After a review of its supply chain, the firm's rationalization of warehouse locations and delivery routes reduced its total logistics cost by fifteen percent.", excn2:"经过供应链审查，公司对仓库选址和配送路线的合理化调整，使物流总成本下降了百分之十五。"}
+];
+
+/* ================= 渲染 ================= */
+const gridCore = document.getElementById("grid-core");
+const gridTerms = document.getElementById("grid-terms");
+const emptyBox = document.getElementById("empty");
+const footCount = document.getElementById("footCount");
+document.getElementById("total").textContent = DATA.length;
+
+function cardHTML(d, i){
+  return `
+    <div class="card" data-sec="${d.sec}" data-w="${d.w.toLowerCase()}" data-cn="${d.cn.toLowerCase()}" data-idx="${i}">
+      <div class="row-top">
+        <div class="word-zone">
+          <div class="word">${d.w}</div>
+          <div class="ipa">${d.ipa}</div>
+          <div class="pos">${d.pos}</div>
+        </div>
+        <button class="play" title="朗读单词" aria-label="朗读 ${d.w}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+        </button>
+      </div>
+      <div class="divider"></div>
+      <div class="cn">${d.cn}</div>
+      <div class="en">${d.en}</div>
+      <div class="ex-block">
+        <div class="ex-label"><span class="dot"></span>例句 · Examples</div>
+        <div class="ex-item">
+          <div class="ex-body">
+            <div class="ex-en"><span class="ex-no">短</span>“${d.ex}”</div>
+            <div class="ex-cn">${d.excn}</div>
+          </div>
+          <button class="ex-play" data-say="${d.ex}" title="朗读例句 1" aria-label="朗读例句 1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+        </div>
+        <div class="ex-item">
+          <div class="ex-body">
+            <div class="ex-en"><span class="ex-no">长</span>“${d.ex2}”</div>
+            <div class="ex-cn">${d.excn2}</div>
+          </div>
+          <button class="ex-play" data-say="${d.ex2}" title="朗读例句 2" aria-label="朗读例句 2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" stroke="none"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>`;
+}
+gridCore.innerHTML = DATA.map((d,i)=> d.sec==="core" ? cardHTML(d,i) : "").join("");
+gridTerms.innerHTML = DATA.map((d,i)=> d.sec==="terms" ? cardHTML(d,i) : "").join("");
+
+/* 动画进场 */
+requestAnimationFrame(()=>{
+  document.querySelectorAll(".card").forEach((c,i)=>{
+    setTimeout(()=> c.classList.add("show"), Math.min(i*18, 420));
+  });
+});
+
+/* ================= TTS 朗读 ================= */
+let enVoice = null;
+function pickVoice(){
+  const vs = speechSynthesis.getVoices();
+  enVoice = vs.find(v=>v.lang && v.lang.toLowerCase().startsWith("en") && /google|natural|premium/i.test(v.name))
+         || vs.find(v=>v.lang && v.lang.toLowerCase().startsWith("en"))
+         || null;
+}
+if("speechSynthesis" in window){
+  pickVoice();
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+function speak(text){
+  if(!("speechSynthesis" in window)){ alert("当前浏览器不支持语音朗读，请用 Chrome / Edge。"); return; }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US";
+  u.rate = 0.88;
+  u.pitch = 1;
+  if(enVoice) u.voice = enVoice;
+  speechSynthesis.speak(u);
+}
+/* 单词 / 例句朗读（委托机制） */
+document.addEventListener("click", (e)=>{
+  const exPlay = e.target.closest(".ex-play");
+  if(exPlay){
+    e.preventDefault();
+    speak(exPlay.dataset.say);
+    return;
+  }
+  const play = e.target.closest(".play");
+  if(play){
+    const w = play.closest(".card").querySelector(".word").textContent.trim();
+    e.preventDefault();
+    speak(w);
+  }
+});
+
+/* ================= 搜索 + 标签 ================= */
+let curFilter = "all";
+const search = document.getElementById("search");
+const tabs = document.getElementById("tabs");
+
+function applyFilter(){
+  const q = search.value.trim().toLowerCase();
+  let visible = 0;
+  document.querySelectorAll(".card").forEach(c=>{
+    const inSec = (curFilter==="all") || (c.dataset.sec===curFilter);
+    const inSearch = !q || c.dataset.w.includes(q) || c.dataset.cn.includes(q);
+    const show = inSec && inSearch;
+    c.classList.toggle("hidden", !show);
+    if(show) visible++;
+  });
+  /* 区标题显隐 */
+  document.querySelectorAll(".sec").forEach(s=>{
+    const anyVisible = s.querySelector(".card:not(.hidden)");
+    if(curFilter!=="all" && !anyVisible) s.style.display="none";
+    else s.style.display="block";
+  });
+  emptyBox.classList.toggle("show", visible===0);
+  footCount.textContent = visible;
+}
+search.addEventListener("input", applyFilter);
+tabs.addEventListener("click", (e)=>{
+  const b = e.target.closest(".tab");
+  if(!b) return;
+  tabs.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  b.classList.add("active");
+  curFilter = b.dataset.f;
+  applyFilter();
+  document.querySelector("main").scrollIntoView({behavior:"smooth", block:"start"});
+});
+
+/* ================= 朗读本页 ================= */
+document.getElementById("listenAll").addEventListener("click", ()=>{
+  const q = search.value.trim().toLowerCase();
+  const words = DATA.filter(d=>{
+    const inSec = (curFilter==="all") || (d.sec===curFilter);
+    const inSearch = !q || d.w.toLowerCase().includes(q) || d.cn.toLowerCase().includes(q);
+    return inSec && inSearch;
+  }).map(d=>d.w);
+  if(!words.length){ alert("当前筛选下没有单词。"); return; }
+  let i = 0;
+  const next = ()=>{
+    if(i>=words.length) return;
+    speak(words[i++]);
+    setTimeout(next, 900);
+  };
+  next();
+});
+
+applyFilter();
+</script>
+</body>
+</html>
