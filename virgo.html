@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virgo Personality Traits · 处女座人格特质</title>
+<style>
+  :root{
+    --bg:#FBF7EF;            /* 奶油米白底 */
+    --card:#FFFFFF;
+    --ink:#2C2A26;           /* 主文字 */
+    --muted:#8A8578;         /* 次要文字 */
+    --line:#EFE7D6;
+    --gold:#C9A227;          /* 麦穗金——处女座主色 */
+    --gold-soft:#F4E8BE;
+    --green:#4E6E4A;         /* 大地深绿 */
+    --green-soft:#E4EDE0;
+    --brown:#7A5C3E;         /* 大地棕 */
+    --danger:#C25B4E;
+    --radius:18px;
+    --shadow:0 6px 22px rgba(90,80,60,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.7;
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:28px 20px 80px}
+
+  /* ===== 页头 hero ===== */
+  .hero{
+    text-align:center; padding:46px 24px 34px; position:relative; overflow:hidden;
+    background:linear-gradient(160deg,#FBF3DF 0%,#F7EBC9 60%,#F2E4BA 100%);
+    border-radius:26px; box-shadow:var(--shadow);
+  }
+  .hero .badge{
+    display:inline-block; font-size:13px; letter-spacing:2px; font-weight:700;
+    color:#8A6A16; background:rgba(255,255,255,.6); border:1px solid #E8D9A8;
+    padding:5px 16px; border-radius:999px; text-transform:uppercase; margin-bottom:14px;
+  }
+  .hero h1{
+    font-size:clamp(34px,6vw,58px); margin:.1em 0 .1em; letter-spacing:.5px;
+    color:#3A3220; font-weight:800;
+  }
+  .hero h1 .sym{font-size:.9em; vertical-align:-2px}
+  .hero .zh{
+    font-size:clamp(18px,3vw,24px); color:#6B5E36; font-weight:600; margin-top:4px;
+  }
+  .hero .sub{color:var(--muted); margin-top:14px; font-size:15px}
+  .hero .dates{
+    display:inline-flex; align-items:center; gap:8px; margin-top:20px;
+    background:#fff; border:1px solid var(--line); border-radius:999px;
+    padding:8px 20px; font-size:14px; color:var(--brown); font-weight:600;
+  }
+  .hero .dates b{color:var(--gold)}
+
+  /* ===== 区块 ===== */
+  section{margin-top:46px}
+  .sec-head{display:flex; align-items:center; gap:12px; margin-bottom:6px}
+  .sec-head .num{
+    width:34px;height:34px;border-radius:11px;display:grid;place-items:center;
+    background:var(--gold-soft); color:var(--gold); font-weight:800; font-size:16px; flex:none;
+  }
+  .sec-head h2{font-size:24px; margin:0; color:#3A3220}
+  .sec-head .en{color:var(--muted); font-size:13px; letter-spacing:.5px; font-weight:600}
+  .sec-intro{color:var(--muted); margin:6px 0 22px; font-size:15px}
+
+  /* 高亮强调（加粗关键词） */
+  b.hl{color:var(--gold); font-weight:800; border-bottom:2px solid var(--gold-soft); padding:0 1px}
+  b.hl.g{color:var(--green); border-bottom-color:var(--green-soft)}
+  b.hl.b{color:var(--brown)}
+  b.hl.r{color:var(--danger); border-bottom-color:#EDD3CF}
+
+  /* ===== 卡片网格 ===== */
+  .grid{display:grid; gap:18px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px 24px; box-shadow:var(--shadow);
+  }
+  .card .tag{
+    display:inline-block; font-size:12px; font-weight:700; letter-spacing:.5px;
+    padding:4px 12px; border-radius:999px; margin-bottom:8px;
+  }
+  .tag.y{background:var(--gold-soft); color:#8A6A16}
+  .tag.g{background:var(--green-soft); color:var(--green)}
+  .tag.b{background:#EFE5D7; color:var(--brown)}
+  .tag.r{background:#F6E0DC; color:var(--danger)}
+  .card h3{margin:2px 0 6px; font-size:19px; color:#3A3220}
+  .card p{margin:6px 0; color:var(--ink); font-size:15px}
+  .card ul{margin:8px 0 0; padding-left:0; list-style:none}
+  .card li{position:relative; padding:5px 0 5px 22px; font-size:15px; color:#4A463D}
+  .card li::before{content:""; position:absolute; left:2px; top:14px; width:7px; height:7px; border-radius:50%; background:var(--gold)}
+  .card li.g::before{background:var(--green)}
+  .card li.b::before{background:var(--brown)}
+  .pill-note{
+    margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:12px 16px;
+    font-size:14px; color:#6B5A1E; border-left:4px solid var(--gold);
+  }
+  .pill-note.g{background:var(--green-soft); color:#3F5C3C; border-left-color:var(--green)}
+
+  /* 例句 */
+  .quote{
+    background:var(--green-soft); border-left:4px solid var(--green); border-radius:12px;
+    padding:14px 18px; margin-top:16px; font-size:15px; color:#3F5C3C; font-style:italic;
+  }
+  .quote .zh2{display:block; color:#6C8A66; font-style:normal; margin-top:6px; font-size:14px}
+
+  /* 名人 chips */
+  .chips{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
+  .chip{
+    background:#fff; border:1px solid var(--line); border-radius:14px; padding:12px 18px;
+    box-shadow:var(--shadow); min-width:120px;
+  }
+  .chip .n{font-weight:800; color:#3A3220; font-size:17px}
+  .chip .d{font-size:13px; color:var(--muted); margin-top:2px}
+
+  /* ===== Famous Virgos 名人卡 ===== */
+  .vip-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:14px; margin-top:16px}
+  .vip{
+    background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px 14px 16px;
+    text-align:center; cursor:pointer; transition:.18s; box-shadow:var(--shadow); user-select:none; position:relative;
+  }
+  .vip:hover{transform:translateY(-3px); border-color:var(--gold)}
+  .vip.active{background:var(--gold-soft); border-color:var(--gold)}
+  .vip .ava{
+    width:74px; height:74px; margin:0 auto; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:26px; font-weight:800; color:#fff; letter-spacing:.5px;
+    box-shadow:0 4px 12px rgba(90,80,60,.18), inset 0 -3px 0 rgba(0,0,0,.12);
+    position:relative;
+  }
+  .vip .ava .job{
+    position:absolute; right:-4px; bottom:-4px; width:26px; height:26px; border-radius:50%;
+    background:#fff; border:2px solid var(--line); font-size:13px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .vip .nm{font-weight:800; color:#3A3220; font-size:16px; margin-top:10px}
+  .vip .bd{font-size:12px; color:var(--muted); margin-top:2px}
+  .vip .d{font-size:12.5px; color:var(--brown); margin-top:6px; font-weight:600}
+  .vip .tap{font-size:11px; color:var(--gold); margin-top:8px; opacity:.8}
+
+  /* 名人弹窗 */
+  .vip-mask{
+    position:fixed; inset:0; background:rgba(44,42,38,.45); display:none;
+    align-items:center; justify-content:center; z-index:99; padding:20px;
+  }
+  .vip-mask.show{display:flex}
+  .vip-pop{
+    background:#fff; border-radius:20px; max-width:430px; width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,.25); overflow:hidden;
+    animation:vipIn .22s ease;
+  }
+  @keyframes vipIn{from{transform:translateY(14px) scale(.96); opacity:0} to{transform:none; opacity:1}}
+  .vip-pop .top{padding:20px 22px 14px; display:flex; gap:14px; align-items:center}
+  .vip-pop .nm{font-weight:800; font-size:20px; color:#3A3220}
+  .vip-pop .role{font-size:13px; color:var(--muted); margin-top:3px}
+  .vip-pop .body{padding:0 22px 20px}
+  .vip-pop h4{
+    font-size:13px; color:var(--gold); letter-spacing:.5px; margin:14px 0 8px; font-weight:800;
+  }
+  .vip-pop ul{list-style:none; margin:0; padding:0}
+  .vip-pop li{
+    font-size:14px; color:var(--ink); padding:7px 0 7px 16px; position:relative; line-height:1.5;
+    border-bottom:1px dashed var(--line);
+  }
+  .vip-pop li:last-child{border-bottom:none}
+  .vip-pop li::before{content:"★"; position:absolute; left:0; color:var(--gold); font-size:12px}
+  .vip-pop li .zh{display:block; color:var(--muted); font-size:12.5px; margin-top:2px}
+  .vip-pop .foot{display:flex; gap:10px; padding:0 22px 20px}
+  .vip-pop .foot button{
+    flex:1; border:none; border-radius:999px; padding:10px 0; font-size:14px; font-weight:700; cursor:pointer; transition:.15s;
+  }
+  .btn-spk{background:var(--green-soft); color:#3F5C3C}
+  .btn-spk:hover{background:var(--green); color:#fff}
+  .btn-close{background:#F1EDE3; color:var(--muted)}
+  .btn-close:hover{background:#E5DFD0; color:var(--ink)}
+  .colorbar{display:flex; gap:0; border-radius:12px; overflow:hidden; margin-top:16px; height:46px}
+  .colorbar span{flex:1; display:grid; place-items:center; color:#fff; font-size:13px; font-weight:700}
+
+  /* ===== 12 星座 ===== */
+  .zodiac-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px}
+  .zs{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:18px 14px; text-align:center; cursor:pointer; transition:.18s; box-shadow:var(--shadow); user-select:none;
+  }
+  .zs:hover{transform:translateY(-3px); border-color:var(--gold)}
+  .zs.active{background:var(--gold-soft); border-color:var(--gold)}
+  .zs .s{font-size:34px; line-height:1; color:var(--gold)}
+  .zs .en{font-weight:800; margin-top:8px; font-size:16px; color:#3A3220}
+  .zs .zh{font-size:13px; color:var(--muted); margin-top:2px}
+  .zs .spk{font-size:11px; color:var(--gold); margin-top:8px; opacity:.75}
+  .zs.star .s{color:var(--green)} .zs.star{background:var(--green-soft); border-color:var(--green)}
+
+  /* ===== 讨论 ===== */
+  .discuss{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 28px; box-shadow:var(--shadow);
+  }
+  .discuss .q{font-size:19px; font-weight:700; color:#3A3220}
+  .discuss .q .zh2{display:block; color:var(--muted); font-weight:600; font-size:15px; margin-top:4px}
+  .prompt-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+  .pw{
+    background:var(--green-soft); color:#3F5C3C; border:none; border-radius:999px;
+    padding:8px 18px; font-size:15px; font-weight:600; cursor:pointer; transition:.15s;
+  }
+  .pw:hover{background:var(--green); color:#fff}
+  .sent{background:var(--gold-soft); border-radius:12px; padding:14px 18px; margin-top:20px; font-size:15px; color:#6B5A1E}
+  .sent b{color:var(--gold)}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; background:var(--gold); color:#fff;
+    border:none; padding:13px 26px; border-radius:999px; font-size:15px; font-weight:700;
+    cursor:pointer; margin-top:24px; box-shadow:0 6px 16px rgba(201,162,39,.3); transition:.15s;
+  }
+  .btn:hover{background:#3A3220}
+
+  /* speak-all floating */
+  .speakbar{position:fixed; right:22px; bottom:22px; z-index:50}
+  .speakbar button{
+    background:#3A3220; color:#fff; border:none; border-radius:999px; padding:13px 20px;
+    font-size:14px; font-weight:700; cursor:pointer; box-shadow:0 8px 22px rgba(0,0,0,.18);
+  }
+  .toast{
+    position:fixed; left:50%; bottom:84px; transform:translateX(-50%);
+    background:rgba(58,50,32,.95); color:#fff; padding:10px 20px; border-radius:999px;
+    font-size:14px; opacity:0; transition:.25s; pointer-events:none; z-index:60;
+  }
+  .toast.show{opacity:1}
+
+  footer{margin-top:56px; text-align:center; color:var(--muted); font-size:13px}
+  @media(max-width:520px){ .hero{padding:34px 16px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <span class="badge">Cross-border English · Zodiac Lesson</span>
+    <h1>Virgo Personality Traits <span class="sym">♍</span></h1>
+    <div class="zh">处女座人格特质 · 用英语聊聊星座与性格</div>
+    <div class="sub">What are Virgos really like? Let's learn personality adjectives with this zodiac sign.<br>该用哪些英语词来形容处女座？</div>
+    <div class="dates"><b>Aug 23</b> — <b>Sep 22</b> · 8月23日—9月22日出生的人就是处女座</div>
+  </header>
+
+  <!-- ========== 01 MEET ========== -->
+  <section>
+    <div class="sec-head">
+      <span class="num">1</span>
+      <div>
+        <h2>Meet Virgo <span style="font-size:15px;color:var(--muted)">· 认识处女座</span></h2>
+      </div>
+    </div>
+    <p class="sec-intro">Virgo is the <b class="hl">sixth sign</b> of the zodiac; its symbol is the maiden holding wheat — a harvest goddess who values order, use, and care.</p>
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag y">The Sign ♍</span>
+        <h3>The Maiden Holding Wheat · 手持麦穗的少女</h3>
+        <ul>
+          <li>Ruling area: <b class="hl">order, service, and detail</b></li>
+          <li>Symbol: the maiden — caring, precise, grounded</li>
+          <li>Element: <b class="hl g">Earth</b> · 土象星座，务实重细节</li>
+        </ul>
+        <div class="pill-note">Virgos are <b class="hl">super type A</b> — 处女座是典型的 A 型人格，超级有条理。</div>
+      </div>
+      <div class="card">
+        <span class="tag g">In One Line</span>
+        <h3>Organized · Warm · A Little Perfectionistic</h3>
+        <ul>
+          <li class="g"><b class="hl g">Organized</b> 有条理</li>
+          <li class="b"><b class="hl b">A planner</b> 规划者</li>
+          <li class="g"><b class="hl g">Sincere &amp; warm</b> 真诚温暖</li>
+        </ul>
+        <div class="quote">“My Virgo friend is so <b class="hl">organized</b>.” — “He can be a bit <b class="hl">perfectionistic</b>.”
+          <span class="zh2">“我的处女座朋友特别有条理。”——“他有点完美主义。”</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 02 CORE CHARACTERISTICS ========== -->
+  <section>
+    <div class="sec-head">
+      <span class="num">2</span>
+      <div>
+        <h2>Core Characteristics <span style="font-size:15px;color:var(--muted)">· 性格关键词</span></h2>
+      </div>
+    </div>
+    <p class="sec-intro">Tap the bold words to hear them in English. · 点击加粗的关键词可以听到英文读音。</p>
+    <div class="grid g2">
+
+      <div class="card">
+        <span class="tag y">🧭 Organizational Strengths · 组织优势</span>
+        <h3>Built for Systems <span style="font-size:14px;color:var(--muted)">天生为系统而生</span></h3>
+        <ul>
+          <li>Defined as <b class="hl">super type A</b> and highly <b class="hl">organized</b> individuals · 典型的 A 型人格、高度有条理</li>
+          <li>They love to <b class="hl">plan things out</b> down to the last detail · 凡事提前规划到细节</li>
+          <li>Excel in roles requiring <b class="hl">planning</b>, <b class="hl">administration</b>, and <b class="hl">scheduling</b> · 擅长组织、行政与排期</li>
+          <li>Keep <b class="hl">neat</b>, <b class="hl">tidy</b>, and <b class="hl">structured</b> environments naturally · 自然保持整洁有序的环境</li>
+          <li>They really love to be <b class="hl">useful</b> and to have <b class="hl">systems</b> · 痴迷于被需要、有系统有流程</li>
+        </ul>
+        <div class="pill-note">Super type A nature drives their excellence in <b class="hl">organization</b> and <b class="hl">planning</b>. · 这种特质成就了他们在组织与规划上的卓越。</div>
+      </div>
+
+      <div class="card">
+        <span class="tag g">🤝 Social Dynamics · 社交动态</span>
+        <h3>Reserved at First, Real Friends After <span style="font-size:14px;color:var(--muted)">起初慢热，熟后真诚</span></h3>
+        <ul>
+          <li class="g">Initial interactions may seem <b class="hl g">reserved</b>, not outwardly friendly · 初见话不多，看起来有点距离感</li>
+          <li class="g">Once they <b class="hl g">warm up</b>, they become <b class="hl g">warm</b> and <b class="hl g">friendly</b> · 熟悉后温暖友善</li>
+          <li class="g">A <b class="hl g">sincere</b>, <b class="hl g">genuine</b> friend — truly loyal · 是真诚、真实的可靠朋友</li>
+          <li class="b">Prefer <b class="hl b">control</b> over planning tasks to avoid frustration · 喜欢掌控规划，以免受挫</li>
+        </ul>
+        <div class="pill-note g">Reserved at first, but become <b class="hl g">genuine friends</b> who value control in planning. · 慢热，却珍视友情与掌控感。</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 03 CHALLENGES ========== -->
+  <section>
+    <div class="sec-head">
+      <span class="num">3</span>
+      <div>
+        <h2>Challenges &amp; Preferences <span style="font-size:15px;color:var(--muted)">· 压力与偏好</span></h2>
+      </div>
+    </div>
+    <p class="sec-intro">The chain: perfectionism → too much responsibility → stress. · 链条：完美主义 → 责任过载 → 压力与焦虑。</p>
+    <div class="grid g2">
+
+      <div class="card">
+        <span class="tag r">⚠️ Potential Stressors · 压力源</span>
+        <h3>When a Virgo Takes on Too Much <span style="font-size:14px;color:var(--muted)">当处女座一个人扛太多</span></h3>
+        <ul>
+          <li>Strong desire for perfection can make them <b class="hl r">too perfectionistic</b>, <b class="hl r">too finicky</b> · 容易过度完美、过于挑剔</li>
+          <li>Taking on so much responsibility leads to feeling <b class="hl r">stressed</b>, <b class="hl r">anxious</b>, or <b class="hl r">overwhelmed</b> · 易感到压力、焦虑、不堪重负</li>
+          <li>May struggle with all the <b class="hl r">details</b> alone without support · 一人硬扛所有细节，难以招架</li>
+        </ul>
+        <div class="pill-note" style="background:#F6E0DC;color:#9A453A;border-left-color:var(--danger)">Perfectionism often leads to <b class="hl r">anxiety</b>; offering help is key. · 完美主义常带来焦虑，主动搭把手很关键。</div>
+      </div>
+
+      <div class="card">
+        <span class="tag b">🎨 Aesthetic &amp; Cultural · 审美与文化</span>
+        <h3>Earth Tones &amp; Iconic Figures <span style="font-size:14px;color:var(--muted)">大地色与代表人物</span></h3>
+        <ul>
+          <li class="b">Drawn to <b class="hl b">earth tones</b> such as <b class="hl b">dark green</b> or <b class="hl b">brown</b> · 偏好深绿、棕色等大地色系</li>
+          <li class="b">Known for their <b class="hl b">specific taste</b> and precision · 以独具品味与精准著称</li>
+          <li class="b">Famous Virgos:<b class="hl b"> Beyoncé</b>, <b class="hl b">Michael Jackson</b>, <b class="hl b">Zendaya</b>, <b class="hl b">Keanu Reeves</b>, <b class="hl b">Kobe Bryant</b></li>
+        </ul>
+        <div class="colorbar">
+          <span style="background:#4E6E4A">Dark Green</span>
+          <span style="background:#7A5C3E">Brown</span>
+          <span style="background:#C9A227">Wheat Gold</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <span class="tag y">🌟 Famous Virgos · 处女座名人</span>
+      <h3>Known for Taste &amp; Precision <span style="font-size:14px;color:var(--muted)">品味与精准</span></h3>
+      <p class="sec-intro" style="margin:8px 0 0">Tap a celebrity card to discover their masterpieces &amp; achievements. · 点击名人卡片，查看他们的代表作与成就。</p>
+      <div class="vip-grid" id="vipGrid"></div>
+    </div>
+
+    <!-- 名人成就弹窗 -->
+    <div class="vip-mask" id="vipMask">
+      <div class="vip-pop" id="vipPop"></div>
+    </div>
+  </section>
+
+  <!-- ========== 04 YOGURT / 12 SIGNS ========== -->
+  <section>
+    <div class="sec-head">
+      <span class="num">4</span>
+      <div>
+        <h2>All 12 Zodiac Signs <span style="font-size:15px;color:var(--muted)">· 十二星座</span></h2>
+      </div>
+    </div>
+    <p class="sec-intro">Tap any sign card to hear its English name. · 点击任意星座卡片，即可听到英文读音。Green = today's star Virgo. · 绿色为今日主角。</p>
+    <div class="zodiac-grid" id="zodiac"></div>
+    <div class="speakbar">
+      <button onclick="speakAll()">🔊 Read All 12 Signs</button>
+    </div>
+  </section>
+
+  <!-- ========== 05 GROUP TALK ========== -->
+  <section>
+    <div class="sec-head">
+      <span class="num">5</span>
+      <div>
+        <h2>Group Talk · Your Turn <span style="font-size:15px;color:var(--muted)">· 小组讨论</span></h2>
+      </div>
+    </div>
+    <div class="discuss">
+      <div class="q">
+        What's your sign? What is it like? <span class="zh2">你的星座是什么？它有什么特点？</span>
+      </div>
+
+      <div style="margin-top:18px;font-size:15px;color:var(--ink)">
+        <b>Talk with your partner · 和你的同伴讨论：</b>
+        <ul style="padding-left:20px;margin:8px 0 0;color:#4A463D">
+          <li><b>My sign is</b> ____. · 我的星座是____。</li>
+          <li>People born under <b>____</b> are usually <b>____</b>. · ____座的人通常是____的。</li>
+          <li>Tell your sign, its <b>symbol</b>, and <b>one personality word</b>. · 介绍你的星座名、符号和 1 个性格词。</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:22px">
+        <b style="color:#3A3220">💡 Prompt words · 提示词（点击也能发音）：</b>
+        <div class="prompt-row" id="prompts"></div>
+      </div>
+
+      <div class="sent">
+        <b>Goal · 完成标准：</b>By the end, you can describe a Virgo — <b>and yourself</b> — in English.<br>
+        <span class="zh2">学完这节课，你能用英语描述处女座，也能描述自己。</span>
+      </div>
+
+      <button class="btn" onclick="speakGroupTalk()">🎧 Listen to the Whole Question</button>
+    </div>
+  </section>
+
+  <footer>Based on the “Virgo Season” English lesson · Aug 23 – Sep 22 · 处女座季节英语课 · 供课堂使用</footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------- 12 星座数据 ---------- */
+const SIGNS = [
+  {s:"\u2648", en:"Aries",       zh:"白羊座"},
+  {s:"\u2649", en:"Taurus",      zh:"金牛座"},
+  {s:"\u264A", en:"Gemini",      zh:"双子座"},
+  {s:"\u264B", en:"Cancer",      zh:"巨蟹座"},
+  {s:"\u264C", en:"Leo",         zh:"狮子座"},
+  {s:"\u264D", en:"Virgo",       zh:"处女座", star:true},
+  {s:"\u264E", en:"Libra",       zh:"天秤座"},
+  {s:"\u264F", en:"Scorpio",     zh:"天蝎座"},
+  {s:"\u2650", en:"Sagittarius", zh:"射手座"},
+  {s:"\u2651", en:"Capricorn",   zh:"摩羯座"},
+  {s:"\u2652", en:"Aquarius",    zh:"水瓶座"},
+  {s:"\u2653", en:"Pisces",      zh:"双鱼座"}
+];
+
+/* ---------- 提示词 ---------- */
+const PROMPTS = ["organized 有条理","warm 温暖","outgoing 外向","creative 有创意","calm 沉稳","passionate 有热情","funny 幽默","thoughtful 体贴","shy 害羞","brave 勇敢","curious 好奇","careful 细心"];
+
+/* ---------- 渲染 12 星座 ---------- */
+const zod = document.getElementById('zodiac');
+zod.innerHTML = SIGNS.map((g,i)=>`
+  <div class="zs ${g.star?'star':''}" onclick="speakWord('${g.en}', this)">
+    <div class="s">${g.s}</div>
+    <div class="en">${g.en}</div>
+    <div class="zh">${g.zh}</div>
+    <div class="spk">🔊 点击发音</div>
+  </div>`).join('');
+
+/* ---------- 渲染提示词 ---------- */
+const pr = document.getElementById('prompts');
+pr.innerHTML = PROMPTS.map(p=>{
+  const [en, zh] = p.split(' ');
+  return `<button class="pw" onclick="speakWord('${en}', this, '${zh}')">${p}</button>`;
+}).join('');
+
+/* ---------- Famous Virgos 名人数据 ---------- */
+const FAMOUS = [
+  {
+    nm:"Beyoncé", ini:"B", job:"🎤", bd:"Sep 4, 1981 · 9月4日",
+    d:"taste & precision 品味与精益求精", role:"Singer & iconic performer · 歌手，天后级表演者",
+    grad:"linear-gradient(135deg,#C9A227,#8A6A16)",
+    feats:[
+      {en:'"Halo", "Single Ladies" and the album "Lemonade"', zh:'代表作《Halo》《Single Ladies》与专辑《Lemonade》'},
+      {en:'32 Grammy Awards — the most decorated Grammy winner in history', zh:'32 座格莱美奖——史上获奖最多的歌手'},
+      {en:'Global icon of detail-obsessed live performance', zh:'以对现场演出细节近乎苛刻的打磨闻名'}
+    ]
+  },
+  {
+    nm:"Michael Jackson", ini:"MJ", job:"🕺", bd:"Aug 29, 1958 · 8月29日",
+    d:"perfectionist performer 完美主义表演者", role:"King of Pop · 流行音乐之王",
+    grad:"linear-gradient(135deg,#4E6E4A,#2E4630)",
+    feats:[
+      {en:'"Thriller" — the best-selling album of all time', zh:'《Thriller》——史上销量最高的专辑'},
+      {en:'"Billie Jean", "Beat It" and his signature Moonwalk', zh:'代表作《Billie Jean》《Beat It》与标志性太空步'},
+      {en:'Famous for rehearsing every move hundreds of times', zh:'以每个动作反复排练数百次的完美主义著称'}
+    ]
+  },
+  {
+    nm:"Zendaya", ini:"Z", job:"🎬", bd:"Sep 1, 1996 · 9月1日",
+    d:"elegant & versatile 优雅全能", role:"Actress & style icon · 演员，时尚偶像",
+    grad:"linear-gradient(135deg,#7A5C3E,#54402B)",
+    feats:[
+      {en:'Star of "Euphoria" — youngest two-time Emmy winner for Lead Drama Actress', zh:'主演《亢奋》——最年轻的两届艾美奖剧情类最佳女主角'},
+      {en:'MJ in the "Spider-Man" series and Chani in "Dune"', zh:'《蜘蛛侠》系列中的 MJ 与《沙丘》中的契妮'},
+      {en:'Known for meticulous red-carpet preparation and versatile roles', zh:'以红毯造型的精心准备与戏路全能闻名'}
+    ]
+  },
+  {
+    nm:"Keanu Reeves", ini:"K", job:"🎭", bd:"Sep 2, 1964 · 9月2日",
+    d:"humble & thoughtful 谦逊体贴", role:"Actor · 演员",
+    grad:"linear-gradient(135deg,#C25B4E,#8F3A31)",
+    feats:[
+      {en:'Neo in "The Matrix" — a sci-fi legend', zh:'《黑客帝国》中的尼奥——科幻片经典角色'},
+      {en:'"John Wick" series and "Speed"', zh:'《疾速追杀》系列与《生死时速》'},
+      {en:'Famous for rehearsing 90% of his stunts himself', zh:'以亲自完成九成动作戏、为人谦逊著称'}
+    ]
+  },
+  {
+    nm:"Kobe Bryant", ini:"KB", job:"🏀", bd:"Aug 23, 1978 · 8月23日",
+    d:"focused & hard-working 专注勤奋", role:"NBA Legend (Lakers) · NBA 传奇（湖人队）",
+    grad:"linear-gradient(135deg,#8A6A16,#54402B)",
+    feats:[
+      {en:'5× NBA champion, 18× All-Star with the LA Lakers', zh:'随湖人队 5 次夺得 NBA 总冠军，18 次入选全明星'},
+      {en:'81 points in a single game — 2nd highest in NBA history', zh:'单场 81 分——NBA 历史第二高分'},
+      {en:'"Mamba Mentality" — the mindset of relentless details', zh:'「曼巴精神」——对细节极致苛求的职业态度'}
+    ]
+  }
+];
+
+/* ---------- 渲染名人卡 ---------- */
+const vipGrid = document.getElementById('vipGrid');
+vipGrid.innerHTML = FAMOUS.map((v,i)=>`
+  <div class="vip" id="vip-${i}" onclick="openVip(${i})">
+    <div class="ava" style="background:${v.grad}">${v.ini}<span class="job">${v.job}</span></div>
+    <div class="nm">${v.nm}</div>
+    <div class="bd">${v.bd}</div>
+    <div class="d">${v.d}</div>
+    <div class="tap">👆 点击查看成就</div>
+  </div>`).join('');
+
+/* ---------- 名人成就弹窗 ---------- */
+const vipMask = document.getElementById('vipMask');
+const vipPop  = document.getElementById('vipPop');
+let curVip = -1;
+
+function openVip(i){
+  const v = FAMOUS[i];
+  curVip = i;
+  document.querySelectorAll('.vip').forEach(el=>el.classList.remove('active'));
+  document.getElementById('vip-'+i).classList.add('active');
+  vipPop.innerHTML = `
+    <div class="top">
+      <div class="ava" style="background:${v.grad};width:64px;height:64px;font-size:22px;position:relative;flex:none">
+        ${v.ini}<span class="job" style="right:-2px;bottom:-2px;width:24px;height:24px;font-size:12px">${v.job}</span>
+      </div>
+      <div>
+        <div class="nm">${v.nm} <span style="font-size:13px;color:var(--muted);font-weight:600">♍ ${v.bd}</span></div>
+        <div class="role">${v.role}</div>
+      </div>
+    </div>
+    <div class="body">
+      <h4>MASTERPIECES &amp; ACHIEVEMENTS · 代表作与成就</h4>
+      <ul>${v.feats.map(f=>`<li>${f.en}<span class="zh">${f.zh}</span></li>`).join('')}</ul>
+    </div>
+    <div class="foot">
+      <button class="btn-spk" onclick="speak('${v.nm.replace(/'/g,"\\'")}')">🔊 听名字读音</button>
+      <button class="btn-close" onclick="closeVip()">关闭 ✕</button>
+    </div>`;
+  vipMask.classList.add('show');
+}
+
+function closeVip(){
+  vipMask.classList.remove('show');
+  if(curVip>=0) document.getElementById('vip-'+curVip)?.classList.remove('active');
+  curVip = -1;
+}
+
+vipMask.addEventListener('click', e=>{ if(e.target === vipMask) closeVip(); });
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeVip(); });
+
+/* ---------- SpeechSynthesis 朗读 ---------- */
+let voicesLoaded = false;
+function loadVoices(){ window.speechSynthesis.getVoices(); voicesLoaded = true; }
+if ('speechSynthesis' in window){
+  loadVoices();
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+}
+
+function pickVoice(lang, gender){
+  try{
+    const vs = window.speechSynthesis.getVoices();
+    const en = vs.filter(v=>v.lang && v.lang.toLowerCase().startsWith('en'));
+    const prefer = gender==='f' ? ['Samantha','Google US English','Female'] : ['Google US English','Male'];
+    for(const p of prefer){
+      const m = en.find(v=>v.name.includes(p));
+      if(m) return m;
+    }
+    return en[0] || vs[0] || null;
+  }catch(e){ return null; }
+}
+
+function speak(text, lang='en-US', gender='f'){
+  if(!('speechSynthesis' in window)){ toast('此浏览器不支持语音朗读'); return; }
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang;
+  u.rate = 0.95; u.pitch = 1.0;
+  const v = pickVoice(lang, gender);
+  if(v) u.voice = v;
+  window.speechSynthesis.speak(u);
+}
+
+/* 点击词/星座 → 发音 */
+function speakWord(en, el, zh){
+  if(el){
+    document.querySelectorAll('.zs.active').forEach(x=>x.classList.remove('active'));
+    if(el.classList.contains('zs')) el.classList.add('active');
+  }
+  speak(en, 'en-US', 'f');
+  toast('🔊 ' + en + (zh?(' · '+zh):''));
+}
+
+/* 朗读全部 12 星座 */
+function speakAll(){
+  if(!('speechSynthesis' in window)){ toast('浏览器不支持'); return; }
+  window.speechSynthesis.cancel();
+  const seq = SIGNS.map(g=>g.en).join('. ');
+  speak(seq, 'en-US', 'f');
+  toast('🔊 Reading all 12 signs… 正在朗读十二星座');
+}
+
+/* 朗读小组讨论问题 */
+function speakGroupTalk(){
+  const t = "What's your sign? What is it like? My sign is blank. People born under a sign are usually blank.";
+  speak(t, 'en-US', 'f');
+  toast('🔊 Group talk question…');
+}
+
+/* ---------- toast ---------- */
+let tm;
+function toast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(tm); tm = setTimeout(()=>el.classList.remove('show'), 1800);
+}
+</script>
+</body>
+</html>
