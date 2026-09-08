@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overview of Cross-border E-commerce · 课文课件</title>
+<style>
+  :root{
+    --bg:#FBF3DF; --card:#FFFDF6; --ink:#3A2E1E; --muted:#8A7A5E;
+    --acc:#E8A33D; --acc2:#F2C94C; --green:#3E8E6B; --pink:#E9A9B8;
+    --line:#EDDFC2; --shadow:0 8px 28px rgba(122,96,52,.12);
+    --rc:18px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+    line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:26px 18px 90px;}
+  header.top{
+    text-align:center; padding:26px 0 12px;
+  }
+  header.top h1{
+    font-size:30px; margin:0 0 6px; letter-spacing:.5px;
+    color:var(--ink); font-weight:800;
+  }
+  header.top p.sub{margin:0; color:var(--muted); font-size:14px;}
+  .tagbar{
+    display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px;
+  }
+  .tag{
+    padding:5px 14px; border-radius:999px; font-size:12.5px; font-weight:600;
+    background:#fff; border:1px solid var(--line); color:var(--muted);
+  }
+  .tag.hl{background:var(--acc); color:#fff; border-color:transparent;}
+
+  .section{margin-top:38px;}
+  .sec-head{
+    display:flex; align-items:center; gap:12px; margin-bottom:16px;
+  }
+  .sec-num{
+    flex:none; width:40px; height:40px; border-radius:12px;
+    background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:18px;
+  }
+  .sec-head h2{margin:0; font-size:22px; font-weight:800;}
+  .sec-head .en{color:var(--muted); font-weight:600; font-size:13px; margin-left:auto;}
+
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--rc);
+    padding:24px; box-shadow:var(--shadow);
+  }
+
+  /* Listening */
+  .qr{
+    display:flex; gap:16px; align-items:center; flex-wrap:wrap;
+    background:#fff; border:1px dashed var(--acc); border-radius:14px;
+    padding:16px 18px; margin-bottom:20px;
+  }
+  .qr .qrbox{
+    width:86px; height:86px; flex:none; border-radius:10px; overflow:hidden;
+    background:#1c1c1c; display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:11px; text-align:center; padding:8px;
+  }
+  .qr .qrinfo{flex:1; min-width:200px;}
+  .qr .qrinfo b{color:var(--ink); font-size:15px;}
+  .qr .qrinfo p{margin:4px 0 0; color:var(--muted); font-size:13px;}
+  .qr .qrinfo .hint{color:var(--green); font-weight:600;}
+
+  .listening ol{margin:0; padding-left:22px;}
+  .listening li{margin-bottom:16px; font-size:16px;}
+  .blank{
+    display:inline-block; min-width:110px; border-bottom:2px solid var(--acc);
+    background:#FFF8E9; border-radius:6px 6px 0 0;
+  }
+  .blank input{
+    border:none; outline:none; background:transparent; text-align:center;
+    font-size:15px; color:var(--green); font-weight:600; width:110px;
+    padding:4px 6px;
+  }
+  .listening .discuss{
+    margin-top:6px; padding:14px 16px; background:#F6F1E2; border-radius:12px;
+    color:var(--muted); font-size:14px;
+  }
+  /* Discuss 示范对话 */
+  .dlg-head{
+    display:flex; gap:10px; align-items:flex-start; margin-bottom:12px; flex-wrap:wrap;
+  }
+  .dlg-head b{color:var(--ink); font-size:15px; flex:1; min-width:220px; line-height:1.7;}
+  .dlg-all{
+    border:none; cursor:pointer; padding:9px 18px; border-radius:10px; font-size:14px; font-weight:700;
+    background:var(--ink); color:#fff; white-space:nowrap;
+  }
+  .dlg-all:hover{background:#241D12;}
+  .dlg-all.playing{background:var(--green);}
+  .dlg-line{
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:12px 14px; margin-bottom:10px; display:flex; gap:12px; align-items:flex-start;
+  }
+  .dlg-line.speaking{border-color:var(--green); box-shadow:0 0 0 3px rgba(62,142,107,.15);}
+  .dlg-sp{
+    flex:none; width:34px; height:34px; border-radius:50%; color:#fff; font-weight:800; font-size:15px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .dlg-line.pa .dlg-sp{background:#C98A5E;}
+  .dlg-line.pb .dlg-sp{background:#6E8FAF;}
+  .dlg-body{flex:1; min-width:0;}
+  .dlg-en{color:var(--ink); font-size:15.5px; line-height:1.8;}
+  .dlg-cn{color:var(--muted); font-size:13px; line-height:1.7; margin-top:6px; border-top:1px dashed var(--line); padding-top:6px;}
+  .dlg-play{
+    flex:none; border:none; cursor:pointer; width:36px; height:36px; border-radius:50%;
+    background:#F0EAD9; color:var(--ink); font-size:15px; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .dlg-play:hover{background:var(--acc); color:#fff;}
+  .dlg-play.playing{background:var(--green); color:#fff;}
+  .dlg-tip{font-size:12.5px; color:var(--muted); margin-top:6px;}
+  /* 每题听力卡片 */
+  .listening ol{margin:0; padding-left:22px;}
+  .listening li{
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    padding:14px 16px; margin-bottom:12px; position:relative;
+  }
+  .li-sent{color:var(--ink); font-size:16px; line-height:1.9;}
+  .li-ctrls{display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:10px;}
+  .play-listen, .reveal-a{
+    border:none; cursor:pointer; padding:6px 14px; border-radius:9px; font-size:13px; font-weight:700;
+  }
+  .play-listen{background:var(--green); color:#fff;}
+  .play-listen:hover{background:#2E7D5B;}
+  .play-listen.playing{background:#2E7D5B; box-shadow:0 0 0 3px rgba(62,142,107,.25);}
+  .play-listen .ic{display:inline-block; margin-right:4px;}
+  .reveal-a{background:#F0EAD9; color:var(--ink);}
+  .reveal-a:hover{background:#E7DFC9;}
+  .reveal-a.on{background:var(--pink); color:#fff;}
+  .a-word{
+    color:#D9302A; font-weight:800; font-size:15px; margin-left:6px; cursor:pointer;
+    border-bottom:1.5px solid #D9302A; padding-bottom:1px;
+  }
+  .a-word:hover{background:#FBEAEA; border-radius:4px;}
+  .play-all{
+    margin:0 0 14px; padding:9px 20px; border:none; border-radius:10px; cursor:pointer;
+    background:var(--ink); color:#fff; font-weight:700; font-size:14px;
+  }
+  .play-all:hover{background:#241D12;}
+  .listen-note{font-size:12.5px; color:var(--muted); margin:8px 0 4px;}
+
+  /* Text */
+  .text-body{font-size:17px; color:#3A2E1E;}
+  .text-body p{margin:0 0 18px;}
+  .text-body .h-t{
+    font-weight:800; font-size:19px; color:var(--ink); margin:4px 0 12px;
+    display:block;
+  }
+  .text-body .h-sub{
+    font-weight:800; color:var(--acc); font-size:17px; margin:18px 0 8px;
+    display:block;
+  }
+  .words-guide{
+    background:#F6F1E2; border-radius:12px; padding:12px 16px; font-size:13px;
+    color:var(--muted); margin-bottom:16px;
+  }
+  .words-guide b{color:var(--green);}
+  .vw{
+    color:#B06A0F; font-weight:700; position:relative;
+    border-bottom:2px dotted var(--acc); cursor:pointer;
+  }
+  .vw:hover{background:#FFF3D6; border-radius:4px;}
+  .vw.done{color:#2E7D5B; border-bottom-color:var(--green);}
+
+  /* Pool */
+  .pool{
+    position:fixed; z-index:60; width:min(400px,92vw);
+    background:#fff; border-radius:16px; box-shadow:0 18px 50px rgba(0,0,0,.22);
+    padding:18px 20px; display:none;
+    transform:translate(-50%,8px);
+  }
+  .pool.show{display:block;}
+  .pool .pw{font-size:22px; font-weight:800; color:var(--ink);}
+  .pool .ipa{color:var(--muted); font-size:14px; margin-left:8px;}
+  .pool .cn{font-size:16px; color:var(--green); font-weight:700; margin-top:6px;}
+  .pool .sent{font-size:13px; color:var(--muted); margin-top:8px; font-style:italic;}
+  .pool .actions{margin-top:12px; display:flex; gap:8px;}
+  .pool button{
+    border:none; cursor:pointer; padding:6px 14px; border-radius:8px; font-size:13px;
+    font-weight:600; background:var(--acc); color:#fff;
+  }
+  .pool button.ghost{background:#F0EAD9; color:var(--ink);}
+  .overlay{
+    position:fixed; inset:0; background:rgba(58,46,30,.18); z-index:55; display:none;
+  }
+  .overlay.show{display:block;}
+
+  /* Quiz */
+  .quiz-item{border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:16px; background:#fff;}
+  .quiz-item .q{
+    display:flex; gap:10px; font-size:16px; font-weight:700; color:var(--ink);
+  }
+  .quiz-item .q .qn{
+    flex:none; width:28px; height:28px; border-radius:50%; background:var(--ink); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800;
+  }
+  .quiz-item .type{
+    font-size:12px; font-weight:700; color:#fff; padding:2px 10px; border-radius:999px; width:fit-content;
+    margin:8px 0 6px 38px;
+  }
+  .type.choice{background:var(--acc);}
+  .type.short{background:var(--green);}
+  .quiz-item .opts{margin:10px 0 0 38px; display:flex; flex-direction:column; gap:8px;}
+  .quiz-item .opt{
+    border:1px solid var(--line); border-radius:10px; padding:10px 14px; font-size:15px; cursor:pointer;
+    background:#FDFAF2;
+  }
+  .quiz-item .opt:hover{border-color:var(--acc);}
+  .quiz-item .opt.correct{background:#E5F2E9; border-color:var(--green); color:var(--green); font-weight:700;}
+  .quiz-item .opt.wrong{background:#FBEAEA; border-color:#D98A8A; color:#B85050;}
+  .quiz-item .full{margin:8px 0 0 38px; font-size:15px; line-height:1.8; color:var(--ink);}
+  .quiz-item .full .b{font-weight:700; color:var(--green);}
+  .answer-box{
+    margin:14px 0 0 38px; padding:14px 16px; border-radius:12px; background:#EFF5EC;
+    border:1px solid #CBE0C7; display:none;
+  }
+  .answer-box.show{display:block;}
+  .answer-box .a-tag{font-size:12px; font-weight:800; color:#fff; background:var(--green); padding:2px 10px; border-radius:999px; }
+  .answer-box .a-cn{margin-top:10px; font-size:15px; line-height:1.85; color:#2E3B2E;}
+  .quiz-item .reveal{
+    margin:14px 0 0 38px; padding:8px 18px; border:none; border-radius:10px; cursor:pointer;
+    background:var(--ink); color:#fff; font-weight:700; font-size:14px;
+  }
+  .quiz-item .reveal:hover{background:#241D12;}
+  .quiz-item .reveal.on{background:var(--green);}
+
+  footer.note{
+    margin-top:40px; text-align:center; color:var(--muted); font-size:12.5px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>Overview of Cross-border E-commerce</h1>
+    <p class="sub">Part 1.1 The Definition and Classification of Cross-border E-commerce</p>
+    <div class="tagbar">
+      <span class="tag hl">热身听力</span>
+      <span class="tag">课文精读</span>
+      <span class="tag">生词点击</span>
+      <span class="tag">课后练习</span>
+    </div>
+  </header>
+
+  <!-- ===== 第一部分・热身听力 ===== -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">1</div>
+      <h2>热身听力</h2>
+      <span class="en">Warming-up · Listening</span>
+    </div>
+    <div class="card">
+      <div class="qr">
+        <div class="qrbox">扫码<br>听音频</div>
+        <div class="qrinfo">
+          <b>🎧 听力音频</b>
+          <p>音源在课本右上角<b class="hint">二维码</b>；本页已在<b class="hint">每题旁嵌入生成好的听力音频</b>，可直接点「🔊 听录音」播放。听录音完成下列 5 句填空。</p>
+          <p>主题：跨境电商商品质量与检验</p>
+        </div>
+      </div>
+      <div class="listening">
+        <p style="font-weight:700;color:var(--ink);margin-top:0;">Listen and fill in the blanks. 听录音补全句子（在横线处输入，可点「🔊 听录音」播放该句）</p>
+        <button class="play-all" id="playAll">▶ 连贯播放全部 5 句</button>
+        <ol>
+          <li>
+            <div class="li-sent">Your goods are superior in quality compared with those of other <span class="blank"><input type="text" autocomplete="off"></span>.</div>
+            <div class="li-ctrls">
+              <button class="play-listen" data-src="assets/listening/s1.mp3"><span class="ic">▶</span>听录音</button>
+              <button class="reveal-a" data-ans="manufacturer">👁 答案</button>
+              <span class="a-word" data-w="manufacturer" hidden>manufacturer</span>
+            </div>
+          </li>
+          <li>
+            <div class="li-sent">Product quality also <span class="blank"><input type="text" autocomplete="off"></span> the process behind the product. So we have to search online to understand the quality.</div>
+            <div class="li-ctrls">
+              <button class="play-listen" data-src="assets/listening/s2.mp3"><span class="ic">▶</span>听录音</button>
+              <button class="reveal-a" data-ans="reflects">👁 答案</button>
+              <span class="a-word" data-w="reflects" hidden>reflects</span>
+            </div>
+          </li>
+          <li>
+            <div class="li-sent">The samples should meet the <span class="blank"><input type="text" autocomplete="off"></span> of the criteria. Have you searched online?</div>
+            <div class="li-ctrls">
+              <button class="play-listen" data-src="assets/listening/s3.mp3"><span class="ic">▶</span>听录音</button>
+              <button class="reveal-a" data-ans="requirements">👁 答案</button>
+              <span class="a-word" data-w="requirements" hidden>requirements</span>
+            </div>
+          </li>
+          <li>
+            <div class="li-sent">Where do you want to <span class="blank"><input type="text" autocomplete="off"></span> the goods?</div>
+            <div class="li-ctrls">
+              <button class="play-listen" data-src="assets/listening/s4.mp3"><span class="ic">▶</span>听录音</button>
+              <button class="reveal-a" data-ans="re-inspect">👁 答案</button>
+              <span class="a-word" data-w="re-inspect" hidden>re-inspect</span>
+            </div>
+          </li>
+          <li>
+            <div class="li-sent">We only inspect the cargo which is to be <span class="blank"><input type="text" autocomplete="off"></span> here.</div>
+            <div class="li-ctrls">
+              <button class="play-listen" data-src="assets/listening/s5.mp3"><span class="ic">▶</span>听录音</button>
+              <button class="reveal-a" data-ans="discharged">👁 答案</button>
+              <span class="a-word" data-w="discharged" hidden>discharged</span>
+            </div>
+          </li>
+        </ol>
+        <div class="listen-note">💡 提示：点击「👁 答案」会在空格处显示正确的红色单词；点击红色单词可单独听发音。</div>
+        <div class="discuss">
+          <div class="dlg-head">
+            <b>Discuss · 讨论：Discuss with your partner about what information is included, and how he/she knows about the definition and classification of cross-border e-commerce. 下面是一段示范对话，先听一听，再和同桌练习。</b>
+            <button class="dlg-all" id="dlgAll">▶ 连贯播放整段对话</button>
+          </div>
+          <div class="dlg-line pa" data-dsrc="assets/discuss/d01.mp3">
+            <div class="dlg-sp">A</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Hey, let's talk about cross-border e-commerce! What do you think it is?</div>
+              <div class="dlg-cn">嘿，我们聊聊跨境电商吧！你觉得它是什么？</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pb" data-dsrc="assets/discuss/d02.mp3">
+            <div class="dlg-sp">B</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Um… I think it's like shopping online, but from another country. For example, I buy things from a website in America, and the seller ships the products to China.</div>
+              <div class="dlg-cn">嗯……我觉得就是网购，但是从别的国家买东西。比如我在美国的网站下单，卖家把商品寄到中国来。</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pa" data-dsrc="assets/discuss/d03.mp3">
+            <div class="dlg-sp">A</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Yeah! So the <b>definition</b> is: cross-border e-commerce means buying and selling goods or services online <b>across borders</b>, through e-commerce platforms.</div>
+              <div class="dlg-cn">对！所以它的定义是：通过电商平台跨越国界在线买卖商品或服务。</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pb" data-dsrc="assets/discuss/d04.mp3">
+            <div class="dlg-sp">B</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Right. And there are different <b>classifications</b>. I learned that there are two main types — <b>B2C</b> and <b>B2B</b>. B2C means business sells to customers, like when my mom buys shoes on a shopping app. B2B means business sells to business, like a factory selling products to a foreign company.</div>
+              <div class="dlg-cn">对，它有不同的分类。我学到主要有两类——B2C 和 B2B。B2C 是企业卖给个人，比如我妈在购物 App 上买鞋；B2B 是企业卖给企业，比如工厂把产品卖给外国公司。</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pa" data-dsrc="assets/discuss/d05.mp3">
+            <div class="dlg-sp">A</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Oh, I see! And we can also classify it by <b>import</b> and <b>export</b>. Import is when we buy things from other countries, and export is when we sell things to other countries.</div>
+              <div class="dlg-cn">明白了！还可以按进口和出口分。进口是我们买别国的东西，出口是我们把东西卖到国外。</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pb" data-dsrc="assets/discuss/d06.mp3">
+            <div class="dlg-sp">B</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Exactly! My dad works in foreign trade, so I know a little about it. He said the products must go through <b>customs clearance</b>, and the <b>logistics</b> takes a long time because the goods travel so far.</div>
+              <div class="dlg-cn">没错！我爸做外贸，所以我懂一点。他说商品要经过清关，物流时间也很长，因为货物要运好远。</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pa" data-dsrc="assets/discuss/d07.mp3">
+            <div class="dlg-sp">A</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Wow, that's cool! How do you know all this?</div>
+              <div class="dlg-cn">哇，你怎么知道这么多？</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pb" data-dsrc="assets/discuss/d08.mp3">
+            <div class="dlg-sp">B</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Well, I read our textbook, and I also watch short videos about online shopping. Sometimes I help my mom order things from overseas websites, so I learn by doing!</div>
+              <div class="dlg-cn">我读课本，还看网购类的短视频。有时还帮我妈在海外网站下单，边做边学嘛！</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pa" data-dsrc="assets/discuss/d09.mp3">
+            <div class="dlg-sp">A</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Haha, me too! So cross-border e-commerce includes information like the <b>platforms</b>, the <b>transactions</b>, the <b>logistics</b>, and even the <b>payment and settlement</b>. It's a whole <b>ecosystem</b>!</div>
+              <div class="dlg-cn">哈哈我也是！所以跨境电商包括平台、交易、物流，甚至还有支付与结算，是一个完整的生态系统！</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-line pb" data-dsrc="assets/discuss/d10.mp3">
+            <div class="dlg-sp">B</div>
+            <div class="dlg-body">
+              <div class="dlg-en">Yes! It's really convenient. That's why it's becoming more and more popular around the world.</div>
+              <div class="dlg-cn">是啊，真的很方便，所以它在全世界越来越流行了。</div>
+            </div>
+            <button class="dlg-play">▶</button>
+          </div>
+          <div class="dlg-tip">💡 提示：每句右侧有圆形播放按钮可单句听音；顶部按钮可整段连播，正在播放的句子会高亮显示。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 第二部分・课文 ===== -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">2</div>
+      <h2>课文精读</h2>
+      <span class="en">Text · 橙色下划线为生词，点击查看释义与发音</span>
+    </div>
+    <div class="card">
+      <div class="words-guide">
+        💡 <b>使用提示：</b>文中<b class="vg">橙色虚线标注</b>的词语是本单元核心生词（来自上节词汇表）。点击任意生词，可弹出<b>中文释义 + 国际音标 + 英文例句</b>，并自动朗读发音。
+      </div>
+      <div class="text-body" id="textBody">
+        <span class="h-t">The Definition of Cross-border E-commerce</span>
+        <p>Cross-border <span class="vw">e-commerce</span> is a kind of <span class="vw">e-commerce</span>. As the largest e-commerce <span class="vw">platform</span> in the world, Amazon entered Shanghai Free Trade Zone on August 20, 2014. The memorandum signed on that day shows that "Amazon will open its new cross-border e-commerce platform in the free trade zone." So it is clear that cross-border e-commerce is a new form of <span class="vw">international e-commerce</span>.</p>
+
+        <p>Then, what exactly is the <span class="vw">definition</span> of cross-border e-commerce? Cross-border e-commerce refers to an <span class="vw">international</span> business activity in which <span class="vw">trading entities</span> from different <span class="vw">customs</span> areas conduct <span class="vw">transactions</span>, complete <span class="vw">payment</span> and <span class="vw">settlement</span>, and <span class="vw">deliver</span> goods through cross-border <span class="vw">logistics</span>, based on e-commerce <span class="vw">platforms</span>.</p>
+
+        <p>In terms of business models, cross-border e-commerce can be divided into cross-border <span class="vw">retail</span> e-commerce (B2C and C2C) and cross-border B2B e-commerce. In terms of customs areas, cross-border e-commerce can be divided into cross-border <span class="vw">import</span> e-commerce and cross-border <span class="vw">export</span> e-commerce.
+
+        <span class="h-sub">1. Cross-border Retail E-Commerce (B2C, Business-to-Consumer)</span>
+        Cross-border B2C e-commerce refers to the <span class="vw">international</span> business activities of companies in different customs areas directly selling products or services to <span class="vw">consumers</span> through the e-commerce platform. The <span class="vw">process</span> includes reaching transactions, completing payment and <span class="vw">delivery</span> of goods through cross-border logistics. Sellers publish product information, price and other contents, and individual <span class="vw">buyers</span> can search the information and place orders directly.</p>
+
+        <span class="h-sub">2. Cross-border B2B E-Commerce (B2B, Business-to-Business)</span>
+        <p>Cross-border B2B e-commerce refers to the international business activities between companies in different customs areas. The process includes reaching the transaction, completing the payment and <span class="vw">settlement</span> through e-commerce <span class="vw">platforms</span> and delivering the products through cross-border logistics, and completing the transaction.</p>
+
+        <span class="h-sub">3. Cross-border Import and Export Business Process</span>
+        <p>From the <span class="vw">process</span> of <span class="vw">import</span> and <span class="vw">export</span> through cross-border e-commerce, after the products are recorded on the platform of cross-border e-commerce, producers or <span class="vw">manufacturers</span> will deliver the products to logistics for <span class="vw">shipment</span>. After <span class="vw">customs clearance</span> and <span class="vw">commodity inspection</span> in both the export and <span class="vw">import</span> countries, the products are finally delivered to the consumers.</p>
+
+        <p>With the continuous development of cross-border e-commerce, cross-border e-commerce involves the whole industry chain such as logistics, <span class="vw">warehousing</span>, payment, customs clearance, etc. The whole industry <span class="vw">ecosystem</span> is becoming more and more <span class="vw">complete</span>, and the <span class="vw">division of labor</span> is increasingly clear.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 第三部分・课后练习 ===== -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">3</div>
+      <h2>课后练习</h2>
+      <span class="en">Exercises · 点击「看答案」才显示</span>
+    </div>
+    <div class="card">
+      <div id="quizBox">
+        <!-- inject -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="note">
+    Overview of Cross-border E-commerce · 跨境电商英语核心词课件 · 点击生词学发音 · 答案需按钮揭示
+  </footer>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="pool" id="pool">
+  <div class="pw">—<span class="ipa"></span></div>
+  <div class="cn"></div>
+  <div class="sent"></div>
+  <div class="actions">
+    <button id="speak">🔊 朗读</button>
+    <button class="ghost" id="closePool">关闭</button>
+  </div>
+</div>
+
+<script>
+/* ============ 生词库（中文释义 + 国际音标 + 例句） ============ */
+const WORDS = {
+  "e-commerce": { cn:"电子商务", ipa:"/ˈiː kɒmɜːs/", sent:"Cross-border e-commerce is a kind of e-commerce." },
+  "international e-commerce": { cn:"国际电子商务", ipa:"/ˌɪntəˈnæʃnəl ɪˈkɒmɜːs/", sent:"Amazon is a world-famous e-commerce platform." },
+  "platform": { cn:"平台", ipa:"/ˈplætfɔːm/", sent:"Sellers publish products on the e-commerce platform." },
+  "definition": { cn:"定义", ipa:"/ˌdefɪˈnɪʃn/", sent:"What is the definition of cross-border e-commerce?" },
+  "international": { cn:"国际的", ipa:"/ˌɪntəˈnæʃnəl/", sent:"It is an international business activity." },
+  "trading entities": { cn:"贸易主体", ipa:"/ˈtreɪdɪŋ ˈentətiz/", sent:"Trading entities from different customs areas conduct transactions." },
+  "customs": { cn:"海关；关税", ipa:"/ˈkʌstəmz/", sent:"The goods pass through customs clearance." },
+  "transaction": { cn:"交易", ipa:"/trænˈzækʃn/", sent:"Reaching a transaction is the first step." },
+  "payment": { cn:"支付；付款", ipa:"/ˈpeɪmənt/", sent:"Buyers complete payment online." },
+  "settlement": { cn:"结算；清算", ipa:"/ˈsetlmənt/", sent:"Payment and settlement are done via the platform." },
+  "deliver": { cn:"交付；配送", ipa:"/dɪˈlɪvər/", sent:"We deliver the goods to the warehouse." },
+  "logistics": { cn:"物流", ipa:"/ləˈdʒɪstɪks/", sent:"Goods are shipped through cross-border logistics." },
+  "retail": { cn:"零售的；零售", ipa:"/ˈriːteɪl/", sent:"Cross-border retail e-commerce is also called B2C." },
+  "import": { cn:"进口", ipa:"/ˈɪmpɔːt/", sent:"Cross-border import e-commerce brings goods in." },
+  "export": { cn:"出口", ipa:"/ˈekspɔːt/", sent:"Cross-border export e-commerce sells goods abroad." },
+  "consumer": { cn:"消费者", ipa:"/kənˈsjuːmər/", sent:"Products are sold directly to consumers." },
+  "process": { cn:"过程；流程", ipa:"/ˈprəʊses/", sent:"The whole process takes about two weeks." },
+  "delivery": { cn:"交付；配送", ipa:"/dɪˈlɪvəri/", sent:"Delivery of goods takes several days." },
+  "buyer": { cn:"买家", ipa:"/ˈbaɪər/", sent:"The buyer places an order on the platform." },
+  "manufacturer": { cn:"制造商；生产商", ipa:"/ˌmænjuˈfæktʃərər/", sent:"Manufacturers deliver products to logistics." },
+  "shipment": { cn:"装运；运输的货物", ipa:"/ˈʃɪpmənt/", sent:"The shipment is ready for export." },
+  "customs clearance": { cn:"清关", ipa:"/ˈkʌstəmz ˈklɪərəns/", sent:"Goods must go through customs clearance." },
+  "commodity inspection": { cn:"商品检验", ipa:"/kəˈmɒdəti ɪnˈspekʃn/", sent:"Commodity inspection ensures product quality." },
+  "warehousing": { cn:"仓储", ipa:"/ˈweəhaʊzɪŋ/", sent:"Warehousing is part of the logistics chain." },
+  "ecosystem": { cn:"生态系统", ipa:"/ˈiːkəʊsɪstəm/", sent:"A healthy ecosystem benefits the whole industry." },
+  "complete": { cn:"完整的", ipa:"/kəmˈpliːt/", sent:"The industry chain is becoming more complete." },
+  "division of labor": { cn:"分工", ipa:"/dɪˈvɪʒn əv ˈleɪbər/", sent:"The division of labor is increasingly clear." }
+};
+
+/* ============ 生词点击弹窗 ============ */
+const pool = document.getElementById('pool');
+const overlay = document.getElementById('overlay');
+let curWord = null;
+
+function getTextOf(word){
+  const poolText = pool.querySelector('.pw').textContent;
+  return word;
+}
+
+function speak(engine, text){
+  try{
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = engine || 'en-US';
+    u.rate = 0.88;
+    speechSynthesis.speak(u);
+  }catch(e){}
+}
+
+function showPool(word, el){
+  const d = WORDS[word];
+  if(!d) return;
+  curWord = word;
+  pool.querySelector('.pw').innerHTML = escapeHtml(word);
+  pool.querySelector('.ipa').textContent = d.ipa;
+  pool.querySelector('.cn').textContent = d.cn;
+  pool.querySelector('.sent').textContent = '例：' + d.sent;
+  // highlight visited
+  el.classList.add('done');
+
+  const r = el.getBoundingClientRect();
+  const pw = pool.offsetWidth;
+  let left = r.left + r.width/2;
+  left = Math.max(pw/2 + 12, Math.min(left, window.innerWidth - pw/2 - 12));
+  pool.style.left = left + 'px';
+  const top = r.bottom + 10;
+  pool.style.top = top + 'px';
+  overlay.classList.add('show');
+  pool.classList.add('show');
+
+  speak('en-US', word);
+}
+
+function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+document.getElementById('textBody').addEventListener('click', function(e){
+  const vw = e.target.closest('.vw');
+  if(vw){ showPool(vw.dataset.w || vw.textContent, vw); }
+});
+
+document.querySelectorAll('.vw').forEach(v=>{
+  v.dataset.w = v.textContent.trim();
+});
+
+document.getElementById('closePool').addEventListener('click', ()=>{ pool.classList.remove('show'); overlay.classList.remove('show'); });
+overlay.addEventListener('click', ()=>{ pool.classList.remove('show'); overlay.classList.remove('show'); });
+
+document.getElementById('speak').addEventListener('click', ()=>{
+  if(curWord) speak('en-US', curWord);
+});
+
+window.addEventListener('scroll', ()=>{ pool.classList.remove('show'); overlay.classList.remove('show'); }, {passive:true});
+
+/* ============ 听力音频播放 + 答案揭示 ============ */
+const listenAudio = new Audio();
+listenAudio.preload = 'none';
+let curSrc = null;
+const playAllBtn = document.getElementById('playAll');
+
+function markPlaying(btn, on){
+  document.querySelectorAll('.play-listen').forEach(x=>{
+    x.classList.remove('playing');
+    const ic = x.querySelector('.ic'); if(ic) ic.textContent = '▶';
+  });
+  if(btn){
+    btn.classList.add('playing');
+    const ic = btn.querySelector('.ic'); if(ic) ic.textContent = '❚❚';
+  }
+}
+function resetPlayAll(){
+  if(playAllBtn){ playAllBtn.textContent = '▶ 连贯播放全部 5 句'; playAllBtn.classList.remove('playing'); }
+}
+function playL(src, btn){
+  resetPlayAll();
+  if(curSrc === src && !listenAudio.paused){
+    listenAudio.pause(); markPlaying(null,false); curSrc = null; return;
+  }
+  listenAudio.src = src; curSrc = src;
+  listenAudio.play().then(()=>markPlaying(btn,true)).catch(()=>{});
+}
+document.querySelectorAll('.play-listen').forEach(b=>{
+  b.addEventListener('click', ()=>{ playL(b.dataset.src, b); });
+});
+listenAudio.addEventListener('ended', ()=>{ markPlaying(null,false); curSrc = null; });
+
+if(playAllBtn){
+  playAllBtn.addEventListener('click', function(){
+    const files = ['assets/listening/s1.mp3','assets/listening/s2.mp3','assets/listening/s3.mp3','assets/listening/s4.mp3','assets/listening/s5.mp3'];
+    if(this.classList.contains('playing')){
+      listenAudio.pause(); resetPlayAll(); return;
+    }
+    listenAudio.pause();
+    const playIdx = (i)=>{
+      if(i >= files.length){ resetPlayAll(); return; }
+      this.textContent = '◼ 播放中… 第 '+(i+1)+' 句';
+      this.classList.add('playing');
+      listenAudio.src = files[i];
+      listenAudio.play();
+      const onEnd = ()=>{ listenAudio.removeEventListener('ended', onEnd); playIdx(i+1); };
+      listenAudio.addEventListener('ended', onEnd);
+    };
+    playIdx(0);
+  });
+}
+
+/* 答案揭示：点「👁 答案」显示红色单词 */
+document.querySelectorAll('.reveal-a').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    const word = b.parentElement.querySelector('.a-word');
+    const showing = !word.hasAttribute('hidden');
+    if(showing){
+      word.setAttribute('hidden','');
+      b.textContent = '👁 答案'; b.classList.remove('on');
+    } else {
+      word.removeAttribute('hidden');
+      b.textContent = '🙈 收起'; b.classList.add('on');
+    }
+  });
+});
+/* 点击红色答案单词 → 读该词发音 */
+document.querySelectorAll('.a-word').forEach(w=>{
+  w.addEventListener('click', (e)=>{ e.stopPropagation(); speak('en-US', w.dataset.w); });
+});
+
+/* ============ Discuss 示范对话播放 ============ */
+const dlgAudio = new Audio();
+dlgAudio.preload = 'none';
+const dlgLines = Array.from(document.querySelectorAll('.dlg-line'));
+const dlgAllBtn = document.getElementById('dlgAll');
+let dlgSeq = false;
+
+function dlgClear(){
+  document.querySelectorAll('.dlg-line').forEach(l=>{
+    l.classList.remove('speaking');
+    const b = l.querySelector('.dlg-play'); if(b){ b.classList.remove('playing'); b.textContent = '▶'; }
+  });
+}
+function dlgMark(line, on){
+  if(!line) return;
+  line.classList.toggle('speaking', on);
+  const b = line.querySelector('.dlg-play');
+  if(b){ b.classList.toggle('playing', on); b.textContent = on ? '❚❚' : '▶'; }
+  if(on) line.scrollIntoView({block:'center', behavior:'smooth'});
+}
+function dlgResetAll(){
+  dlgSeq = false;
+  if(dlgAllBtn){ dlgAllBtn.textContent = '▶ 连贯播放整段对话'; dlgAllBtn.classList.remove('playing'); }
+}
+dlgLines.forEach(line=>{
+  const btn = line.querySelector('.dlg-play');
+  btn.addEventListener('click', ()=>{
+    if(dlgSeq){ dlgAudio.pause(); dlgResetAll(); dlgClear(); return; }
+    dlgClear();
+    dlgAudio.src = line.dataset.dsrc;
+    dlgAudio.play().then(()=>dlgMark(line,true)).catch(()=>{});
+  });
+});
+dlgAudio.addEventListener('ended', ()=>{ dlgClear(); });
+dlgAudio.addEventListener('pause', ()=>{ dlgClear(); });
+
+if(dlgAllBtn){
+  dlgAllBtn.addEventListener('click', ()=>{
+    if(dlgSeq){ dlgAudio.pause(); dlgResetAll(); dlgClear(); return; }
+    dlgSeq = true;
+    dlgAllBtn.classList.add('playing');
+    const playNext = (i)=>{
+      if(i >= dlgLines.length){ dlgResetAll(); dlgClear(); return; }
+      dlgClear();
+      dlgAllBtn.textContent = '◼ 播放中… 第 '+(i+1)+' 句 / '+dlgLines.length;
+      dlgAudio.src = dlgLines[i].dataset.dsrc;
+      dlgAudio.play().then(()=>dlgMark(dlgLines[i],true)).catch(()=>{ dlgResetAll(); });
+      const onEnd = ()=>{
+        dlgAudio.removeEventListener('ended', onEnd);
+        setTimeout(()=>{ playNext(i+1); }, 500);
+      };
+      dlgAudio.addEventListener('ended', onEnd);
+    };
+    playNext(0);
+  });
+}
+
+/* ============ 课后练习数据 ============ */
+const QUIZ = [
+  {
+    type:"choice", q:"According to the text, which of the following statements best matches the definition of cross-border e-commerce?",
+    opts:[
+      "It is a business activity carried out by trading entities within the same customs area through e-commerce platforms.",
+      "It refers to online transactions between trading entities in different customs areas, completing payment, settlement and delivery of goods through cross-border logistics.",
+      "It mainly refers to individuals buying goods from overseas websites for their own use.",
+      "It means that foreign buyers place orders at traditional offline trade fairs such as the Canton Fair."
+    ],
+    ans:"B", explain:"定义含三大要素：①不同关境(customs areas)的交易主体 ②基于电商平台完成交易、支付与结算 ③通过跨境物流交付商品。A 把「不同关境」偷换成「同一关境」；C 只强调个人海淘，忽略了 B2B 和企业卖家角色；D 把跨境电商错当成线下展会交易。"
+  },
+  {
+    type:"choice", q:"A Chinese factory sells goods in bulk to an American importer through an e-commerce platform. According to the classification in the text, this transaction should be ______.",
+    opts:[
+      "cross-border B2C retail e-commerce (export)",
+      "cross-border B2B e-commerce (export)",
+      "cross-border B2C retail e-commerce (import)",
+      "cross-border B2B e-commerce (import)"
+    ],
+    ans:"B", explain:"需结合两个维度判断：①商业模式——工厂卖给美国进口商，是企业对企业，属 B2B（而非面对消费者的 B2C）；②关境方向——中国工厂把货卖给美方，货物出境，对中国而言是出口。故选 B（跨境 B2B 出口电商）。A 模式错、C 模式与方向均错、D 方向错。"
+  },
+  {
+    type:"choice", q:"Which element is NOT mentioned in the text as part of the cross-border e-commerce industry chain?",
+    opts:["logistics","warehousing","payment","curriculum design"],
+    ans:"D", explain:"原文提到 logistics、warehousing、payment 等，而「curriculum design（课程设计）」未涉及。"
+  },
+  {
+    type:"short", q:"Please briefly explain what cross-border B2C (Business-to-Consumer) e-commerce refers to according to the text.",
+    full:"", // filled by essay
+    ans:"Cross-border B2C e-commerce refers to the international business activities of companies in different customs areas directly selling products or services to consumers through the e-commerce platform. The process includes reaching transactions, completing payment and delivery of goods through cross-border logistics.",
+    explain:"关键点：①不同关境的公司 ②直接面向消费者 ③通过电商平台销售 ④包含交易、支付、物流配送。"
+  },
+  {
+    type:"short", q:"According to the cross-border e-commerce business, what should producers or manufacturers do before the products are finally delivered to consumers?",
+    full:"",
+    ans:"Producers or manufacturers will deliver the products to logistics for shipment. Then the products go through customs clearance and commodity inspection in both the export and import countries before they are finally delivered to the consumers.",
+    explain:"关键流程：制造商→物流装运→出口/进口两国清关与商品检验→最终送达消费者。"
+  }
+];
+
+const quizBox = document.getElementById('quizBox');
+
+function buildQuiz(){
+  QUIZ.forEach((item, i)=>{
+    const el = document.createElement('div');
+    el.className = 'quiz-item';
+
+    const typeLabel = item.type === 'choice' ? '选择题 · Multiple Choice' : '简答题 · Short Answer';
+    const typeCls = item.type === 'choice' ? 'choice' : 'short';
+
+    let optsHtml = '';
+    if(item.type === 'choice'){
+      optsHtml = '<div class="opts">' + item.opts.map((o, j)=>{
+        const letter = String.fromCharCode(65+j);
+        return `<div class="opt" data-letter="${letter}">${letter}. ${escapeHtml(o)}</div>`;
+      }).join('') + '</div>';
+    } else {
+      const fullText = item.q.replace(/^.*?according to the text\./i, '') ;
+      optsHtml = `<div class="full" style="color:#6a5c43;">请口头或书面作答（参考答案见下方按钮）。</div>`;
+    }
+
+    el.innerHTML = `
+      <div class="q"><span class="qn">${i+1}</span><span>${escapeHtml(item.q)}</span></div>
+      <span class="type ${typeCls}">${typeLabel}</span>
+      ${optsHtml}
+      <div class="answer-box">
+        <span class="a-tag">参考</span>
+        <div class="a-cn">${item.type==='choice' ? '<b>答案：'+item.ans+'</b><br>'+(item.explain||'') : item.ans+'<br><br>💡 答题要点：'+(item.explain||'')}</div>
+      </div>
+      <button class="reveal">👁 看答案</button>
+    `;
+    quizBox.appendChild(el);
+
+    const revealBtn = el.querySelector('.reveal');
+    const abox = el.querySelector('.answer-box');
+    revealBtn.addEventListener('click', ()=>{
+      abox.classList.toggle('show');
+      revealBtn.classList.toggle('on');
+      revealBtn.textContent = abox.classList.contains('show') ? '🙈 隐藏答案' : '👁 看答案';
+    });
+
+    if(item.type === 'choice'){
+      const opts = el.querySelectorAll('.opt');
+      opts.forEach(o=>{
+        o.addEventListener('click', ()=>{
+          opts.forEach(x=>{x.classList.remove('correct','wrong');});
+          const sel = o.dataset.letter;
+          if(sel === item.ans){ o.classList.add('correct'); }
+          else { o.classList.add('wrong'); }
+        });
+      });
+    }
+  });
+}
+buildQuiz();
+</script>
+</body>
+</html>
