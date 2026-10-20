@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境电商英语 · 单元课件（词汇 / 习题 / 写作）</title>
+<style>
+  :root{
+    --bg:#eef3f6; --card:#ffffff; --ink:#132430; --muted:#5c7284; --line:#dbe5ec;
+    --brand:#0f766e; --brand-soft:#e6f4f1; --amber:#b45309; --amber-soft:#fef3c7;
+    --blue:#1d4ed8; --blue-soft:#e8efff; --rose:#be123c; --rose-soft:#ffe9ee;
+    --shadow:0 1px 2px rgba(16,40,60,.05),0 8px 24px rgba(16,40,60,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:linear-gradient(180deg,#f6fafb 0%,var(--bg) 240px);
+    color:var(--ink);
+    font:16px/1.6 "Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+
+  /* ---------- 顶部 ---------- */
+  header.hero{
+    background:linear-gradient(135deg,#0b4f4a 0%,#0f766e 55%,#12857a 100%);
+    color:#fff; padding:34px 0 26px; position:relative; overflow:hidden;
+  }
+  header.hero:after{
+    content:""; position:absolute; right:-80px; top:-90px; width:340px; height:340px;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 65%); border-radius:50%;
+  }
+  .hero-in{max-width:1180px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+  .kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+  h1{margin:8px 0 6px;font-size:30px;line-height:1.25;font-weight:700}
+  .sub{opacity:.9;font-size:15px;max-width:760px}
+  .meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);
+        padding:5px 12px;border-radius:999px;font-size:13px}
+
+  /* ---------- 导航 ---------- */
+  nav.tabs{
+    position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line);
+  }
+  .tabs-in{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .tab{
+    border:1px solid var(--line); background:#fff; color:var(--ink);
+    padding:9px 16px;border-radius:10px;font-size:14.5px;font-weight:600;cursor:pointer;
+    transition:.18s; display:flex;align-items:center;gap:8px;
+  }
+  .tab .no{width:20px;height:20px;border-radius:50%;background:var(--brand-soft);color:var(--brand);
+           font-size:12px;display:grid;place-items:center;font-weight:700}
+  .tab:hover{border-color:#b9cfd9}
+  .tab.on{background:var(--brand);border-color:var(--brand);color:#fff}
+  .tab.on .no{background:rgba(255,255,255,.22);color:#fff}
+  .tabs-spacer{flex:1}
+  .ghost{
+    border:1px dashed #b9cfd9;background:transparent;color:var(--muted);
+    padding:8px 12px;border-radius:10px;font-size:13px;cursor:pointer
+  }
+  .ghost:hover{color:var(--brand);border-color:var(--brand)}
+
+  /* ---------- 通用区块 ---------- */
+  section.panel{display:none; padding-top:26px}
+  section.panel.on{display:block}
+  .sec-head{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .sec-head h2{margin:0;font-size:22px;letter-spacing:.01em}
+  .sec-head .hint{color:var(--muted);font-size:13.5px}
+  .rule{height:3px;width:54px;background:var(--amber);border-radius:2px;margin:10px 0 20px}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+  .pad{padding:20px 22px}
+  h3{font-size:17px;margin:0 0 12px}
+  .muted{color:var(--muted)}
+  .small{font-size:13px}
+
+  /* ---------- 工具栏 ---------- */
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+  .search{
+    flex:1;min-width:220px;display:flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);border-radius:10px;padding:0 12px;height:42px
+  }
+  .search input{border:0;outline:0;flex:1;font:inherit;font-size:14.5px;background:transparent}
+  .chip{
+    border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;
+    padding:7px 14px;font-size:13.5px;cursor:pointer;transition:.15s
+  }
+  .chip:hover{border-color:#b9cfd9;color:var(--ink)}
+  .chip.on{background:var(--brand-soft);border-color:#9fd3cb;color:var(--brand);font-weight:600}
+  .count{font-size:13px;color:var(--muted);margin-left:auto}
+
+  /* ---------- 单词卡 ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+  .wcard{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px;
+    box-shadow:var(--shadow); transition:.18s; position:relative; overflow:hidden
+  }
+  .wcard:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--brand)}
+  .wcard.phrase:before{background:var(--amber)}
+  .wcard:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(16,40,60,.10)}
+  .wtop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .wd{font-size:22px;font-weight:700;letter-spacing:.01em}
+  .ipa{color:var(--muted);font-family:"Segoe UI",serif;font-size:14px}
+  .pos{background:var(--brand-soft);color:var(--brand);font-size:12px;padding:2px 8px;border-radius:6px;font-weight:600}
+  .phrase .pos{background:var(--amber-soft);color:var(--amber)}
+  .spk{
+    margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:8px;
+    width:32px;height:32px;display:grid;place-items:center;cursor:pointer;font-size:15px;transition:.15s
+  }
+  .spk:hover{background:var(--brand-soft);border-color:#9fd3cb}
+  .cn{font-size:16.5px;font-weight:600;margin:6px 0 10px}
+  .eg{background:#f7fafb;border-left:3px solid #cfe3e7;border-radius:0 8px 8px 0;padding:9px 12px;font-size:14.5px}
+  .eg .en{color:#20323f}
+  .eg .zh{color:var(--muted);font-size:13.5px;margin-top:3px}
+  .cols{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+  .tag{
+    background:#f2f6f8;border:1px solid #e3ecf1;color:#33505f;border-radius:7px;
+    padding:3px 9px;font-size:12.5px;line-height:1.45
+  }
+  .tag i{color:var(--muted);font-style:normal;font-size:11.5px;margin-left:4px}
+  .tag.key{background:var(--amber-soft);border-color:#f3d9a4;color:#8a5307}
+  .empty{padding:40px;text-align:center;color:var(--muted)}
+
+  /* ---------- 练习讲评 ---------- */
+  .exsec{margin-bottom:22px}
+  .exhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 10px}
+  .exhead h3{margin:0;font-size:17px}
+  .exhead .src{font-size:12px;color:var(--muted);background:#eef4f7;border-radius:999px;padding:3px 10px}
+  .qitem{
+    display:flex;gap:12px;padding:14px 0;border-top:1px dashed #e5eef3;align-items:flex-start
+  }
+  .qitem:first-of-type{border-top:0}
+  .qno{
+    flex:0 0 26px;height:26px;border-radius:8px;background:var(--brand-soft);color:var(--brand);
+    display:grid;place-items:center;font-size:13px;font-weight:700;margin-top:2px
+  }
+  .qbody{flex:1;min-width:0}
+  .qt{font-size:15px;line-height:1.75}
+  .blank{display:inline-block;min-width:90px;border-bottom:1.5px solid #9fb6c4;text-align:center;color:#9fb6c4}
+  .qhint{display:inline-block;margin-left:6px;font-size:12px;color:var(--amber);
+         background:var(--amber-soft);border-radius:6px;padding:1px 7px;white-space:nowrap}
+  .ans{
+    display:none;margin-top:10px;background:#f3faf8;border:1px solid #cfe9e3;border-radius:9px;
+    padding:10px 12px;font-size:14.5px;line-height:1.7
+  }
+  .ans.show{display:block}
+  .ans b{color:var(--brand)}
+  .ans .note{color:var(--muted);font-size:13px;margin-top:4px}
+  .btns{display:flex;gap:8px;margin-top:8px}
+  .toggle{
+    border:1px solid #bcd8d3;background:#fff;color:var(--brand);border-radius:8px;
+    padding:5px 12px;font-size:13px;cursor:pointer;font-weight:600;transition:.15s;white-space:nowrap
+  }
+  .toggle:hover{background:var(--brand-soft)}
+  .toggle.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .wordbox{
+    display:flex;flex-wrap:wrap;gap:8px;background:#f7fafb;border:1px dashed #c9dbe4;
+    border-radius:10px;padding:12px 14px;margin:6px 0 4px
+  }
+  .wordbox span{background:#fff;border:1px solid var(--line);border-radius:7px;padding:3px 10px;font-size:13.5px}
+  .trans-box{display:none;background:#f7fafb;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:14px;color:#2a4050}
+  .trans-box .k{color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+
+  /* ---------- 写作课 ---------- */
+  .write-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+  @media(max-width:900px){.write-grid{grid-template-columns:1fr}}
+  .prompt{background:linear-gradient(180deg,#fffdf5,#fff);border:1px solid #f0e2bd;border-radius:14px;padding:20px 22px}
+  .prompt .tagline{font-size:12px;letter-spacing:.12em;color:var(--amber);font-weight:700}
+  .prompt h3{margin:6px 0 10px;font-size:20px}
+  .prompt p{margin:8px 0;font-size:14.7px}
+  .req{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .req span{background:#fff;border:1px solid #eadfc0;border-radius:8px;padding:4px 10px;font-size:13px}
+  .step-list{counter-reset:s;list-style:none;padding:0;margin:0}
+  .step-list li{counter-increment:s;display:flex;gap:12px;padding:10px 0;border-top:1px dashed #e5eef3}
+  .step-list li:first-child{border-top:0}
+  .step-list li:before{
+    content:counter(s);flex:0 0 26px;height:26px;border-radius:50%;background:var(--brand-soft);
+    color:var(--brand);display:grid;place-items:center;font-weight:700;font-size:13px
+  }
+  .struct{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:6px}
+  @media(max-width:760px){.struct{grid-template-columns:1fr 1fr}}
+  .st{border:1px solid var(--line);border-radius:11px;padding:12px;background:#fff}
+  .st b{display:block;font-size:13.5px;color:var(--brand)}
+  .st span{font-size:12.5px;color:var(--muted)}
+  .st em{display:block;margin-top:6px;font-style:normal;font-size:12px;color:var(--amber)}
+
+  .lex{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+  .lexgroup{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
+  .lexgroup h4{margin:0 0 8px;font-size:14px;display:flex;align-items:center;gap:6px}
+  .lexgroup h4 .dot{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+  .lexgroup p{margin:6px 0;font-size:13.6px;line-height:1.65}
+  .lexgroup code{background:#f2f6f8;border-radius:5px;padding:1px 5px;font-size:13px;color:#1f4453}
+
+  .patterns{counter-reset:p}
+  .pat{display:flex;gap:12px;padding:12px 0;border-top:1px dashed #e5eef3}
+  .pat:first-child{border-top:0}
+  .pat .n{flex:0 0 30px;font-weight:700;color:#b9cfd9;font-size:14px}
+  .pat .body b{font-size:15px;color:#123}
+  .pat .body .zh{color:var(--muted);font-size:13.4px}
+  .pat .body .use{display:inline-block;margin-top:4px;font-size:11.5px;color:var(--brand);
+                  background:var(--brand-soft);border-radius:5px;padding:1px 7px}
+
+  .model-tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+  .mtab{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 14px;font-size:13.5px;cursor:pointer}
+  .mtab.on{background:var(--brand);color:#fff;border-color:var(--brand);font-weight:600}
+  .model{display:none}
+  .model.on{display:block}
+  .model h4{margin:0 0 4px;font-size:17px}
+  .model .wc{font-size:12.5px;color:var(--muted);margin-bottom:10px}
+  .model p{font-size:15px;line-height:1.9;margin:9px 0}
+  .hl{background:linear-gradient(180deg,transparent 58%,#ffe9a8 58%);padding:0 1px}
+  .badge{display:inline-block;font-size:11.5px;color:var(--brand);background:var(--brand-soft);
+         border-radius:5px;padding:1px 6px;margin-right:4px;vertical-align:1px}
+  .warn{border-left:4px solid var(--rose);background:var(--rose-soft);border-radius:0 10px 10px 0;padding:12px 16px}
+  .warn b{color:var(--rose)}
+  .hw{border:1px solid #cfe9e3;background:linear-gradient(180deg,#f5fbfa,#fff);border-radius:14px;padding:18px 20px}
+  .hw ol{margin:8px 0 0 20px;padding:0}
+  .hw li{margin:6px 0;font-size:14.5px}
+
+  footer{margin-top:46px;color:var(--muted);font-size:12.5px;text-align:center}
+
+  @media print{
+    nav.tabs,.spk,.toggle,.btns,.ghost{display:none!important}
+    section.panel{display:block!important;page-break-before:always}
+    .ans{display:block!important}
+    .wcard{box-shadow:none}
+    body{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="kicker">Cross-border E-commerce English · Unit Review</div>
+    <h1>跨境电商英语 · 单元课件</h1>
+    <p class="sub">词汇精讲 → 教材任务讲评 → 期中写作训练。所有例词、例句均取自本单元教材图片，可点击 🔊 听发音。</p>
+    <div class="meta-row">
+      <span class="pill">27 个词条 / 搭配</span>
+      <span class="pill">7 组任务 · 25 题</span>
+      <span class="pill">3 篇不同品类范文</span>
+      <span class="pill">对应期中试卷 61 题</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-in">
+    <button class="tab on" data-tab="p1"><span class="no">1</span>词汇与搭配</button>
+    <button class="tab" data-tab="p2"><span class="no">2</span>Task / Exercise 讲评</button>
+    <button class="tab" data-tab="p3"><span class="no">3</span>写作训练课</button>
+    <div class="tabs-spacer"></div>
+    <button class="ghost" onclick="window.print()">打印 / 导出 PDF</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ================= 第一部分 ================= -->
+<section class="panel on" id="p1">
+  <div class="sec-head">
+    <h2>Part 1　生词 · 词组 · 固定搭配</h2>
+    <span class="hint">Vocabulary / Common Phrases｜点击 🔊 听英式或美式发音</span>
+  </div>
+  <div class="rule"></div>
+
+  <div class="toolbar">
+    <div class="search">
+      <span>🔍</span>
+      <input id="q" type="search" placeholder="搜索单词、中文释义或搭配……">
+    </div>
+    <button class="chip on" data-f="all">全部</button>
+    <button class="chip" data-f="word">生词</button>
+    <button class="chip" data-f="phrase">词组 / 搭配</button>
+    <span class="count" id="cnt">共 27 条</span>
+  </div>
+
+  <div class="grid" id="vocabGrid"></div>
+</section>
+
+<!-- ================= 第二部分 ================= -->
+<section class="panel" id="p2">
+  <div class="sec-head">
+    <h2>Part 2　Task / Exercise 讲评</h2>
+    <span class="hint">先让学生口头作答，再点“显示答案”核对</span>
+  </div>
+  <div class="rule"></div>
+
+  <div class="toolbar">
+    <button class="toggle" id="allShow">显示全部答案</button>
+    <button class="toggle" id="allHide">全部收起</button>
+    <span class="count" id="ansCnt">已显示 0 / 25</span>
+  </div>
+
+  <div id="exWrap"></div>
+</section>
+
+<!-- ================= 第三部分 ================= -->
+<section class="panel" id="p3">
+  <div class="sec-head">
+    <h2>Part 3　期中写作训练课</h2>
+    <span class="hint">A Best-selling Cross-border E-commerce Product｜120 词｜15 分</span>
+  </div>
+  <div class="rule"></div>
+
+  <div class="write-grid">
+    <div class="prompt">
+      <div class="tagline">WRITING TASK · 61</div>
+      <h3>A Best-selling Cross-border E-commerce Product</h3>
+      <p><b>Directions:</b> Write a short passage of no less than 120 words to introduce a best-selling product on a cross-border e-commerce platform.</p>
+      <p class="muted small">你的短文需要包含以下信息：</p>
+      <div class="req">
+        <span>① 品名 / 品类</span><span>② 外观</span><span>③ 颜色</span><span>④ 功能</span><span>⑤ 热销原因或推荐</span>
+      </div>
+    </div>
+    <div class="card pad">
+      <h3>评分标准（15 分）</h3>
+      <ul class="step-list">
+        <li><div><b>内容要点（5 分）</b><div class="muted small">品名、外观、颜色、功能四项齐全，缺一项扣 1—2 分</div></div></li>
+        <li><div><b>语言准确（5 分）</b><div class="muted small">时态统一、主谓一致、拼写与搭配正确</div></div></li>
+        <li><div><b>结构衔接（3 分）</b><div class="muted small">分段清晰，有连接词，首尾呼应</div></div></li>
+        <li><div><b>字数与书写（2 分）</b><div class="muted small">不少于 120 词；少于 100 词酌情扣分</div></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card pad" style="margin-top:18px">
+    <h3>一、审题四问（3 分钟想清楚再动笔）</h3>
+    <div class="struct">
+      <div class="st"><b>写什么</b><span>介绍一款热销产品</span><em>说明 + 推荐</em></div>
+      <div class="st"><b>写给谁</b><span>平台上的海外买家</span><em>语气友好、有说服力</em></div>
+      <div class="st"><b>用什么人称</b><span>it / the product</span><em>不要写成 I 的自述</em></div>
+      <div class="st"><b>用什么时态</b><span>一般现在时为主</span><em>销量数据可用现在完成时</em></div>
+    </div>
+    <h3 style="margin-top:20px">二、四段式结构（每段 2—4 句）</h3>
+    <div class="struct">
+      <div class="st"><b>① 开篇点题</b><span>品名 + 品类 + 热销地位</span><em>约 25 词</em></div>
+      <div class="st"><b>② 外观与颜色</b><span>尺寸、重量、材质、配色</span><em>约 35 词</em></div>
+      <div class="st"><b>③ 功能与场景</b><span>核心功能 + 使用便利</span><em>约 45 词</em></div>
+      <div class="st"><b>④ 结尾推荐</b><span>热销原因 + 值得购买</span><em>约 25 词</em></div>
+    </div>
+  </div>
+
+  <div class="card pad" style="margin-top:18px">
+    <h3>三、词汇弹药库（按写作位置分类）</h3>
+    <div class="lex">
+      <div class="lexgroup">
+        <h4><span class="dot"></span>品名 / 品类</h4>
+        <p><code>portable blender</code> 便携榨汁机</p>
+        <p><code>smart fitness band</code> 智能运动手环</p>
+        <p><code>wireless earbuds</code> 无线耳机</p>
+        <p><code>skin-care set</code> 护肤套装</p>
+        <p><code>kitchen appliance</code> 厨房小家电</p>
+      </div>
+      <div class="lexgroup">
+        <h4><span class="dot"></span>外观 / 尺寸</h4>
+        <p><code>appearance</code> 外观；<code>design</code> 设计</p>
+        <p><code>compact / mini</code> 小巧的</p>
+        <p><code>lightweight</code> 轻便的；<code>portable</code> 便携的</p>
+        <p><code>sleek / stylish</code> 时尚流畅的</p>
+        <p><code>measures 20 cm in height</code> 高 20 厘米</p>
+        <p><code>weighs only 350 grams</code> 仅重 350 克</p>
+        <p><code>be made of food-grade plastic</code> 食品级塑料</p>
+      </div>
+      <div class="lexgroup">
+        <h4><span class="dot"></span>颜色</h4>
+        <p><code>come in four colors</code> 有四色可选</p>
+        <p><code>mint green / pearl white</code> 薄荷绿 / 珍珠白</p>
+        <p><code>midnight black / coral pink</code> 午夜黑 / 珊瑚粉</p>
+        <p><code>with a matte finish</code> 磨砂质感</p>
+        <p><code>available in silver</code> 有银色款</p>
+        <p><code>transparent cup</code> 透明杯体</p>
+      </div>
+      <div class="lexgroup">
+        <h4><span class="dot"></span>功能</h4>
+        <p><code>function / feature</code> 功能 / 特点</p>
+        <p><code>be designed for</code> 专为……设计</p>
+        <p><code>be used to do</code> 用来做</p>
+        <p><code>blend fruit and ice</code> 搅拌水果和冰块</p>
+        <p><code>track steps and heart rate</code> 记录步数与心率</p>
+        <p><code>be charged by USB-C</code> 用 USB-C 充电</p>
+        <p><code>waterproof / battery life</code> 防水 / 续航</p>
+        <p><code>one-button operation</code> 一键操作</p>
+      </div>
+      <div class="lexgroup">
+        <h4><span class="dot"></span>护肤 / 美妆（范文三）</h4>
+        <p><code>serum / moisturizer</code> 精华 / 面霜</p>
+        <p><code>skin-care set</code> 护肤套装</p>
+        <p><code>brighten the skin</code> 提亮肤色</p>
+        <p><code>reduce dark spots</code> 淡化色斑</p>
+        <p><code>vitamin C / plant extracts</code> 维生素 C / 植物提取物</p>
+        <p><code>gentle / skin-friendly</code> 温和 / 亲肤</p>
+        <p><code>apply three drops</code> 涂抹三滴</p>
+        <p><code>suitable for all skin types</code> 适合各种肤质</p>
+      </div>
+      <div class="lexgroup">
+        <h4><span class="dot"></span>热销 / 评价</h4>
+        <p><code>best-selling / hot-selling</code> 热销的</p>
+        <p><code>rank No.1 in its category</code> 品类第一</p>
+        <p><code>sell 50,000 units a month</code> 月销 5 万台</p>
+        <p><code>set a record for daily sales</code> 创单日销量纪录</p>
+        <p><code>practical / durable</code> 实用 / 耐用</p>
+        <p><code>value for money</code> 性价比高</p>
+      </div>
+      <div class="lexgroup">
+        <h4><span class="dot"></span>高频搭配（本单元）</h4>
+        <p><code>compared to</code> 与……相比</p>
+        <p><code>be expected to</code> 预计</p>
+        <p><code>be combined with</code> 与……结合</p>
+        <p><code>contribute to</code> 促进</p>
+        <p><code>be worth doing</code> 值得做</p>
+        <p><code>be aware of</code> 意识到</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card pad" style="margin-top:18px">
+    <h3>四、常用句式（背 8 句就够写完整篇）</h3>
+    <div class="patterns">
+      <div class="pat"><div class="n">01</div><div class="body">
+        <b>Among all the products on our platform, the best-selling one is …</b>
+        <div class="zh">在我们平台的所有产品中，最畅销的是……</div><span class="use">开篇点题</span></div></div>
+      <div class="pat"><div class="n">02</div><div class="body">
+        <b>It has sold more than 50,000 units a month and ranks No.1 in its category.</b>
+        <div class="zh">它月销超过 5 万台，在同类产品中排名第一。</div><span class="use">用数据证明“热销”</span></div></div>
+      <div class="pat"><div class="n">03</div><div class="body">
+        <b>It measures about 20 cm in height and weighs only 350 grams, so it fits easily into a bag.</b>
+        <div class="zh">它高约 20 厘米、仅重 350 克，很容易放进包里。</div><span class="use">外观＋尺寸</span></div></div>
+      <div class="pat"><div class="n">04</div><div class="body">
+        <b>It comes in four colors: mint green, pearl white, sky blue and midnight black.</b>
+        <div class="zh">它有四种颜色：薄荷绿、珍珠白、天蓝和午夜黑。</div><span class="use">颜色</span></div></div>
+      <div class="pat"><div class="n">05</div><div class="body">
+        <b>Its main function is to … / It is designed to …</b>
+        <div class="zh">它的主要功能是……／它专为……而设计。</div><span class="use">功能</span></div></div>
+      <div class="pat"><div class="n">06</div><div class="body">
+        <b>What makes it special is that it can be charged by USB-C and used about 15 times after one charge.</b>
+        <div class="zh">它的特别之处在于可用 USB-C 充电，一次充电可用约 15 次。</div><span class="use">突出卖点</span></div></div>
+      <div class="pat"><div class="n">07</div><div class="body">
+        <b>Compared to traditional models, it is smaller, smarter and much cheaper.</b>
+        <div class="zh">与传统款相比，它更小、更智能，也便宜得多。</div><span class="use">对比＋推荐</span></div></div>
+      <div class="pat"><div class="n">08</div><div class="body">
+        <b>No wonder it has become a best-seller. It is really worth buying.</b>
+        <div class="zh">难怪它成了爆款，真的值得购买。</div><span class="use">结尾推荐</span></div></div>
+    </div>
+  </div>
+
+  <div class="card pad" style="margin-top:18px">
+    <h3>五、写作流程与时间分配（25 分钟）</h3>
+    <ul class="step-list">
+      <li><div><b>3 分钟｜定产品</b><div class="muted small">选自己熟悉的品类：小家电、数码、美妆、家居。不要选说不清功能的产品。</div></div></li>
+      <li><div><b>4 分钟｜列要点</b><div class="muted small">用四个关键词写下：name / look / colors / functions，每个配 1 个细节（尺寸、材质、续航）。</div></div></li>
+      <li><div><b>12 分钟｜成文</b><div class="muted small">按四段式写，先用简单句把要点写全，再改写成含 <i>which / what makes it special</i> 的复合句。</div></div></li>
+      <li><div><b>4 分钟｜查错</b><div class="muted small">查三样：动词第三人称单数、名词单复数、介词搭配（be made <b>of</b>、be designed <b>for</b>、be worth <b>doing</b>）。</div></div></li>
+      <li><div><b>2 分钟｜数字数</b><div class="muted small">不足 120 词就补一句使用场景或买家评价。</div></div></li>
+    </ul>
+  </div>
+
+  <div class="warn" style="margin-top:18px">
+    <b>常见失分点：</b>① 只写“很好用”却没有具体功能；② 忘记写颜色（题目明确要求）；③ 全篇一般过去时；④ 把 <i>worth</i> 写成 <i>worthy to buy</i>；⑤ 逐字翻译中文品牌名。
+  </div>
+
+  <div class="card pad" style="margin-top:18px">
+    <h3>六、范文（三个不同品类）</h3>
+    <div class="model-tabs">
+      <button class="mtab on" data-m="m1">范文一 · 小家电（便携榨汁机）</button>
+      <button class="mtab" data-m="m2">范文二 · 数码（智能运动手环）</button>
+      <button class="mtab" data-m="m3">范文三 · 护肤（维 C 精华套装）</button>
+      <button class="ghost" id="transBtn" style="margin-left:auto">显示中文译文</button>
+    </div>
+
+    <div class="model on" id="m1">
+      <h4>A Best-selling Cross-border E-commerce Product</h4>
+      <div class="wc">约 152 词｜品类：厨房小家电｜要点：品名 ✓ 外观 ✓ 颜色 ✓ 功能 ✓</div>
+      <p>Among all the products on our platform, the best-selling one is a <span class="hl">portable blender</span>. It has sold more than 50,000 units a month and ranks No.1 in the kitchen category.</p>
+      <p>The blender is small and lightweight. It <span class="hl">measures about 20 cm in height and weighs only 350 grams</span>, so it fits easily into a handbag or a backpack. It <span class="hl">comes in four colors: mint green, pearl white, sky blue and midnight black</span>. The body is made of food-grade plastic with a matte finish, and the cup is transparent, so users can see the juice clearly.</p>
+      <p>Its main function is to blend fruit, vegetables and ice in less than thirty seconds. <span class="hl">What makes it special is that</span> it can be charged by USB-C and used about fifteen times after one charge, which is very convenient for travel and office workers.</p>
+      <p><span class="hl">No wonder it has become a best-seller.</span> It is practical, stylish and really worth buying.</p>
+      <div class="trans-box"><div class="k">参考译文</div>
+        在我们平台的所有产品中，最畅销的是一款便携榨汁机。它月销超过 5 万台，在厨房小家电类目中排名第一。<br><br>
+        这款榨汁机小巧轻便，高约 20 厘米，仅重 350 克，可以轻松放进手提包或背包。它有四种颜色：薄荷绿、珍珠白、天蓝和午夜黑。机身采用磨砂质感的食品级塑料，杯体透明，用户可以清楚看到果汁的状态。<br><br>
+        它的主要功能是在 30 秒内搅拌水果、蔬菜和冰块。它的特别之处在于支持 USB-C 充电，一次充电可使用约 15 次，对旅行和上班族来说非常方便。<br><br>
+        难怪它成了爆款。它实用、时尚，真的值得购买。
+      </div>
+      <p class="small muted" style="margin-top:12px">
+        <span class="badge">亮点</span>用 <i>rank No.1 / sold 50,000 units</i> 证明“热销”；
+        <span class="badge">亮点</span><i>measures … and weighs …</i> 一句写清外观；
+        <span class="badge">亮点</span><i>What makes it special is that …</i> 引出核心卖点。
+      </p>
+    </div>
+
+    <div class="model" id="m2">
+      <h4>A Best-selling Cross-border E-commerce Product</h4>
+      <div class="wc">约 158 词｜品类：消费电子｜要点：品名 ✓ 外观 ✓ 颜色 ✓ 功能 ✓</div>
+      <p>If you ask me which product sells best in our store, it is the <span class="hl">Smart Fitness Band X3</span>. Since it was launched, more than 80,000 pieces have been sold, and it has <span class="hl">set a record</span> for the highest daily sales in the electronics category.</p>
+      <p>The band has a sleek and sporty design. It <span class="hl">comes in three colors — black, coral pink and silver</span> — and the strap is soft and skin-friendly, so it is comfortable to wear all day. It weighs only 25 grams, and the screen is bright enough to read in the sun.</p>
+      <p>The band <span class="hl">is designed to</span> help people live a healthier life. It can track steps, heart rate and sleep quality, and it reminds users to stand up after sitting for a long time. Besides, it is waterproof, and <span class="hl">its battery lasts about ten days after one charge</span>.</p>
+      <p><span class="hl">Compared to traditional watches, it is smarter and much cheaper.</span> That is why it has become so popular with young customers.</p>
+      <div class="trans-box"><div class="k">参考译文</div>
+        如果你问我店里哪款产品卖得最好，那就是智能运动手环 X3。自上市以来已售出 8 万多只，并创下了电子产品类目单日销量的最高纪录。<br><br>
+        这款手环设计流畅、运动感强。它有三种颜色——黑色、珊瑚粉和银色，表带柔软亲肤，全天佩戴也很舒适。它仅重 25 克，屏幕在阳光下也清晰可读。<br><br>
+        这款手环旨在帮助人们过更健康的生活。它可以记录步数、心率和睡眠质量，还会提醒用户在久坐后站起来活动。此外，它防水，一次充电续航约十天。<br><br>
+        与传统手表相比，它更智能，也便宜得多。这就是它深受年轻消费者欢迎的原因。
+      </div>
+      <p class="small muted" style="margin-top:12px">
+        <span class="badge">亮点</span><i>If you ask me which …</i> 开头更口语、更自然；
+        <span class="badge">亮点</span><i>has set a record for …</i> 用上本单元短语；
+        <span class="badge">亮点</span><i>Compared to …</i> 结尾对比收束，呼应试卷考点。
+      </p>
+    </div>
+
+    <div class="model" id="m3">
+      <h4>A Best-selling Cross-border E-commerce Product</h4>
+      <div class="wc">约 165 词｜品类：护肤 / 美妆｜要点：品名 ✓ 外观 ✓ 颜色 ✓ 功能 ✓</div>
+      <p>Among all the skin-care products on our platform, the best-selling one is the <span class="hl">Vitamin C Brightening Serum Set</span>. Since it was launched last spring, more than 60,000 sets have been sold, and it has become the No.1 skin-care product in our store.</p>
+      <p>The set contains a 30 ml serum and a 50 ml moisturizer, both <span class="hl">packed in simple glass bottles with a dropper</span>. It <span class="hl">comes in two colors: pearl white for the serum and soft pink for the cream</span>, and the boxes are printed with fresh oranges, which clearly shows the vitamin C inside. The bottles are small and light, so they fit easily into a travel bag.</p>
+      <p>Its main function is to brighten the skin and reduce dark spots. <span class="hl">What makes it special is that</span> it uses a high concentration of vitamin C and natural plant extracts, so it is <span class="hl">gentle enough for beginners</span>. Users only need to apply three drops every morning and evening, and they can see a difference in about four weeks.</p>
+      <p><span class="hl">No wonder it has become a best-seller.</span> It is effective, safe and really worth buying.</p>
+      <div class="trans-box"><div class="k">参考译文</div>
+        在我们平台的所有护肤品中，最畅销的是这款维生素 C 提亮精华套装。自去年春天上市以来，已售出 6 万多套，成为店内的护肤类销量第一。<br><br>
+        这套产品包含一支 30 毫升精华和一瓶 50 毫升面霜，都装在简洁的玻璃瓶中，配有滴管。它有两种颜色：精华是珍珠白，面霜是柔粉色；包装盒上印着新鲜橙子，直观地表明其中的维生素 C。瓶身小巧轻便，很容易放进旅行包。<br><br>
+        它的主要功能是提亮肤色、淡化色斑。它的特别之处在于采用高浓度维生素 C 和天然植物提取物，因此足够温和，新手也能使用。用户只需早晚各涂三滴，大约四周就能看到变化。<br><br>
+        难怪它成了爆款。它有效、安全，真的值得购买。
+      </div>
+      <p class="small muted" style="margin-top:12px">
+        <span class="badge">亮点</span>用 <i>No.1 + 60,000 sets</i> 开场立住“热销”；
+        <span class="badge">亮点</span><i>packed in … with a dropper</i> 写包装细节，比只说 beautiful 更具体；
+        <span class="badge">亮点</span><i>gentle enough for beginners</i> 用 enough to 结构说明适用人群。
+      </p>
+    </div>
+  </div>
+
+  <div class="hw" style="margin-top:18px">
+    <b>课后仿写任务（三选一，不少于 120 词）</b>
+    <ol>
+      <li>选一款你身边的中国商品（如电动牙刷、保温杯、无线充电器），按四段式介绍它，必须用到 <i>compared to / be designed to / be worth doing</i> 三个表达。</li>
+      <li>仿照范文三，为你熟悉的一款国货美妆产品（如唇釉、面膜、防晒霜）写一段介绍，保留句式、替换品名与卖点。</li>
+      <li>互评：同桌交换，用评分表四项各打 1—5 分，找出对方漏写的一个要点。</li>
+    </ol>
+  </div>
+</section>
+
+<footer>跨境电商英语 · 单元课件｜词汇 27 条 · 习题 25 题 · 范文 3 篇｜可用浏览器直接投屏</footer>
+</div>
+
+<script>
+/* ============ 词汇数据 ============ */
+const DATA = [
+  {type:"word",w:"dilemma",ipa:"/dɪˈlemə/",pos:"n.",cn:"（进退两难的）窘境，困境",
+   en:"It was an insoluble dilemma that I could do nothing about.",zh:"那是一个我无能为力的、无法解决的两难局面。",
+   cols:[["face a dilemma","面临两难"],["be in a dilemma","处于进退两难"],["an insoluble dilemma","无法解决的困境"],["resolve a dilemma","化解困境"]]},
+  {type:"word",w:"aspect",ipa:"/ˈæspekt/",pos:"n.",cn:"方面；层面",
+   en:"The ministry had direct control over every aspect of foreign trade.",zh:"该政府部门直接掌控着外贸的各个方面。",
+   cols:[["every aspect of","……的每个方面"],["in all aspects","在各方面"],["an important aspect","一个重要方面"],["cover all aspects","涵盖各个方面"]]},
+  {type:"word",w:"forecast",ipa:"/ˈfɔːkɑːst/",pos:"n. / v.",cn:"预测；预报",
+   en:"Can you forecast where the economy is heading?",zh:"你能预测经济的发展方向吗？",
+   cols:[["weather forecast","天气预报"],["sales forecast","销售预测"],["forecast that …","预测……"],["forecast growth","预测增长"]]},
+  {type:"word",w:"continue",ipa:"/kənˈtɪnjuː/",pos:"v.",cn:"继续，再开始；持续",
+   en:"The trial is expected to continue for three months.",zh:"预计审判要持续三个月。",
+   cols:[["continue to do sth","继续做某事"],["continue doing sth","继续做某事"],["continue with sth","继续（某事）"],["continue for + 时间","持续……之久"]]},
+  {type:"word",w:"subdivide",ipa:"/ˌsʌbdɪˈvaɪd/",pos:"v.",cn:"（被）再分割，再分",
+   en:"You can use sales organizations to subdivide markets into regions.",zh:"你可以用销售组织将市场细分为区域。",
+   cols:[["subdivide sth into sth","把……细分为……"],["be subdivided into","被细分为"],["subdivide a market","细分市场"]]},
+
+  {type:"word",w:"represent",ipa:"/ˌreprɪˈzent/",pos:"v.",cn:"代表",
+   en:"This product represents the latest trend in kitchen appliances.",zh:"这款产品代表了厨房小家电的最新趋势。",
+   cols:[["represent a trend","代表一种趋势"],["represent a company","代表公司"],["represent 40% of","占……的 40%"]]},
+  {type:"word",w:"reputation",ipa:"/ˌrepjuˈteɪʃn/",pos:"n.",cn:"名声，声誉",
+   en:"Fast delivery helps sellers build a good reputation among overseas buyers.",zh:"快速交付帮助卖家在海外买家当中建立良好声誉。",
+   cols:[["build / establish a reputation","建立声誉"],["have a good reputation for","因……而有好名声"],["damage one's reputation","损害声誉"]]},
+  {type:"word",w:"reflect",ipa:"/rɪˈflekt/",pos:"v.",cn:"反映",
+   en:"Recent sales figures reflect that Chinese consumers prefer international brands.",zh:"近期的销售数据反映出中国消费者更青睐国际品牌。",
+   cols:[["reflect the views of","反映……的意见"],["reflect the fact that","反映出……的事实"],["be reflected in","体现在"]]},
+  {type:"word",w:"high-quality",ipa:"/ˌhaɪ ˈkwɒləti/",pos:"adj.",cn:"高质量的",
+   en:"Chinese consumers prefer high-quality food and cosmetics.",zh:"中国消费者偏爱高质量的食品和化妆品。",
+   cols:[["high-quality products","高质量产品"],["high-quality service","优质服务"],["of high quality","质量上乘的"]]},
+  {type:"word",w:"cosmetics",ipa:"/kɒzˈmetɪks/",pos:"n.",cn:"化妆品",
+   en:"The cosmetics industry often finds some beautiful models to sell skin-care products.",zh:"化妆品行业常找一些漂亮模特来推销护肤品。",
+   cols:[["the cosmetics industry","化妆品行业"],["cosmetics counter","化妆品柜台"],["skin-care cosmetics","护肤类化妆品"]]},
+  {type:"word",w:"implement",ipa:"/ˈɪmplɪment/",pos:"v.",cn:"实施，执行",
+   en:"The government promised to implement a new system to control financial loan institutions.",zh:"政府承诺实施一套新系统来监管金融贷款机构。",
+   cols:[["implement a plan / policy","实施计划／政策"],["implement a system","实施系统"],["implement reforms","推行改革"]]},
+  {type:"word",w:"complicated",ipa:"/ˈkɒmplɪkeɪtɪd/",pos:"adj.",cn:"复杂的",
+   en:"Cross-border payment is more complicated than domestic payment.",zh:"跨境支付比国内支付更复杂。",
+   cols:[["a complicated process","复杂的流程"],["complicated procedures","繁琐的手续"],["get complicated","变得复杂"]]},
+  {type:"word",w:"obstacle",ipa:"/ˈɒbstəkl/",pos:"n.",cn:"障碍，阻碍",
+   en:"A lack of qualification can be a major obstacle to finding a good job.",zh:"缺乏资质可能成为找到好工作的主要障碍。",
+   cols:[["an obstacle to (doing) sth","……的障碍"],["overcome an obstacle","克服障碍"],["a major obstacle","主要障碍"]]},
+  {type:"word",w:"terminology",ipa:"/ˌtɜːmɪˈnɒlədʒi/",pos:"n.",cn:"术语；专门用语",
+   en:"The terminology of cross-border e-commerce can be hard for beginners.",zh:"跨境电商的术语对初学者来说可能很难。",
+   cols:[["technical terminology","专业术语"],["e-commerce terminology","电商术语"],["in simple terminology","用通俗的说法"]]},
+  {type:"word",w:"crucial",ipa:"/ˈkruːʃl/",pos:"adj.",cn:"至关重要的",
+   en:"It is crucial to choose a reliable payment platform.",zh:"选择可靠的支付平台至关重要。",
+   cols:[["be crucial to / for","对……至关重要"],["play a crucial role in","在……中起关键作用"],["of crucial importance","至关重要"]]},
+  {type:"word",w:"boost",ipa:"/buːst/",pos:"v.",cn:"使增长，推动",
+   en:"Good customer reviews can boost the sales of new products.",zh:"好的买家评价能提升新产品的销量。",
+   cols:[["boost sales","提升销量"],["boost one's confidence","增强信心"],["give a boost to","促进……"]]},
+  {type:"word",w:"multilingual",ipa:"/ˌmʌltiˈlɪŋɡwəl/",pos:"adj.",cn:"说多种语言的",
+   en:"A multilingual product page attracts buyers from different countries.",zh:"多语言的产品页面能吸引不同国家的买家。",
+   cols:[["multilingual staff","多语种员工"],["a multilingual website","多语言网站"],["a multilingual society","多语言社会"]]},
+  {type:"word",w:"currently",ipa:"/ˈkʌrəntli/",pos:"adv.",cn:"目前，当前",
+   en:"The platform currently has more than 100 million active buyers.",zh:"该平台目前拥有超过 1 亿活跃买家。",
+   cols:[["currently available","目前可用的"],["currently under construction","目前在建"],["at present = currently","目前"]]},
+  {type:"word",w:"category",ipa:"/ˈkætəɡəri/",pos:"n.",cn:"类别，种类",
+   en:"Every product on the platform belongs to a certain category.",zh:"平台上的每件产品都属于某个类别。",
+   cols:[["product category","产品类别"],["fall into a category","归入某一类"],["a wide range of categories","品类丰富"]]},
+  {type:"word",w:"dominate",ipa:"/ˈdɒmɪneɪt/",pos:"v.",cn:"支配，控制；占主导地位",
+   en:"Big companies dominate the low-end price range.",zh:"大公司在低端价格领域占主导地位。",
+   cols:[["dominate the market","主导市场"],["be dominated by","由……主导"],["dominate the industry","控制行业"]]},
+
+  {type:"phrase",w:"set a record",ipa:"/set ə ˈrekɔːd/",pos:"phrase",cn:"创造纪录",
+   en:"The product set a record for the highest daily sales on the platform.",zh:"该产品创下了平台单日销量的最高纪录。",
+   cols:[["set a new record","创造新纪录"],["set a record for","创下……的纪录"],["break a record","打破纪录"]]},
+  {type:"phrase",w:"compared to",ipa:"/kəmˈpeəd tu/",pos:"phrase",cn:"与……相比",
+   en:"Compared to traditional trade, cross-border e-commerce has a shorter supply chain.",zh:"与传统贸易相比，跨境电商的供应链更短。",
+   cols:[["compared to / with","与……相比"],["compared to last year","与去年相比"]]},
+  {type:"phrase",w:"be expected to",ipa:"/bi ɪkˈspektɪd tu/",pos:"phrase",cn:"预计，预期",
+   en:"China's online sales are expected to reach $1.8 trillion in the next four years.",zh:"预计未来四年中国网络销售额将达到 1.8 万亿美元。",
+   cols:[["be expected to do sth","预计做某事"],["it is expected that …","预计……"],["as expected","正如预期"]]},
+  {type:"phrase",w:"be combined with",ipa:"/bi kəmˈbaɪnd wɪð/",pos:"phrase",cn:"与……相结合",
+   en:"Only when combined with a clear goal can great efforts help people give full play to their potential.",zh:"只有与明确的目标相结合，巨大的努力才能帮助人充分发挥潜力。",
+   cols:[["be combined with","与……结合"],["combine A with B","把 A 与 B 结合"],["in combination with","与……联合"]]},
+  {type:"phrase",w:"contribute to",ipa:"/kənˈtrɪbjuːt tu/",pos:"phrase",cn:"促进；有助于",
+   en:"The fast development of the Chinese market has contributed to the growth of cross-border e-commerce.",zh:"中国市场的快速发展促进了跨境电商的增长。",
+   cols:[["contribute to","促进／有助于"],["contribute to doing sth","有助于做某事"],["make a contribution to","为……做贡献"]]},
+  {type:"phrase",w:"be worth doing",ipa:"/bi wɜːθ ˈduːɪŋ/",pos:"phrase",cn:"值得做",
+   en:"The documentary about cross-border logistics is well worth watching.",zh:"这部关于跨境物流的纪录片很值得一看。",
+   cols:[["be well worth doing","很值得做"],["be worth the money","物有所值"],["be worth it","值得"]]},
+  {type:"phrase",w:"be aware of",ipa:"/bi əˈweə əv/",pos:"phrase",cn:"意识到，知道",
+   en:"Every seller should be aware of the importance of integrity in business.",zh:"每个卖家都应意识到商业诚信的重要性。",
+   cols:[["be aware of","意识到"],["be aware that …","意识到……"],["raise awareness of","提高对……的认识"]]}
+];
+
+/* ============ 渲染词汇卡 ============ */
+const grid = document.getElementById('vocabGrid');
+const cnt = document.getElementById('cnt');
+let filter = 'all', keyword = '';
+
+function speak(text){
+  if(!('speechSynthesis' in window)) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = .88;
+  const v = speechSynthesis.getVoices().find(v => /en-(US|GB)/.test(v.lang));
+  if(v) u.voice = v;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+
+function render(){
+  const list = DATA.filter(d => {
+    const okType = filter === 'all' || d.type === filter;
+    const k = keyword.trim().toLowerCase();
+    const okKey = !k || (d.w + d.cn + d.en + d.cols.map(c => c[0]).join('')).toLowerCase().includes(k);
+    return okType && okKey;
+  });
+  grid.innerHTML = list.map(d => `
+    <article class="wcard ${d.type}">
+      <div class="wtop">
+        <span class="wd">${d.w}</span>
+        <span class="ipa">${d.ipa}</span>
+        <span class="pos">${d.pos}</span>
+        <button class="spk" title="朗读" data-say="${d.w}">🔊</button>
+      </div>
+      <div class="cn">${d.cn}</div>
+      <div class="eg">
+        <div class="en">${d.en}</div>
+        <div class="zh">${d.zh}</div>
+      </div>
+      <div class="cols">
+        ${d.cols.map(c => `<span class="tag">${c[0]}<i>${c[1]}</i></span>`).join('')}
+      </div>
+    </article>`).join('') || `<div class="empty">没有找到匹配的词条，换个关键词试试。</div>`;
+  cnt.textContent = `共 ${list.length} 条`;
+}
+
+document.querySelectorAll('.chip').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
+  b.classList.add('on'); filter = b.dataset.f; render();
+});
+document.getElementById('q').addEventListener('input', e => { keyword = e.target.value; render(); });
+grid.addEventListener('click', e => {
+  const b = e.target.closest('.spk');
+  if(b) speak(b.dataset.say);
+});
+render();
+
+/* ============ 练习数据 ============ */
+const EX = [
+ {title:'Task 1｜用括号中的表达翻译句子', src:'教材 Task 1',
+  items:[
+   {q:'化妆品行业常找一些性感美女来推销护肤品。', hint:'cosmetics',
+    a:'The cosmetics industry often finds some sexy beauties to sell skin-care products.',
+    note:'cosmetics 为复数名词，作定语修饰 industry；sell / promote 均可表示“推销”。'},
+   {q:'大公司在低端价格领域占主导地位。', hint:'dominate',
+    a:'Big companies dominate the low-end price range.',
+    note:'dominate 及物动词，主语为复数用原形；low-end price range 低端价格区间。'}
+  ]},
+ {title:'Task 2｜选词配义（写出对应的单词）', src:'教材 Task 2',
+  items:[
+   {q:'________ : the set of technical words or expressions used in a particular subject', hint:'术语',
+    a:'terminology', note:'terminology n. 术语；专门用语。注意与 technique（技术）区分。'},
+   {q:'________ : speaking or using several different languages', hint:'多语的',
+    a:'multilingual', note:'multi-（多）+ lingual（语言的）；同类：bilingual 双语的。'}
+  ]},
+ {title:'Task 3｜用固定搭配翻译句子', src:'教材 Task（Common Phrases）',
+  items:[
+   {q:'只有与目标相结合，巨大的努力才能帮助人们充分发挥潜力。', hint:'be combined with',
+    a:'Only when combined with a goal can great efforts help people give full play to their potential.',
+    note:'Only + 状语从句置于句首，主句要部分倒装：can great efforts help …；give full play to 充分发挥。'},
+   {q:'每个人都应该意识到诚信在商业中的重要性。', hint:'be aware of',
+    a:'Everyone should be aware of the importance of integrity in business.',
+    note:'be aware of + 名词；若接句子用 be aware that …。integrity 诚信、正直。'}
+  ]},
+ {title:'Exercise I｜根据汉语提示完成句子', src:'教材 Exercise I',
+  items:[
+   {q:'In the next four years, the Chinese online sales are expected to reach $1.8 trillion which ________. （将是美国市场规模的两倍以上）',
+    a:'will be more than twice the size of the US market',
+    note:'倍数表达：twice / three times + the size of …；先行词为 $1.8 trillion，从句用 which 引导。'},
+   {q:'________ （中国市场的快速发展）market combined with a large and growing digital user and consumer base has contributed to a rapid growth of domestic online sales as well as cross-border e-commerce.',
+    a:'The fast development of the Chinese market',
+    note:'主语中心词为 market，谓语用 has contributed to，注意主谓一致。'},
+   {q:'Besides that, ________, （还有许多具有不同特征和功能的电子商务平台）which make the strategic decision to get into Chinese market even more difficult.',
+    a:'there are still many e-commerce platforms with different features and functions',
+    note:'which 引导非限制性定语从句，先行词是 platforms；with different features and functions 作后置定语。'},
+   {q:'However, ________, [市场仍由最知名的平台——阿里巴巴的天猫环球（Tmall Global）主导] which holds more than 27% shares of the market.',
+    a:'the market is still dominated by the best-known platform — Alibaba\u2019s Tmall Global',
+    note:'be dominated by 由……主导；破折号引出同位语解释 platform。'}
+  ]},
+ {title:'Exercise II｜单词与英文释义配对', src:'教材 Exercise II',
+  items:[
+   {q:'1. reflect', a:'B — to show the nature of sth or sb\u2019s attitude or feeling',
+    note:'reflect 反映；也可表示“反射、反思”。'},
+   {q:'2. implement', a:'E — to make sth that has been officially decided start to happen',
+    note:'implement 实施（政策、系统、计划）。'},
+   {q:'3. crucial', a:'A — extremely important',
+    note:'crucial = extremely important；同义：vital, essential。'},
+   {q:'4. cosmetics', a:'C — a substance that you put on your face or body to make it more attractive',
+    note:'cosmetics 化妆品（常用复数）。'},
+   {q:'5. obstacle', a:'D — a situation that makes it difficult for you to achieve sth',
+    note:'obstacle 障碍；搭配 an obstacle to doing sth。'}
+  ]},
+ {title:'Exercise III｜选词填空（必要时改变词形）', src:'教材 Exercise III',
+  wordbox:['oversea','implement','electronic','obstacle','significance','crucial','contribute to','reflect'],
+  items:[
+   {q:'The government promised to ________ a new system to control financial loan institutions.', a:'implement',
+    note:'to 后接动词原形。'},
+   {q:'Our newspaper aims to ________ the views of the local community.', a:'reflect',
+    note:'aim to do sth 旨在做某事，to 后接原形。'},
+   {q:'Parents play a ________ role in shaping their children\u2019s personality.', a:'crucial',
+    note:'play a crucial role in 在……中起关键作用。'},
+   {q:'A lack of qualification can be a major ________ to finding a good job in cross-border e-commerce area.', a:'obstacle',
+    note:'an obstacle to doing sth，to 为介词，后接动名词。'},
+   {q:'Arts ________ cultural development when people gather together to share their experience.', a:'contribute to',
+    note:'主语 Arts 为复数，动词用原形；contribute to 促进。'},
+   {q:'The increased demand for ________ products reflect that more and more Chinese consumers are looking for international brands.', a:'overseas',
+    note:'词形变化：oversea → overseas（形容词，海外的）。'},
+   {q:'Chinese online consumers prefer to buy overseas products such as high-quality food, cosmetics, healthcare, baby products, and ________.', a:'electronics',
+    note:'词形变化：electronic → electronics（电子产品，名词）。'},
+   {q:'Choosing the right platform is of great ________ to boost your e-commerce presence.', a:'significance',
+    note:'be of great significance = be very important；名词形式。'}
+  ]},
+ {title:'Useful Expressions｜课文金句翻译', src:'教材 Useful Expressions',
+  items:[
+   {q:'Cross-border e-commerce allows businesses to showcase their range of products and earn trust of their target customers by providing good customer service and on-time delivery.',
+    a:'跨境电商使企业能够展示其产品范围，并通过提供良好的客户服务和及时交付来赢得目标客户的信任。',
+    note:'allow sb to do 使某人能够做；earn trust 赢得信任；on-time delivery 准时交付。'},
+   {q:'Chinese e-commerce market is the largest in the world and already represents more than 40% of the total global e-commerce spending.',
+    a:'中国的电子商务市场是世界上最大的市场，已占全球电子商务总支出的 40% 以上。',
+    note:'represent 占（比例）；spending 支出、花费。'}
+  ]}
+];
+
+/* ============ 渲染练习 ============ */
+const exWrap = document.getElementById('exWrap');
+let totalAns = 0, shownAns = 0;
+exWrap.innerHTML = EX.map(sec => {
+  const box = sec.wordbox ? `<div class="wordbox">${sec.wordbox.map(w => `<span>${w}</span>`).join('')}</div>` : '';
+  const items = sec.items.map((it, i) => {
+    totalAns++;
+    return `<div class="qitem">
+      <div class="qno">${i + 1}</div>
+      <div class="qbody">
+        <div class="qt">${it.q}${it.hint ? `<span class="qhint">${it.hint}</span>` : ''}</div>
+        <div class="ans"><b>答案：</b>${it.a}${it.note ? `<div class="note">解析：${it.note}</div>` : ''}</div>
+        <div class="btns"><button class="toggle">显示答案</button></div>
+      </div>
+    </div>`;
+  }).join('');
+  return `<div class="card pad exsec">
+    <div class="exhead"><h3>${sec.title}</h3><span class="src">${sec.src}</span></div>
+    ${box}${items}
+  </div>`;
+}).join('');
+
+const ansCnt = document.getElementById('ansCnt');
+function updateCnt(){ ansCnt.textContent = `已显示 ${shownAns} / ${totalAns}`; }
+exWrap.addEventListener('click', e => {
+  const b = e.target.closest('.toggle');
+  if(!b) return;
+  const ans = b.closest('.qbody').querySelector('.ans');
+  ans.classList.toggle('show');
+  b.classList.toggle('on', ans.classList.contains('show'));
+  b.textContent = ans.classList.contains('show') ? '收起答案' : '显示答案';
+  shownAns += ans.classList.contains('show') ? 1 : -1;
+  updateCnt();
+});
+document.getElementById('allShow').onclick = () => {
+  exWrap.querySelectorAll('.ans').forEach(a => a.classList.add('show'));
+  exWrap.querySelectorAll('.toggle').forEach(b => { b.classList.add('on'); b.textContent = '收起答案'; });
+  shownAns = totalAns; updateCnt();
+};
+document.getElementById('allHide').onclick = () => {
+  exWrap.querySelectorAll('.ans').forEach(a => a.classList.remove('show'));
+  exWrap.querySelectorAll('.toggle').forEach(b => { b.classList.remove('on'); b.textContent = '显示答案'; });
+  shownAns = 0; updateCnt();
+};
+updateCnt();
+
+/* ============ 标签切换 ============ */
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(x => x.classList.remove('on'));
+  t.classList.add('on');
+  document.getElementById(t.dataset.tab).classList.add('on');
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+/* 支持 #p2 / #p3 锚点直达 */
+const hash = location.hash.slice(1);
+if(hash && document.getElementById(hash)){
+  document.querySelector('.tab[data-tab="' + hash + '"]').click();
+}
+
+/* ============ 范文切换 / 译文 ============ */
+document.querySelectorAll('.mtab').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.mtab').forEach(x => x.classList.remove('on'));
+  document.querySelectorAll('.model').forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  document.getElementById(b.dataset.m).classList.add('on');
+  document.querySelectorAll('.trans-box').forEach(t => t.style.display = 'none');
+  document.getElementById('transBtn').textContent = '显示中文译文';
+});
+let transOn = false;
+document.getElementById('transBtn').onclick = e => {
+  transOn = !transOn;
+  document.querySelectorAll('.trans-box').forEach(t => t.style.display = transOn ? 'block' : 'none');
+  e.target.textContent = transOn ? '隐藏中文译文' : '显示中文译文';
+};
+</script>
+</body>
+</html>
