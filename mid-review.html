@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境电商英语 · 期中复习模拟卷</title>
+<style>
+:root{--ink:#1c2333;--sub:#5b6478;--line:#e3e8f2;--blue:#2f5fe0;--blue-d:#1d46b8;--green:#0e9f6e;--bg:#f4f6fb;--card:#ffffff;--gold:#b45309;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+header{background:linear-gradient(120deg,#1d46b8,#2f5fe0 55%,#0ea5b7);color:#fff;padding:34px 20px 26px;text-align:center}
+header h1{font-size:1.65rem;letter-spacing:.05em}
+header p{opacity:.92;margin-top:6px;font-size:.95rem}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px 60px}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);display:flex;justify-content:center;gap:6px;padding:10px 8px;flex-wrap:wrap}
+nav button{border:1px solid var(--line);background:#fff;color:var(--sub);padding:8px 18px;border-radius:999px;cursor:pointer;font-size:.95rem;transition:.15s}
+nav button:hover{border-color:var(--blue);color:var(--blue)}
+nav button.on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
+.page{display:none;padding-top:22px;scroll-margin-top:70px}
+.page.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:18px;box-shadow:0 1px 3px rgba(30,50,90,.05)}
+.card h2{font-size:1.2rem;color:var(--blue-d);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h2::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(#2f5fe0,#0ea5b7)}
+.card h3{font-size:1.02rem;margin:16px 0 8px;color:var(--ink)}
+.note{color:var(--sub);font-size:.9rem}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.93rem}
+th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+th{background:#eef2fc;color:var(--blue-d);white-space:nowrap}
+tr:nth-child(even) td{background:#fafbfe}
+.pill{display:inline-block;background:#eef2fc;color:var(--blue-d);border-radius:999px;padding:2px 12px;font-size:.85rem;margin-right:8px}
+.tip{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;font-size:.92rem;color:#7a4b06;margin-top:12px}
+.tip b{color:#b45309}
+.q{border-top:1px dashed var(--line);padding:14px 2px 6px;margin-top:10px}
+.q:first-of-type{border-top:none}
+.qno{font-weight:700;color:var(--blue-d);margin-right:6px}
+.qtext{font-size:1rem}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin:8px 0 4px}
+@media(max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{padding:5px 10px;border-radius:8px;background:#f7f9fd;border:1px solid transparent;font-size:.95rem}
+.opt b{color:var(--blue-d);margin-right:6px}
+.opt.hit{background:#e8f7f0;border-color:#b7e4d0}
+.opt.was{opacity:.55}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:6px}
+button.ans{border:1px solid var(--blue);color:var(--blue);background:#fff;border-radius:999px;padding:4px 16px;cursor:pointer;font-size:.86rem;transition:.15s}
+button.ans:hover{background:var(--blue);color:#fff}
+button.ans.open{background:var(--blue);color:#fff}
+button.mini{border:1px solid var(--line);color:var(--sub);background:#fff;border-radius:999px;padding:4px 14px;cursor:pointer;font-size:.84rem}
+button.mini:hover{border-color:var(--blue);color:var(--blue)}
+.ansbox{display:none;margin-top:8px;background:#eefaf3;border:1px solid #b7e4d0;border-radius:10px;padding:10px 14px;font-size:.93rem}
+.ansbox.show{display:block;animation:fade .2s}
+.ansbox .aw{color:var(--green);font-weight:700;font-size:1.02rem}
+.ansbox .an{color:var(--sub);margin-top:4px}
+.group-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin:26px 0 4px}
+.group-head h3{margin:0}
+.tr-cn{font-size:1rem;margin:4px 0}
+.hint{color:var(--gold);font-size:.9rem;margin:2px 0}
+.hint b{letter-spacing:.02em}
+.en-sent{font-size:1rem;margin:4px 0}
+.src{color:var(--sub);font-size:.84rem}
+.bank{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:#eef2fc;border:1px solid #ccd8f5;color:var(--blue-d);border-radius:999px;padding:4px 14px;font-size:.92rem;user-select:none}
+.blank{display:inline-block;min-width:64px;border-bottom:2px solid var(--blue);color:transparent;cursor:pointer;text-align:center;font-weight:700;padding:0 6px;transition:.15s;border-radius:4px 4px 0 0}
+.blank.reveal{color:var(--green);border-bottom-color:var(--green)}
+.blank:hover{background:#eef2fc}
+.passage p{margin:7px 0;font-size:.98rem}
+.cnt{font-size:.84rem;color:var(--sub)}
+footer{text-align:center;color:var(--sub);font-size:.85rem;padding:26px 0 10px}
+@media print{
+ nav{display:none}
+ .page{display:block!important;page-break-after:always}
+ .ansbox{display:block!important}
+ .blank i{display:inline!important}
+ .blank{color:inherit;border-bottom-color:#999}
+ button{display:none}
+ body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header>
+ <h1>跨境电商英语 · 期中复习模拟卷</h1>
+ <p>题型分值说明 ｜ 词汇·词组模拟 ｜ 翻译模拟 ｜ 选词填空模拟 —— 全部带答案按钮</p>
+</header>
+<nav>
+ <button data-p="p1" class="on">① 考试题型与分值</button>
+ <button data-p="p2">② 词汇 / 词组模拟卷</button>
+ <button data-p="p3">③ 翻译模拟</button>
+ <button data-p="p4">④ 选词填空模拟</button>
+</nav>
+<div class="wrap">
+
+<!-- ================= Tab 1 ================= -->
+<section class="page on" id="p1">
+ <div class="card">
+  <h2>期中考试题型与分值说明</h2>
+  <p class="note">本页只说明<b>题型、题号与分值</b>，不涉及任何原题。复习时请对照下面的分值安排时间，用后面三个标签页的模拟题练手。</p>
+  <table>
+   <tr><th>题号</th><th>题型</th><th>计分方式</th><th>分值</th></tr>
+   <tr><td>第 1 — 35 题</td><td>词汇与词组（四选一）</td><td>每题 1 分 · <b>答题卡涂卡</b></td><td>35 分</td></tr>
+   <tr><td>第 36 — 40 题</td><td>汉译英（给中文 + 括号提示词）</td><td>每题 3 分 · 写出完整英文句子</td><td>15 分</td></tr>
+   <tr><td>第 41 — 45 题</td><td>英译汉（给英文句子）</td><td>每题 3 分 · 写出中文译文</td><td>15 分</td></tr>
+   <tr><td>第 46 — 50 题</td><td>阅读理解</td><td>每题 2 分 · <b>答题卡涂卡</b></td><td>10 分</td></tr>
+   <tr><td>第 51 — 60 题</td><td>选词填空（一篇短文 10 空）</td><td>每题 1 分 · <b>把单词写在答题纸对应题号后</b>（不是涂卡！）</td><td>10 分</td></tr>
+   <tr><td>第 61 题</td><td>书面表达（作文）</td><td>15 分 · 写在答题纸大答题区</td><td>15 分</td></tr>
+   <tr><td colspan="3"><b>合计</b></td><td><b>100 分</b></td></tr>
+  </table>
+  <h3>建议时间分配（考试时长 90 分钟）</h3>
+  <table>
+   <tr><th>板块</th><th>建议用时</th><th>提醒</th></tr>
+   <tr><td>词汇与词组（1—35）</td><td>约 12 分钟</td><td>拿不准的先涂一个，题号做个记号</td></tr>
+   <tr><td>汉译英（36—40）</td><td>约 12 分钟</td><td>用上括号里的提示词，写完整句子</td></tr>
+   <tr><td>英译汉（41—45）</td><td>约 12 分钟</td><td>先抓主干（谁—做什么），再补修饰</td></tr>
+   <tr><td>阅读理解（46—50）</td><td>约 12 分钟</td><td>先看题干关键词，再回原文定位</td></tr>
+   <tr><td>选词填空（51—60）</td><td>约 10 分钟</td><td>先通读全文，按词性和句意选词；<b>记得写到答题纸上</b></td></tr>
+   <tr><td>书面表达（61）</td><td>约 25 分钟</td><td>留足时间：审题 3 分钟 + 打草稿列要点 + 誊写</td></tr>
+   <tr><td>检查</td><td>约 7 分钟</td><td>核对涂卡题号是否错位、大小写与拼写</td></tr>
+  </table>
+  <div class="tip"><b>复习提示：</b>① 词汇题覆盖 5 个课时的生词与词组，本模拟卷第②页按课时分组，共 45 题，考过的词之外还有考卷没考的词，都要过一遍；② 翻译题的句子都来自课文，建议把每篇课文的长难句口头翻译一遍；③ 选词填空考“词性 + 句意”两步判断，先判断空格需要名词/动词/形容词，再从词库里挑。</div>
+ </div>
+</section>
+
+<!-- ================= Tab 2 ================= -->
+<section class="page" id="p2">
+ <div class="card">
+  <h2>词汇 / 词组模拟卷（共 45 题）</h2>
+  <p class="note">与考试同题型：四选一。点击每题的「答案」核对；也可用「显示本组全部 / 收起」。其中既有之前练习中未选入考卷的回收题目，也有考卷没考到的教材生词新编题。</p>
+  <div id="vocab"></div>
+ </div>
+</section>
+
+<!-- ================= Tab 3 ================= -->
+<section class="page" id="p3">
+ <div class="card">
+  <h2>翻译模拟 · 汉译英（6 题）</h2>
+  <p class="note">考试中本题型会给出括号内的提示词，必须用上提示词翻译。先自己写，再点「参考答案」对照，重点看句子结构和词组搭配。</p>
+  <div id="trcn"></div>
+ </div>
+ <div class="card">
+  <h2>翻译模拟 · 英译汉（6 题）</h2>
+  <p class="note">句子全部选自课文（与考卷句子不重复）。先抓句子主干，再处理修饰成分；点「参考译文」核对采分点。</p>
+  <div id="tren"></div>
+ </div>
+</section>
+
+<!-- ================= Tab 4 ================= -->
+<section class="page" id="p4">
+ <div class="card">
+  <h2>选词填空模拟（2 篇 × 10 空）</h2>
+  <p class="note">考试中本题型要求<b>把选出的单词写在答题纸对应题号后</b>（不是涂卡）。练法：先通读全文 → 逐空判断词性 → 从词库选词 → 填完后回读检查。短文中带下划线的空格可以<b>直接点击</b>显示/隐藏答案。</p>
+  <div id="cloze"></div>
+ </div>
+</section>
+
+<footer>跨境电商英语 · 期中复习模拟卷 · 自主核对，查漏补缺</footer>
+</div>
+
+<script>
+const D = {"vocab": [{"name": "A 组 · Part 1.1 课文词汇（练习回收）", "desc": "选自 Part 1.1《跨境电商的定义与分类》课文与练习，均为之前练习中未选入考卷的题目。", "items": [{"q": "The ______ office checks the invoices and the value of the goods before the parcel is released.", "o": ["custom", "retail", "shipment", "wholesaler"], "a": "A", "w": "custom", "n": "custom 与海关事务相关（the custom office 海关）；retail 零售、shipment 货物运输、wholesaler 批发商。"}, {"q": "“采购（尤指为机构大批量采购）” in English is ______.", "o": ["warehousing", "procurement", "settlement", "distribution"], "a": "B", "w": "procurement", "n": "procurement 采购；warehousing 仓储、settlement 结算、distribution 分销。"}, {"q": "Every cross-border ______ between the two companies is recorded automatically, so sellers can trace each order.", "o": ["argument", "shipment", "transaction", "constraint"], "a": "C", "w": "transaction", "n": "transaction n. 交易；与句意“自动记录、可追溯”匹配。"}, {"q": "The ______ company delivers the parcels from the overseas warehouse to the buyer within three days.", "o": ["vertical", "operational", "warehousing", "logistics"], "a": "D", "w": "logistics", "n": "logistics company 物流公司；warehousing 仓储指存储环节。"}, {"q": "Wider ______ channels help the goods reach overseas customers more quickly.", "o": ["distribution", "conversion", "argument", "qualification"], "a": "A", "w": "distribution", "n": "distribution channels 分销渠道；conversion 转化、argument 论据、qualification 资质。"}, {"q": "Delay, damage and high freight all add to the total ______ of an order.", "o": ["profit", "cost", "margin", "revenue"], "a": "B", "w": "cost", "n": "add to the cost of 增加……的成本；profit 利润、margin 利润率、revenue 收入。"}, {"q": "New technologies ______ faster clearance and more accurate tracking.", "o": ["subdivide", "reshuffle", "facilitate", "convert"], "a": "C", "w": "facilitate", "n": "facilitate 促进、使便利；convert 兑换、转换。"}, {"q": "The brand faced a real ______: keep prices low or protect its profit.", "o": ["integration", "evidence", "procurement", "dilemma"], "a": "D", "w": "dilemma", "n": "dilemma 两难困境；integration 一体化。"}, {"q": "Small sellers often choose ______ markets, such as pet products or camping gear.", "o": ["vertical", "cumbersome", "complementary", "deniable"], "a": "A", "w": "vertical", "n": "vertical market 垂直细分市场（如宠物用品、露营装备）。"}]}, {"name": "B 组 · Part 1.2 Text A 词汇（练习回收）", "desc": "选自 Part 1.2 Text A《跨境电商与传统外贸的区别》，均为未选入考卷的题目。", "items": [{"q": "A very ______ industry will be reshuffled sooner or later.", "o": ["vertical", "vigorous", "cumbersome", "complementary"], "a": "B", "w": "vigorous", "n": "vigorous 蓬勃的（a vigorous industry 蓬勃发展的行业）。"}, {"q": "The seller put forward a strong ______ for choosing a local warehouse instead of air freight.", "o": ["exhibition", "community", "argument", "constraint"], "a": "C", "w": "argument", "n": "argument 在此意为“论据、理由”，put forward an argument for 为固定搭配。"}, {"q": "The company promises to ______ every order within 48 hours of payment.", "o": ["subdivide", "restriction", "practitioner", "process"], "a": "D", "w": "process", "n": "process 作动词意为“处理、加工”，process an order 即“处理订单”。"}, {"q": "“仓储；仓储业” in English is ______.", "o": ["warehousing", "community", "shipment", "clearance"], "a": "A", "w": "warehousing", "n": "warehousing 为“仓储、仓储业”，动词原形为 warehouse。"}, {"q": "Most cross-border sellers can hardly meet the ______ required to open a store on this platform.", "o": ["exhibition", "qualification", "definition", "retail"], "a": "B", "w": "qualification", "n": "qualification 在此指“资质、资格条件”，meet the qualification 即“符合资质要求”。"}, {"q": "Customs procedures are a real ______ for small sellers who have no experience in paperwork.", "o": ["community", "exhibition", "constraint", "definition"], "a": "C", "w": "constraint", "n": "constraint 意为“限制、制约因素”，a real constraint for sb. 即“对某人是实实在在的制约”。"}]}, {"name": "C 组 · 教材重点生词（新编）", "desc": "教材中要求掌握、但考卷未考到的重点生词，新编题目。", "items": [{"q": "This new phone case quickly became the ______ of young shoppers.", "o": ["dilemma", "revenue", "exposure", "darling"], "a": "D", "w": "darling", "n": "darling n. 宠儿、备受追捧的人（物）；the darling of... ……的宠儿。"}, {"q": "We can offer a discount if you order in large ______.", "o": ["quantity", "strategy", "preference", "exposure"], "a": "A", "w": "quantity", "n": "in large quantities 大量地；quantity n. 数量、大宗。"}, {"q": "The company will show its newest products at an international trade ______.", "o": ["argument", "exhibition", "vertical", "constraint"], "a": "B", "w": "exhibition", "n": "trade exhibition 展会；exhibition n. 展览会。"}, {"q": "Parcels can travel from Shenzhen to Europe in five days by SF ______.", "o": ["wholesale", "dispute", "express", "preference"], "a": "C", "w": "express", "n": "SF Express 顺丰速运；express 快递、速递（express delivery 快递服务）。"}, {"q": "Many small and medium-sized ______ now run their own cross-border online stores.", "o": ["exhibitions", "quantities", "arguments", "enterprises"], "a": "D", "w": "enterprises", "n": "enterprise n. 企业；small and medium-sized enterprises 中小企业。"}, {"q": "We provide free ______ for orders over 50 dollars.", "o": ["delivery", "dilemma", "revenue", "exposure"], "a": "A", "w": "delivery", "n": "delivery n. 递送、送货；free delivery 免费配送。"}, {"q": "The factory sells its goods at ______ prices to traders, not to individual buyers.", "o": ["progressively", "wholesale", "commonplace", "cumbersome"], "a": "B", "w": "wholesale", "n": "wholesale 批发（wholesale prices 批发价）；retail 零售。"}, {"q": "The online fair is a good chance to ______ your newest products to global buyers.", "o": ["subdivide", "convert", "showcase", "dominate"], "a": "C", "w": "showcase", "n": "showcase v. 展示、陈列；showcase your products 展示产品。"}, {"q": "Sellers should ______ product quality instead of chasing low prices.", "o": ["compete with", "connect with", "argue with", "concentrate on"], "a": "D", "w": "concentrate on", "n": "concentrate on 集中于、专注于；compete with 与……竞争。"}, {"q": "The two companies settled their ______ over the payment terms peacefully.", "o": ["dispute", "revenue", "exposure", "strategy"], "a": "A", "w": "dispute", "n": "dispute n. 争论、争议；settle a dispute 解决争端。"}]}, {"name": "D 组 · Text B 重点词汇（新编）", "desc": "Part 1.2 Text B《跨境电商的好处与重要考虑因素》重点词汇，考卷未考，新编题目。", "items": [{"q": "Doing business online has become ______ in recent years.", "o": ["complementary", "commonplace", "cumbersome", "compliant"], "a": "B", "w": "commonplace", "n": "commonplace adj. 常见的、平常的（课文原句：Doing business online has become more and more commonplace）。"}, {"q": "Short videos give new stores more ______ to young customers.", "o": ["exhibition", "expression", "exposure", "expansion"], "a": "C", "w": "exposure", "n": "exposure n. 曝光度、知名度；build exposure 打开曝光。"}, {"q": "Older buyers have a strong ______ for paying when the parcel arrives.", "o": ["prevention", "preparation", "production", "preference"], "a": "D", "w": "preference", "n": "preference n. 偏好；have a preference for 对……有偏好。"}, {"q": "Each country has its own tax ______, so sellers must learn the local rules.", "o": ["regulations", "solutions", "suggestions", "conditions"], "a": "A", "w": "regulations", "n": "regulation n. 法规、规定；taxes and regulations 税收与法规。"}, {"q": "A clear marketing ______ helps a new store grow step by step.", "o": ["sympathy", "strategy", "ceremony", "industry"], "a": "B", "w": "strategy", "n": "strategy n. 策略、战略；devise a strategy 制定策略。"}, {"q": "The brand has no ______ store abroad; it sells only online.", "o": ["back-and-forth", "step-by-step", "brick-and-mortar", "day-by-day"], "a": "C", "w": "brick-and-mortar", "n": "brick-and-mortar 实体的（店铺）；without a brick-and-mortar store 没有实体店。"}, {"q": "______ matters a lot in e-commerce, because buyers hate waiting for their parcels.", "o": ["Free samples", "Low taxes", "Big data", "On-time delivery"], "a": "D", "w": "On-time delivery", "n": "on-time delivery 按时送达；课文强调 Good customer service + on-time delivery。"}, {"q": "With good reviews, the small shop grew ______ into an international seller.", "o": ["progressively", "professionally", "possibly", "previously"], "a": "A", "w": "progressively", "n": "progressively adv. 日益、逐步地；a progressively growing business 持续增长的业务。"}, {"q": "The more the reach and customers, the higher are sales and ______.", "o": ["review", "revenue", "reward", "rescue"], "a": "B", "w": "revenue", "n": "revenue n. 收入、收益（课文原句：the higher are sales and revenue）。"}, {"q": "Every e-commerce business ______ long-term growth and higher profits.", "o": ["waits for", "pays for", "strives for", "stands for"], "a": "C", "w": "strives for", "n": "strive for 努力争取、力求；strive for sustainability 力求可持续发展。"}]}, {"name": "E 组 · Part 1.3 / 10.8 词汇（练习回收）", "desc": "选自 Part 1.3《中国跨境电商现状》及 10.8 课时词汇练习，均为未选入考卷的题目。", "items": [{"q": "You can use sales organizations to ______ large markets into smaller regions.", "o": ["combine", "reflect", "dominate", "subdivide"], "a": "D", "w": "subdivide", "n": "subdivide （被）再分割、细分；subdivide ... into ... 把……细分为……。"}, {"q": "It is ______ for cross-border sellers to choose a reliable payment platform.", "o": ["crucial", "casual", "curious", "cautious"], "a": "A", "w": "crucial", "n": "crucial 至关重要的；It is crucial for sb. to do sth.。"}, {"q": "“创造纪录” in English is ______.", "o": ["break a record", "set a record", "keep a record", "copy a record"], "a": "B", "w": "set a record", "n": "set a record 创造纪录。"}, {"q": "______ traditional trade, cross-border e-commerce has a much shorter supply chain.", "o": ["According to", "Thanks to", "Compared to", "Prior to"], "a": "C", "w": "Compared to", "n": "compared to 与……相比。"}, {"q": "“值得做” in English is ______.", "o": ["be tired of doing", "be afraid of doing", "be proud of doing", "be worth doing"], "a": "D", "w": "be worth doing", "n": "be worth doing 值得做。"}]}, {"name": "F 组 · 词组与固定搭配（新编）", "desc": "课文中的重点词组与固定搭配，考卷未考，新编题目。", "items": [{"q": "A middleman is ______ an extra link that raises the price.", "o": ["nothing more than", "anything but", "as well as", "so far"], "a": "A", "w": "nothing more than", "n": "nothing more than 只不过是；课文原句：A middleman is nothing more than an extra link that raises the price。"}, {"q": "Cross-border e-commerce sells directly to the ______ without middlemen.", "o": ["wholesaler", "end consumer", "retailer", "distributor"], "a": "B", "w": "end consumer", "n": "end consumer 终端消费者；跨境电商直接面对 end consumer。"}, {"q": "Beginners often ______ cross-border e-commerce with traditional foreign trade.", "o": ["distinguish", "compare", "confuse", "combine"], "a": "C", "w": "confuse", "n": "confuse ... with ... 把……与……混淆；distinguish ... from ... 区分（搭配不同，注意介词）。"}, {"q": "What ______ does this tracking number mean? I can't find my parcel at all.", "o": ["at least", "in total", "for example", "on earth"], "a": "D", "w": "on earth", "n": "on earth 究竟、到底（用于疑问词后加强语气）：What on earth...?。"}, {"q": "Honest descriptions and quick replies help sellers ______ overseas buyers.", "o": ["earn the trust of", "take care of", "run out of", "keep away from"], "a": "A", "w": "earn the trust of", "n": "earn the trust of 赢得……的信任（Text B 词组）。"}]}], "trcn": [{"cn": "这款产品在年轻买家中间很受欢迎。", "hint": "be popular with", "en": "This product is very popular with young buyers.", "pts": "be popular with 受……欢迎；主语为单数用 is。"}, {"cn": "我们公司专营家用小电器。", "hint": "specialize in", "en": "Our company specializes in small home appliances.", "pts": "specialize in 专营、专攻；第三人称单数用 specializes。"}, {"cn": "你们的产品在质量上优于其他厂家的产品。", "hint": "be superior to / those of", "en": "Your goods are superior in quality to those of other manufacturers.", "pts": "be superior to 优于；those of 代替前文提到的复数名词（products），避免重复。"}, {"cn": "2025 年，中国跨境电商贸易额达到了 2.84 万亿元。", "hint": "reach", "en": "In 2025, China's cross-border e-commerce trade reached 2.84 trillion yuan.", "pts": "reach 达到；trillion 万亿；2.84 trillion yuan 的数字表达。"}, {"cn": "无论环境如何，30% 以上的年均增速都将保持下去。", "hint": "annual growth rate", "en": "The average annual growth rate of above 30% will certainly be kept under any environment.", "pts": "annual growth rate 年增长率；above 30% 超过 30%；under any environment 无论环境如何。"}, {"cn": "海外买家可以通过第三方平台安全地付款。", "hint": "third-party platforms", "en": "Overseas buyers can make payments safely through third-party platforms.", "pts": "third-party platforms 第三方平台；make payments 付款；through 通过（方式）。"}], "tren": [{"en": "Cross-border B2B e-commerce refers to the international business activities between companies in different customs areas.", "cn": "跨境 B2B 电商是指不同关境的企业之间开展的国际商务活动。", "pts": "refers to 是指；customs areas 关境；between companies in... 企业之间的。"}, {"en": "Traditional trade uses information platforms such as wholesale message, mail, and exhibitions to spread information.", "cn": "传统外贸使用批发信息、邮件和展会等信息平台来传播信息。", "pts": "such as 例如、诸如；spread information 传播信息；platforms 平台。"}, {"en": "Cross-border e-commerce simply translates into higher chances of selling your products. The more the reach and customers, the higher are sales and revenue.", "cn": "跨境电商简单来说就意味着更多的产品销售机会。触达面和客户越多，销售额和收入就越高。", "pts": "translate into 意味着、带来；the more..., the higher... 越……就越……；revenue 收入。"}, {"en": "Timely and safe delivery of products is the backbone of any e-commerce business.", "cn": "及时且安全的产品配送是任何电商业务的支柱。", "pts": "timely 及时的；delivery 配送、送货；backbone 支柱、骨干。"}, {"en": "Customs clearance is still cumbersome in some countries, which slows down CBEC orders.", "cn": "在一些国家，清关仍然十分繁琐，这拖慢了跨境电商订单的速度。", "pts": "customs clearance 清关；cumbersome 繁琐的；which 引导非限制性定语从句；slow down 拖慢。"}, {"en": "In the future the competition of CBEC will be more professional.", "cn": "未来，跨境电商的竞争将更加专业化。", "pts": "competition 竞争；professional 专业的、职业化的；in the future 在未来。"}], "cloze": [{"title": "Passage 1 · From Workshop to the World", "story": "小作坊如何借跨境电商走向世界", "bank": ["standard", "delivery", "manufacturers", "division of labor", "warehousing", "step", "consumers", "third-party", "additional", "overseas"], "blanks": [{"w": "manufacturers", "n": "manufacturers n. 制造商、生产厂家（ manufacture 的名词复数）。"}, {"w": "overseas", "n": "overseas adj./adv. 海外的、向海外；overseas customers 海外客户。"}, {"w": "step", "n": "take a big step 迈出一大步；step n. 步骤、一步。"}, {"w": "third-party", "n": "third-party platforms 第三方平台。"}, {"w": "warehousing", "n": "warehousing n. 仓储（Part 1.2 重点词）。"}, {"w": "additional", "n": "additional adj. 额外的（Text B 重点词）；additional fees 附加费用。"}, {"w": "division of labor", "n": "division of labor 分工（10.8 课时词组）。"}, {"w": "delivery", "n": "delivery n. 递送、配送；fast and safe delivery 快速安全的配送。"}, {"w": "consumers", "n": "consumers n. 消费者；end consumer 终端消费者。"}, {"w": "standard", "n": "standard n. 标准；keep a high service standard 保持高服务标准。"}], "text": ["Small 【1】 used to sell their goods only to local buyers.", "They had few 【2】 customers and little money for advertising.", "Today they can take a big 【3】 into the world market.", "Many of them sell through 【4】 platforms instead of building their own websites.", "Platform services cover 【5】, packing and shipping.", "So sellers do not need to pay 【6】 fees for storage.", "Thanks to a clear 【7】, every side does what it is best at.", "Fast and safe 【8】 makes buyers come back again.", "In the end, both sellers and 【9】 win.", "If a shop keeps a high service 【10】, its brand will grow naturally."]}, {"title": "Passage 2 · The Online Canton Fair", "story": "线上广交会：传统展会的新生", "bank": ["trade", "transaction", "exhibition", "wholesale", "facilitate", "enterprise", "quantity", "select", "distribution", "express"], "blanks": [{"w": "exhibition", "n": "exhibition n. 展览会、展会。"}, {"w": "enterprise", "n": "enterprise n. 企业；small and medium-sized enterprises 中小企业。"}, {"w": "select", "n": "select v. 挑选、选择。"}, {"w": "wholesale", "n": "wholesale 批发；wholesale prices 批发价。"}, {"w": "express", "n": "express n./adj. 快递、速递；send by express 用快递寄送。"}, {"w": "transaction", "n": "transaction n. 交易（课文原句：Every online transaction is recorded and protected）。"}, {"w": "quantity", "n": "quantity n. 数量；check the quantity 核对数量。"}, {"w": "facilitate", "n": "facilitate v. 促进、使便利。"}, {"w": "distribution", "n": "distribution channels 分销渠道。"}, {"w": "trade", "n": "trade n. 贸易；global trade 全球贸易。"}], "text": ["The Canton Fair is the biggest 【1】 in China for global buyers and sellers.", "Each 【2】, big or small, can meet buyers from all over the world.", "Buyers can 【3】 products from sixteen main export categories online.", "On the platform, sellers offer 【4】 prices for large orders.", "Samples can be sent by 【5】 within a few days.", "Every online 【6】 is recorded and protected.", "Buyers usually check the price, quality and 【7】 before placing an order.", "Live-streaming rooms 【8】 communication between sellers and buyers.", "The fair helps sellers open new 【9】 channels in many countries.", "In this way, a traditional fair turns into a window of global 【10】."]}]};
+
+/* ---------- Tab 切换（支持 #p2 锚点直达） ---------- */
+function show(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===id));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.p===id));
+  window.scrollTo({top:0});
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.p));
+if(location.hash){const t=document.querySelector(location.hash);if(t)show(t.id);}
+
+/* ---------- 词汇模拟 ---------- */
+const vocabEl=document.getElementById('vocab');
+let vh='';
+D.vocab.forEach((g,gi)=>{
+  vh+=`<div class="group-head"><h3><span class="pill">${g.name}</span></h3>
+       <span class="btnrow"><button class="mini" onclick="gshow(${gi},true)">显示本组全部</button>
+       <button class="mini" onclick="gshow(${gi},false)">收起</button></span></div>
+       <p class="note">${g.desc}</p>`;
+  g.items.forEach((it,i)=>{
+    const no=vh_no(gi,i);
+    vh+=`<div class="q" data-g="${gi}">
+      <div class="qtext"><span class="qno">${no}.</span>${it.q}</div>
+      <div class="opts">${it.o.map((o,oi)=>`<span class="opt" data-o="${'ABCD'[oi]}"><b>${'ABCD'[oi]}.</b>${o}</span>`).join('')}</div>
+      <div class="btnrow"><button class="ans" onclick="tg(this,${gi},${i})">答案</button><span class="cnt"></span></div>
+      <div class="ansbox" id="v${gi}_${i}"><span class="aw">答案：${it.a}. ${it.w}</span><div class="an">${it.n}</div></div>
+    </div>`;
+  });
+});
+vocabEl.innerHTML=vh;
+function vh_no(gi,i){ /* 全卷连号 1-45 */
+  let n=i+1; for(let k=0;k<gi;k++) n+=D.vocab[k].items.length; return n;
+}
+function tg(btn,gi,i){
+  const box=document.getElementById(`v${gi}_${i}`);
+  const open=box.classList.toggle('show');
+  btn.classList.toggle('open',open);
+  btn.textContent=open?'收起答案':'答案';
+  const q=btn.closest('.q');
+  q.querySelectorAll('.opt').forEach(o=>{
+    o.classList.toggle('hit',o.dataset.o===D.vocab[gi].items[i].a);
+    o.classList.toggle('was',o.dataset.o!==D.vocab[gi].items[i].a);
+  });
+  q.querySelector('.cnt').textContent=open?'正确项已高亮':'';
+}
+function gshow(gi,open){
+  const qs=document.querySelectorAll(`.q[data-g="${gi}"]`);
+  qs.forEach((q,i)=>{
+    const box=q.querySelector('.ansbox'), btn=q.querySelector('button.ans');
+    box.classList.toggle('show',open); btn.classList.toggle('open',open);
+    btn.textContent=open?'收起答案':'答案';
+    q.querySelectorAll('.opt').forEach(o=>{
+      o.classList.toggle('hit',open&&o.dataset.o===D.vocab[gi].items[i].a);
+      o.classList.toggle('was',open&&o.dataset.o!==D.vocab[gi].items[i].a);
+    });
+    q.querySelector('.cnt').textContent=open?'正确项已高亮':'';
+  });
+}
+
+/* ---------- 翻译模拟 ---------- */
+(function(){
+  let h1='<h3>一、汉译英</h3>',h2='';
+  D.trcn.forEach((t,i)=>{h1+=th_item_cn(t,i);});
+  D.tren.forEach((t,i)=>{h2+=th_item_en(t,i);});
+  document.getElementById('trcn').innerHTML=h1;
+  const enCard=document.querySelectorAll('#p3 .card')[1].querySelector('.note');
+  enCard.insertAdjacentHTML('afterend',h2);
+})();
+function th_item_cn(t,i){return `<div class="q"><div class="qno">${i+1}.</div>
+   <div class="tr-cn">${t.cn}</div>
+   <div class="hint">提示词：<b>（${t.hint}）</b></div>
+   <div class="btnrow"><button class="ans" onclick="tgBox(this,'tcn${i}')">参考答案</button></div>
+   <div class="ansbox" id="tcn${i}"><span class="aw">${t.en}</span><div class="an">采分点：${t.pts}</div></div></div>`;}
+function th_item_en(t,i){return `<div class="q"><div class="qno">${i+1}.</div>
+   <div class="en-sent">${t.en}</div>
+   <div class="btnrow"><button class="ans" onclick="tgBox(this,'ten${i}')">参考译文</button></div>
+   <div class="ansbox" id="ten${i}"><span class="aw">${t.cn}</span><div class="an">采分点：${t.pts}</div></div></div>`;}
+function tgBox(btn,id){
+  const box=document.getElementById(id);
+  const open=box.classList.toggle('show');
+  btn.classList.toggle('open',open);
+  btn.textContent=open?'收起':'参考答案';
+}
+
+/* ---------- 选词填空模拟 ---------- */
+let ch='';
+D.cloze.forEach((c,pi)=>{
+  ch+=`<h3 style="margin-top:20px">${c.title}　<span class="note">（${c.story}）</span></h3>
+   <div class="bank">${c.bank.map(w=>`<span class="chip">${w}</span>`).join('')}</div>
+   <div class="passage">`;
+  c.text.forEach((seg,si)=>{
+    ch+='<p>'+seg.replace(/【(\d+)】/g,(m,n)=>`<span class="blank" data-p="${pi}" data-b="${n-1}" onclick="tgBlank(this)">【${n}】<i style="font-style:normal">${c.blanks[n-1].w}</i></span>`)+'</p>';
+  });
+  ch+=`</div><div class="btnrow"><button class="ans" onclick="pAll(${pi},true)">显示整篇答案</button>
+       <button class="mini" onclick="pAll(${pi},false)">收起整篇</button>
+       <span class="cnt">提示：点空格可单独显示/隐藏答案；再点下方「逐空解析」看每个空的讲解。</span></div>
+       <div class="btnrow"><button class="mini" onclick="nAll(${pi},true)">逐空解析</button><button class="mini" onclick="nAll(${pi},false)">收起解析</button></div>
+       <div id="notes${pi}" style="display:none">`;
+  c.blanks.forEach((b,i)=>{
+    ch+=`<div class="q"><span class="qno">${i+1}. ${b.w}</span><div class="an note">${b.n}</div></div>`;
+  });
+  ch+='</div>';
+});
+document.getElementById('cloze').innerHTML=ch;
+/* 空格初始隐藏答案文字 */
+document.querySelectorAll('.blank i').forEach(i=>i.style.display='none');
+function tgBlank(el){
+  const i=el.querySelector('i');
+  const open=i.style.display==='none';
+  i.style.display=open?'inline':'none';
+  el.classList.toggle('reveal',open);
+}
+function pAll(pi,open){
+  document.querySelectorAll(`.blank[data-p="${pi}"]`).forEach(el=>{
+    const i=el.querySelector('i');
+    i.style.display=open?'inline':'none';
+    el.classList.toggle('reveal',open);
+  });
+}
+function nAll(pi,open){
+  const box=document.getElementById('notes'+pi);
+  box.style.display=open?'block':'none';
+}
+</script>
+</body>
+</html>
