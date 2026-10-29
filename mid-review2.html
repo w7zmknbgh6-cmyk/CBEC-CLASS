@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境电商英语 · 期中考试难点串讲</title>
+<style>
+:root{--ink:#1c2333;--sub:#5b6478;--line:#e3e8f2;--blue:#2f5fe0;--blue-d:#1d46b8;--green:#0e9f6e;--bg:#f4f6fb;--gold:#b45309;--red:#c0392b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
+header{background:linear-gradient(120deg,#7c2d92,#2f5fe0 60%,#0ea5b7);color:#fff;padding:34px 20px 26px;text-align:center}
+header h1{font-size:1.6rem;letter-spacing:.05em}
+header p{opacity:.92;margin-top:6px;font-size:.95rem}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px 60px}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);display:flex;justify-content:center;gap:6px;padding:10px 8px;flex-wrap:wrap}
+nav button{border:1px solid var(--line);background:#fff;color:var(--sub);padding:8px 18px;border-radius:999px;cursor:pointer;font-size:.95rem;transition:.15s}
+nav button:hover{border-color:var(--blue);color:var(--blue)}
+nav button.on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
+.page{display:none;padding-top:22px;scroll-margin-top:70px}
+.page.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:18px;box-shadow:0 1px 3px rgba(30,50,90,.05)}
+.card h2{font-size:1.2rem;color:var(--blue-d);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h2::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(#7c2d92,#2f5fe0)}
+.card h3{font-size:1.05rem;margin:20px 0 8px;color:var(--ink)}
+.note{color:var(--sub);font-size:.9rem}
+.q{border-top:1px dashed var(--line);padding:14px 2px 10px;margin-top:10px}
+.q:first-of-type{border-top:none}
+.qno{font-weight:700;color:var(--blue-d);margin-right:4px}
+.wtop{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.wword{font-size:1.15rem;font-weight:700;color:var(--blue-d)}
+.ipa{color:var(--sub);font-size:.9rem}
+.pos{background:#f3e8ff;color:#7c2d92;border-radius:6px;padding:0 8px;font-size:.85rem}
+.cn{font-weight:600}
+.diff{color:var(--gold);font-size:.9rem;margin-left:auto;white-space:nowrap}
+.spk{border:1px solid var(--line);background:#fff;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:.85rem;line-height:1}
+.spk:hover{border-color:var(--blue)}
+.row{display:flex;gap:8px;margin-top:7px;font-size:.93rem;align-items:flex-start}
+.tag{flex:0 0 auto;border-radius:6px;padding:0 8px;font-size:.82rem;color:#fff;margin-top:3px}
+.t1{background:#c0392b}.t2{background:#b45309}.t3{background:#0e9f6e}
+.row i{color:var(--sub)}
+.btnrow{display:flex;gap:8px;margin-top:8px}
+button.ans{border:1px solid var(--blue);color:var(--blue);background:#fff;border-radius:999px;padding:4px 16px;cursor:pointer;font-size:.86rem}
+button.ans:hover,button.ans.open{background:var(--blue);color:#fff}
+.ansbox{display:none;margin-top:8px;background:#eefaf3;border:1px solid #b7e4d0;border-radius:10px;padding:10px 14px;font-size:.95rem}
+.ansbox.show{display:block;animation:fade .2s}
+.ansbox .aw{color:var(--green);font-weight:700}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f3e8fc;color:#6b21a8;white-space:nowrap}
+.lvl{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+.lvlbox{flex:1;min-width:260px;border-radius:12px;padding:12px 14px;font-size:.9rem}
+.l3{background:#fdecea;border:1px solid #f5c6c0}
+.l2{background:#fff7e6;border:1px solid #fde68a}
+.l1{background:#eefaf3;border:1px solid #b7e4d0}
+.lvlbox b{display:block;margin-bottom:4px}
+.l3 b{color:var(--red)}.l2 b{color:var(--gold)}.l1 b{color:var(--green)}
+.tip{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;font-size:.92rem;color:#7a4b06;margin-top:12px}
+.en-sent{font-size:1rem;margin:6px 0;padding:10px 14px;background:#f7f9fd;border-left:3px solid var(--blue);border-radius:0 8px 8px 0}
+.pill{display:inline-block;background:#f3e8ff;color:#7c2d92;border-radius:999px;padding:2px 12px;font-size:.85rem;margin:4px 0}
+footer{text-align:center;color:var(--sub);font-size:.85rem;padding:26px 0 10px}
+@media print{nav{display:none}.page{display:block!important;page-break-after:always}.ansbox{display:block!important}button{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<header>
+ <h1>跨境电商英语 · 期中考试难点串讲</h1>
+ <p>考卷词汇 35 词逐词难点 ｜ 英译汉 5 句逐句拆解 ｜ 8 组易混词速查 —— 全部带答案按钮与发音</p>
+</header>
+<nav>
+ <button data-p="p1" class="on">① 易混词速查</button>
+ <button data-p="p2">② 词汇难点卡（35 词）</button>
+ <button data-p="p3">③ 英译汉难点拆解（5 句）</button>
+</nav>
+<div class="wrap">
+
+<section class="page on" id="p1">
+ <div class="card">
+  <h2>8 组易混词速查（选择 / 填空最容易踩的坑）</h2>
+  <p class="note">这 8 组词形近或义近，是选择题干扰项和选词填空的高频陷阱。建议每组读两遍，重点记搭配介词。</p>
+  <table><tr><th>易混组</th><th>一句话区分</th></tr><tr><td><b>custom / customs / customer</b></td><td>custom 风俗；定制的 ｜ custom<b>s</b> 海关 ｜ customer 顾客</td></tr><tr><td><b>wholesale / wholesaler / retail / retailer</b></td><td>批发 / 批发商 / 零售 / 零售商——四件套一起背</td></tr><tr><td><b>transfer / convert / transform</b></td><td>transfer 转移（位置、资金）｜ convert 转换（形态、币种）｜ transform 彻底改变</td></tr><tr><td><b>compliant / complaint</b></td><td>complia<b>nt</b> 合规的（形容词）｜ complai<b>n</b>t 投诉（名词）</td></tr><tr><td><b>complementary / complimentary</b></td><td>comple<b>ment</b>ary 互补的 ｜ complimen<b>t</b>ary 赞美的；赠送的</td></tr><tr><td><b>barrier / obstacle</b></td><td>barrier 壁垒、屏障（抽象）｜ obstacle 具体障碍物</td></tr><tr><td><b>distinguish A from B / confuse A with B</b></td><td>区分 A 和 B（from）｜ 把 A 误当 B（with）——介词方向相反</td></tr><tr><td><b>contribute to / attribute to</b></td><td>A contribute to B：A 促成 B ｜ A attribute B to C：把 B 归因于 C</td></tr></table>
+  <div class="tip"><b>应试提醒：</b>① 名词考“中文→英文”时注意<b>单复数与拼写</b>（settlement 双写 t、barrier 双写 r）；② 形容词考“英文释义→词”时先看搭配介词（be compliant <b>with</b>、distinguish A <b>from</b> B、be aware <b>of</b>）；③ 词组题看前后搭配线索：看到 to + doing 想到 contributed to，看到 with 想到 in line with / combined with。</div>
+ </div>
+</section>
+
+<section class="page" id="p2">
+ <div class="card">
+  <h2>词汇难点卡（考卷涉及的全部生词/词组）</h2>
+  <p class="note">按词性分四组，每张卡：发音 → 音标 → 易错点 → 易混辨析 → 课文例句。点击 🔊 听发音，先自测再逐条核对。</p>
+  <h3>一、名词（16 词）</h3><div class="cards"><div class="q"><div class="wtop"><span class="qno">1.</span>
+      <span class="wword">definition</span><button class="spk" onclick="speak('definition')">🔊</button>
+      <span class="ipa">/ˌdefɪˈnɪʃn/</span><span class="pos">n.</span>
+      <span class="cn">定义；释义</span><span class="diff">★☆☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>动词 define 变名词时拼写变化：defin<b>e</b> → definit<b>ion</b>，注意别写成 defination。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>definition（定义）≠ description（描述）≠ explanation（解释）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>...what information is included in the definition and classification of cross-border e-commerce.</i></div></div><div class="q"><div class="wtop"><span class="qno">2.</span>
+      <span class="wword">platform</span><button class="spk" onclick="speak('platform')">🔊</button>
+      <span class="ipa">/ˈplætfɔːm/</span><span class="pos">n.</span>
+      <span class="cn">平台</span><span class="diff">★☆☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>是 form 不是 from：plat+<b>form</b>。e-commerce platform 电商平台是本课核心搭配。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>形近词：plank（板条）、plateau（高原）——考卷干扰项爱用。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Sellers publish product information on the e-commerce platform, and buyers place orders there.</i></div></div><div class="q"><div class="wtop"><span class="qno">3.</span>
+      <span class="wword">settlement</span><button class="spk" onclick="speak('settlement')">🔊</button>
+      <span class="ipa">/ˈsetlmənt/</span><span class="pos">n.</span>
+      <span class="cn">结算；解决</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>settle 结尾双写 t 再加 -ment。payment and settlement（支付与结算）是课文固定说法。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>settlement（结算；和解）≠ solution（解决问题的办法）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>...conduct transactions, complete payment and settlement, and deliver goods...</i></div></div><div class="q"><div class="wtop"><span class="qno">4.</span>
+      <span class="wword">retail</span><button class="spk" onclick="speak('retail')">🔊</button>
+      <span class="ipa">/ˈriːteɪl/</span><span class="pos">n./v./adj.</span>
+      <span class="cn">零售</span><span class="diff">★☆☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>重音在前面 RE-tail，别读成 re-TAIL。加 -er 变 retailer 零售商。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>成对记：retail 零售 ↔ wholesale 批发；retailer 零售商 ↔ wholesaler 批发商。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>The selling of goods to consumers, usually in small quantities and not for resale.</i></div></div><div class="q"><div class="wtop"><span class="qno">5.</span>
+      <span class="wword">ecosystem</span><button class="spk" onclick="speak('ecosystem')">🔊</button>
+      <span class="ipa">/ˈiːkəʊsɪstəm/</span><span class="pos">n.</span>
+      <span class="cn">生态系统</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>eco-（生态）+ system，重音在第一个音节 E-co。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>形近词 economy（经济）——词义不同，别混。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>...cross-border e-commerce involves the whole industry chain... and forms a new ecosystem.</i></div></div><div class="q"><div class="wtop"><span class="qno">6.</span>
+      <span class="wword">barrier</span><button class="spk" onclick="speak('barrier')">🔊</button>
+      <span class="ipa">/ˈbæriə(r)/</span><span class="pos">n.</span>
+      <span class="cn">障碍；壁垒</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>trade barriers 贸易壁垒是高频搭配。双写 r 再加 -ier。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>barrier 多指“屏障、壁垒”（抽象阻隔）；obstacle 指前进路上的具体障碍。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Say goodbye to the barriers of international trade.</i></div></div><div class="q"><div class="wtop"><span class="qno">7.</span>
+      <span class="wword">upsurge</span><button class="spk" onclick="speak('upsurge')">🔊</button>
+      <span class="ipa">/ˈʌpsɜːdʒ/</span><span class="pos">n.</span>
+      <span class="cn">激增；高涨</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>up+surge（浪潮）。“an upsurge <b>in</b> sth” 某方面的激增。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>形近：upsurge（激增）≠ upscale（高端的）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>See an upsurge in business profits.</i></div></div><div class="q"><div class="wtop"><span class="qno">8.</span>
+      <span class="wword">awareness</span><button class="spk" onclick="speak('awareness')">🔊</button>
+      <span class="ipa">/əˈweənəs/</span><span class="pos">n.</span>
+      <span class="cn">意识；知名度</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>aware 意识到的 + -ness 名词后缀。brand awareness 品牌知名度（课文原搭配）。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>awareness（意识）≠ knowledge（知识）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Brand awareness increases at minimum investment.</i></div></div><div class="q"><div class="wtop"><span class="qno">9.</span>
+      <span class="wword">accountability</span><button class="spk" onclick="speak('accountability')">🔊</button>
+      <span class="ipa">/əˌkaʊntəˈbɪləti/</span><span class="pos">n.</span>
+      <span class="cn">责任；可问责性</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>全卷最长词之一：account→accountable→accountability，逐层加后缀，考前抄三遍。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>accountability（对行为负责并交代）≠ responsibility（职责本身）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>...you must take the accountability to deliver the desired product to your customer...</i></div></div><div class="q"><div class="wtop"><span class="qno">10.</span>
+      <span class="wword">sustainability</span><button class="spk" onclick="speak('sustainability')">🔊</button>
+      <span class="ipa">/səˌsteɪnəˈbɪləti/</span><span class="pos">n.</span>
+      <span class="cn">可持续性</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>sustain→sustainable→sustainability，五个音节，重音在 -bil- 前的 -nə-。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>课文原句：increased business sustainability every business strives for（每家企业都力求的可持续经营）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Increased reach, expansion, profits, and brand awareness automatically result in increased business sustainability.</i></div></div><div class="q"><div class="wtop"><span class="qno">11.</span>
+      <span class="wword">reputation</span><button class="spk" onclick="speak('reputation')">🔊</button>
+      <span class="ipa">/ˌrepjuˈteɪʃn/</span><span class="pos">n.</span>
+      <span class="cn">声誉；名声</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>重音在第三个音节 -TA-。build a good reputation 树立好口碑。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>形近干扰项：computation（计算）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>The fair has a high reputation among global buyers.</i></div></div><div class="q"><div class="wtop"><span class="qno">12.</span>
+      <span class="wword">obstacle</span><button class="spk" onclick="speak('obstacle')">🔊</button>
+      <span class="ipa">/ˈɒbstəkl/</span><span class="pos">n.</span>
+      <span class="cn">障碍（物）</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>b-m 不发音组合别漏写：ob-<b>st</b>acle。clear/remove an obstacle 排除障碍。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>obstacle（具体障碍）≠ barrier（壁垒、屏障）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Careful planning helps you get over every obstacle.</i></div></div><div class="q"><div class="wtop"><span class="qno">13.</span>
+      <span class="wword">wholesaler</span><button class="spk" onclick="speak('wholesaler')">🔊</button>
+      <span class="ipa">/ˈhəʊlseɪlə(r)/</span><span class="pos">n.</span>
+      <span class="cn">批发商</span><span class="diff">★☆☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>whole（整）+ sale（卖）+ -er。整批卖出的人。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>wholesale 批发 / wholesaler 批发商 / retail 零售 / retailer 零售商 四件套。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>A wholesaler buys in bulk and sells to retailers.</i></div></div><div class="q"><div class="wtop"><span class="qno">14.</span>
+      <span class="wword">shipment</span><button class="spk" onclick="speak('shipment')">🔊</button>
+      <span class="ipa">/ˈʃɪpmənt/</span><span class="pos">n.</span>
+      <span class="cn">装运；一批货</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>ship+ment。a shipment of... 一批……货物。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>shipment（一批货；装运）≠ shipping（运输业务）≠ delivery（递送）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>The shipment was delayed by the storm at sea.</i></div></div><div class="q"><div class="wtop"><span class="qno">15.</span>
+      <span class="wword">intermediary</span><button class="spk" onclick="speak('intermediary')">🔊</button>
+      <span class="ipa">/ˌɪntəˈmiːdiəri/</span><span class="pos">n.</span>
+      <span class="cn">中间人；媒介</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>inter-（中间）+ medi（中间）+ -ary，双“中间”词根，五音节长词。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>intermediary（中间商）≠ medium/media（媒介、媒体）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>An intermediary buys from the factory and sells to the shop.</i></div></div><div class="q"><div class="wtop"><span class="qno">16.</span>
+      <span class="wword">integration</span><button class="spk" onclick="speak('integration')">🔊</button>
+      <span class="ipa">/ˌɪntɪˈɡreɪʃn/</span><span class="pos">n.</span>
+      <span class="cn">整合；一体化</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>integrate → integration。economic integration 经济一体化。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>integration（整合）≠ integrity（正直；完整）——形近易混！</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>...the integration of online and offline channels makes shopping easier.</i></div></div></div><h3>二、动词（7 词）</h3><div class="cards"><div class="q"><div class="wtop"><span class="qno">17.</span>
+      <span class="wword">transfer</span><button class="spk" onclick="speak('transfer')">🔊</button>
+      <span class="ipa">/trænsˈfɜː(r)/</span><span class="pos">v.</span>
+      <span class="cn">转移；转账</span><span class="diff">★☆☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>动词重音在后 trans-FER，名词重音在前 TRANS-fer（/ˈtrænsfɜː/）。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>transfer（位置/资金的转移）≠ convert（形态/币种的转换）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Overseas buyers can transfer payments safely through third-party platforms.</i></div></div><div class="q"><div class="wtop"><span class="qno">18.</span>
+      <span class="wword">distinguish</span><button class="spk" onclick="speak('distinguish')">🔊</button>
+      <span class="ipa">/dɪˈstɪŋɡwɪʃ/</span><span class="pos">v.</span>
+      <span class="cn">区分；辨别</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>搭配 <b>distinguish A from B</b>（区分 A 和 B）。名词形式 distinction。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>distinguish A from B（区分）↔ confuse A with B（混淆）——介词搭配相反！</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>...so what distinguishes traditional foreign trade from cross-border e-commerce?</i></div></div><div class="q"><div class="wtop"><span class="qno">19.</span>
+      <span class="wword">customize</span><button class="spk" onclick="speak('customize')">🔊</button>
+      <span class="ipa">/ˈkʌstəmaɪz/</span><span class="pos">v.</span>
+      <span class="cn">定制；按客户要求改制</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>custom（定制的）+ -ize 动词后缀。课文：customize packaging 定制包装。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>custom（风俗；定制的）/ customs（海关）/ customer（顾客）/ customize（定制）——一家人分清楚。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Overseas buyers can customize packaging on many CBEC platforms.</i></div></div><div class="q"><div class="wtop"><span class="qno">20.</span>
+      <span class="wword">disseminate</span><button class="spk" onclick="speak('disseminate')">🔊</button>
+      <span class="ipa">/dɪˈsemɪneɪt/</span><span class="pos">v.</span>
+      <span class="cn">传播；散布</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>词源记忆：dis- + semin（种子）+ -ate，像撒种子一样传播。正式书面词。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>disseminate（正式，传播信息）≈ spread（日常用词）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Information platforms are used to disseminate product information.</i></div></div><div class="q"><div class="wtop"><span class="qno">21.</span>
+      <span class="wword">convert</span><button class="spk" onclick="speak('convert')">🔊</button>
+      <span class="ipa">/kənˈvɜːt/</span><span class="pos">v.</span>
+      <span class="cn">转换；兑换</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>convert A into B 把 A 转变成 B；convert currency 兑换货币。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>convert（改变形态/币种）≠ transfer（转移位置/资金）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Sellers need to convert US dollars into RMB to settle payments.</i></div></div><div class="q"><div class="wtop"><span class="qno">22.</span>
+      <span class="wword">implement</span><button class="spk" onclick="speak('implement')">🔊</button>
+      <span class="ipa">/ˈɪmplɪment/</span><span class="pos">v.</span>
+      <span class="cn">实施；执行</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>重音在开头 IM-。implement a plan / policy / strategy 实施计划/政策/战略。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>implement（实施）≠ complete（完成）≠ imply（暗示）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>The company implemented a new logistics strategy last year.</i></div></div><div class="q"><div class="wtop"><span class="qno">23.</span>
+      <span class="wword">dominate</span><button class="spk" onclick="speak('dominate')">🔊</button>
+      <span class="ipa">/ˈdɒmɪneɪt/</span><span class="pos">v.</span>
+      <span class="cn">支配；主导</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>形容词 dominant（占主导的）。大公司 dominate 低端市场 = 占主导地位。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>dominate（动词“主导”）≠ dominant（形容词“占主导的”）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Large companies dominate the low-end price market.</i></div></div></div><h3>三、形容词（6 词）</h3><div class="cards"><div class="q"><div class="wtop"><span class="qno">24.</span>
+      <span class="wword">cumbersome</span><button class="spk" onclick="speak('cumbersome')">🔊</button>
+      <span class="ipa">/ˈkʌmbəsəm/</span><span class="pos">adj.</span>
+      <span class="cn">繁琐的；缓慢复杂的</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>拼写是 c-u-m-<b>b</b>er-some。课文：the import and export process are cumbersome。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>cumbersome（流程繁琐）≈ troublesome（麻烦的）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Customs clearance is still cumbersome in some countries, which slows down CBEC orders.</i></div></div><div class="q"><div class="wtop"><span class="qno">25.</span>
+      <span class="wword">compliant</span><button class="spk" onclick="speak('compliant')">🔊</button>
+      <span class="ipa">/kəmˈplaɪənt/</span><span class="pos">adj.</span>
+      <span class="cn">合规的；遵守的</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>搭配 <b>be compliant with</b> 符合（标准/法规）。名词 compliance。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>⚠️ 形近陷阱：complia<b>nt</b>（合规的，形容词）≠ complai<b>n</b>t（投诉，名词）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Products sold in the EU must be compliant with CE safety standards.</i></div></div><div class="q"><div class="wtop"><span class="qno">26.</span>
+      <span class="wword">unprecedented</span><button class="spk" onclick="speak('unprecedented')">🔊</button>
+      <span class="ipa">/ʌnˈpresɪdentɪd/</span><span class="pos">adj.</span>
+      <span class="cn">前所未有的</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>un-（无）+ pre-（先）+ cedent（先例）+ -ed。“没有先例的”，五音节。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>unprecedented（史无前例）≠ unpredicted（未预料到的）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>The online Canton Fair brought unprecedented opportunities to CBEC sellers.</i></div></div><div class="q"><div class="wtop"><span class="qno">27.</span>
+      <span class="wword">solid</span><button class="spk" onclick="speak('solid')">🔊</button>
+      <span class="ipa">/ˈsɒlɪd/</span><span class="pos">adj.</span>
+      <span class="cn">可靠的；坚实的</span><span class="diff">★☆☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>本义“固体的”，课文中引申为“扎实可靠的”。a solid feature 扎实的卖点。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>solid（可靠的）≠ stability（稳定性，名词）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Fine workmanship is the solid feature of our products.</i></div></div><div class="q"><div class="wtop"><span class="qno">28.</span>
+      <span class="wword">complementary</span><button class="spk" onclick="speak('complementary')">🔊</button>
+      <span class="ipa">/ˌkɒmplɪˈmentri/</span><span class="pos">adj.</span>
+      <span class="cn">互补的</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>complement（补足）+ -ary。“互补的”四音节，重音在 -men-。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>⚠️ 形近陷阱：comple<b>ment</b>ary（互补的）≠ complimen<b>t</b>ary（赞美的；赠送的）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>The two platforms are complementary rather than competitive.</i></div></div><div class="q"><div class="wtop"><span class="qno">29.</span>
+      <span class="wword">cost-effective</span><button class="spk" onclick="speak('cost-effective')">🔊</button>
+      <span class="ipa">/ˌkɒst ɪˈfektɪv/</span><span class="pos">adj.</span>
+      <span class="cn">高性价比的；划算的</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>复合形容词：cost（成本）+ effective（有效的）——成本效果好的=划算。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>cost-effective（划算）≠ efficient（高效的）≠ effective（有效的）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Offering cost-effective products in line with local preferences is the ticket to a progressively growing business.</i></div></div></div><h3>四、词组与固定搭配（6 个）</h3><div class="cards"><div class="q"><div class="wtop"><span class="qno">30.</span>
+      <span class="wword">customs clearance</span><button class="spk" onclick="speak('customs clearance')">🔊</button>
+      <span class="ipa">/ˈkʌstəmz ˈklɪərəns/</span><span class="pos">词组</span>
+      <span class="cn">海关放行；清关</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>custom<b>s</b> 加 s 才是“海关”；custom 无 s 是“风俗/定制的”。clearance = clear（清）+ -ance。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>custom（风俗；定制的）/ customs（海关）/ customer（顾客）三兄弟必考。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Customs clearance is still cumbersome in some countries.</i></div></div><div class="q"><div class="wtop"><span class="qno">31.</span>
+      <span class="wword">commodity inspection</span><button class="spk" onclick="speak('commodity inspection')">🔊</button>
+      <span class="ipa">/kəˈmɒdəti ɪnˈspekʃn/</span><span class="pos">词组</span>
+      <span class="cn">商品检验</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>commodity 重音在第二音节 -MO-，指（大宗）商品。inspection 动词 inspect，词根 spect = 看。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>commodity（正式，大宗商品）≈ goods（货物）≠ product（产品）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>...the China Import and Export Commodity Inspection Bureau...</i></div></div><div class="q"><div class="wtop"><span class="qno">32.</span>
+      <span class="wword">in line with</span><button class="spk" onclick="speak('in line with')">🔊</button>
+      <span class="ipa">/ɪn laɪn wɪð/</span><span class="pos">词组</span>
+      <span class="cn">与……一致；符合</span><span class="diff">★★☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>= in accordance with。课文：products in line with local preferences 符合当地偏好的产品。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>in line with（与…一致）≠ in the way of（妨碍）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Offering cost-effective products in line with local preferences...</i></div></div><div class="q"><div class="wtop"><span class="qno">33.</span>
+      <span class="wword">combined with</span><button class="spk" onclick="speak('combined with')">🔊</button>
+      <span class="ipa">/kəmˈbaɪnd wɪð/</span><span class="pos">词组</span>
+      <span class="cn">连同；加上</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>作插入语时谓语就近：A combined with B + <b>谓语跟 A</b>。别因此把谓语变复数！</div>
+      <div class="row"><span class="tag t2">易混辨析</span>combined with（连同）≠ combining with（与…结合，主动）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Good quality, combined with fast delivery, wins repeat orders.</i></div></div><div class="q"><div class="wtop"><span class="qno">34.</span>
+      <span class="wword">contributed to</span><button class="spk" onclick="speak('contributed to')">🔊</button>
+      <span class="ipa">/kənˈtrɪbjuːtɪd tu/</span><span class="pos">词组</span>
+      <span class="cn">促成；导致</span><span class="diff">★★★</span></div>
+      <div class="row"><span class="tag t1">易错点</span>⚠️ 这里 to 是<b>介词</b>，后面接名词或动名词：contributed to solving...。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>contribute to（促成、导致）≠ attribute to（把…归因于）——主宾方向相反。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>The new policy contributed to the upsurge in cross-border orders.</i></div></div><div class="q"><div class="wtop"><span class="qno">35.</span>
+      <span class="wword">be aware of</span><button class="spk" onclick="speak('be aware of')">🔊</button>
+      <span class="ipa">/bi əˈweə(r) əv/</span><span class="pos">词组</span>
+      <span class="cn">意识到；知道</span><span class="diff">★☆☆</span></div>
+      <div class="row"><span class="tag t1">易错点</span>aware 是形容词，前面必须加 be。= be conscious of。名词 awareness。</div>
+      <div class="row"><span class="tag t2">易混辨析</span>be aware of（意识到）≠ know（知道）。</div>
+      <div class="row"><span class="tag t3">课文例句</span><i>Sellers should be aware of the local customs of their target markets.</i></div></div></div>
+ </div>
+</section>
+
+<section class="page" id="p3">
+ <div class="card">
+  <h2>英译汉难点逐句拆解（考卷 5 句）</h2>
+  <p class="note">先自己口头译一遍，再看「结构拆解」和「参考译文」。采分点 = 阅卷时逐个核对的关键词，常见错误 = 往年最容易丢分的地方。</p>
+  <div class="q"><div class="pill">来源 · Part 1.1 定义句（9.9 课文）</div>
+    <div class="en-sent">Cross-border e-commerce refers to an international business activity in which trading entities from different customs areas conduct transactions, complete payment and settlement, and deliver goods through cross-border logistics, based on e-commerce platforms.</div>
+    <div class="row"><span class="tag t3">结构拆解</span><ul style="margin:4px 0 4px 18px"><li>主干：Cross-border e-commerce refers to an international business activity（跨境电商是指一种国际商业活动）</li><li>in which 引导定语从句，修饰 activity，从句很长——中文要么提前、要么拆成小句</li><li>从句内三个并列谓语：conduct transactions（开展交易）/ complete payment and settlement（完成支付结算）/ deliver goods（送达商品）</li><li>based on e-commerce platforms 是后置修饰，“依托电子商务平台”</li></ul></div>
+    <div class="row"><span class="tag t1">采分点</span>refers to 是指｜customs areas 关境｜payment and settlement 支付与结算｜cross-border logistics 跨境物流｜based on 依托</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'sn41')">参考译文</button></div>
+    <div class="ansbox" id="sn41"><span class="aw">跨境电商是指不同关境的交易主体，依托电子商务平台开展交易、完成支付结算，并通过跨境物流送达商品的一种国际商业活动。</span></div>
+    <div class="row"><span class="tag t2">常见错误</span>① in which 定语从句照搬英语语序，译成“……的活动里交易主体……”读不通——先译主体行为再收尾；② 三个并列动词漏译一个（尤其 complete payment and settlement 容易丢）；③ customs areas 译成“海关地区”，正确是“关境”。</div></div><div class="q"><div class="pill">来源 · Part 1.2 Text A（9.16 课文）</div>
+    <div class="en-sent">Traditional foreign trade is mainly concentrated on large quantities of goods, and then the goods enter into a multi-level distribution by overseas logistics companies, while cross-border e-commerce is directly facing the end customers.</div>
+    <div class="row"><span class="tag t3">结构拆解</span><ul style="margin:4px 0 4px 18px"><li>前半句：be concentrated on 集中于（被动含义）+ large quantities of goods 大宗货物</li><li>enter into a multi-level distribution 进入多级分销</li><li>by overseas logistics companies 由海外物流公司（完成的）</li><li>while 在此表<b>对比</b>，译“而／然而”，连接两种模式</li></ul></div>
+    <div class="row"><span class="tag t1">采分点</span>be concentrated on 集中于｜large quantities of 大宗｜multi-level distribution 多级分销｜while 而｜end customers 终端消费者</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'sn42')">参考译文</button></div>
+    <div class="ansbox" id="sn42"><span class="aw">传统外贸主要集中在大宗货物上，货物随后经由海外物流公司进入多级分销，而跨境电商则直接面对终端消费者。</span></div>
+    <div class="row"><span class="tag t2">常见错误</span>① while 译成“当……的时候”——这里是对比连词；② multi-level distribution 拆散译成“多层次的、分配”；③ end customers 译成“最后的顾客”，正确是“终端消费者”。</div></div><div class="q"><div class="pill">来源 · Part 1.2 Text B（9.30 课文）</div>
+    <div class="en-sent">Cross-border e-commerce can take your business to new heights, but payment methods, taxes, and logistics and delivery are not the only vital considerations. Understanding the local market of your targeted country, customs, culture, and preferences is also crucial to your cross-border e-commerce business.</div>
+    <div class="row"><span class="tag t3">结构拆解</span><ul style="margin:4px 0 4px 18px"><li>第一句主干：...but ... are not the only vital considerations（并非唯一要重点考虑的因素）</li><li>take your business to new heights 让生意更上一层楼（比喻，别直译“新高度”也行，但“更上一层楼”更顺）</li><li>第二句主语是动名词短语 Understanding the local market...（了解……这件事），谓语是 is</li><li>be crucial to 对……至关重要；targeted country 目标国</li></ul></div>
+    <div class="row"><span class="tag t1">采分点</span>take ... to new heights 更上一层楼｜vital 至关重要的｜Understanding... 动名词作主语｜be crucial to 对…关键｜preferences 偏好</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'sn43')">参考译文</button></div>
+    <div class="ansbox" id="sn43"><span class="aw">跨境电商能让你的生意更上一层楼，但支付方式、税收以及物流配送并非唯一需要重点考虑的因素。了解目标国家的当地市场、风俗、文化和偏好，对你的跨境电商业务同样至关重要。</span></div>
+    <div class="row"><span class="tag t2">常见错误</span>① 第二句找不到主语——主语是 Understanding 引导的整个动名词短语，别把 Understanding 译成动词开头的“理解！”命令句；② customs 此处与 culture 并列，按“风俗习惯”理解（译“海关”酌情给分）；③ the only vital considerations 生硬直译“唯一的重要考虑”——加“的因素”才通顺。</div></div><div class="q"><div class="pill">来源 · 9.18 Vocab Game 行业语句</div>
+    <div class="en-sent">Any tuyere industry will experience a process of reshuffling. In the future the overall resources of the cross-border e-commerce industry will be further concentrated on the large platforms and big sellers.</div>
+    <div class="row"><span class="tag t3">结构拆解</span><ul style="margin:4px 0 4px 18px"><li>第一句：Any tuyere industry（任何风口行业）+ will experience（都将经历）+ a process of reshuffling（一个洗牌/重组的过程）</li><li>第二句主干：the overall resources ... will be concentrated（整体资源将被集中）</li><li>will be further concentrated 被动语态 + further（进一步）叠加</li><li>on the large platforms and big sellers 向大平台、大卖家（集中）</li></ul></div>
+    <div class="row"><span class="tag t1">采分点</span>tuyere industry 风口行业｜reshuffling 洗牌；重组｜overall resources 整体资源｜will be concentrated 被动语态｜further 进一步</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'sn44')">参考译文</button></div>
+    <div class="ansbox" id="sn44"><span class="aw">任何风口行业都会经历一个洗牌（重组）的过程。未来，跨境电商行业的整体资源将进一步向大平台、大卖家集中。</span></div>
+    <div class="row"><span class="tag t2">常见错误</span>① tuyere 不认识就慌了——它是“风口”的借词，按“热门行业”理解即可；② reshuffle 本义“重新洗牌”，译“洗牌／重组”都得分，译“重新洗刷”不得分；③ will be concentrated 是被动，漏译“被／向……集中”就丢了整句重心。</div></div><div class="q"><div class="pill">来源 · Part 1.2 Text B（9.30 课文）</div>
+    <div class="en-sent">Cross-border e-commerce allows businesses to showcase their range of products and earn trust of their target customers by providing good customer service and on-time delivery.</div>
+    <div class="row"><span class="tag t3">结构拆解</span><ul style="margin:4px 0 4px 18px"><li>主干：CBEC allows businesses to do A and do B（使企业能够做 A 和 B）</li><li>A = showcase their range of products 展示产品系列</li><li>B = earn trust of their target customers 赢得目标客户的信任</li><li>by providing... 方式状语在句尾——中文习惯把它提前到“赢得信任”之前</li></ul></div>
+    <div class="row"><span class="tag t1">采分点</span>allow sb to do 使…能够｜showcase 展示｜range of products 产品系列｜earn trust of 赢得…的信任｜on-time delivery 按时送达</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'sn45')">参考译文</button></div>
+    <div class="ansbox" id="sn45"><span class="aw">跨境电商使企业能够展示自己的产品系列，并通过提供良好的客户服务和按时送达来赢得目标客户的信任。</span></div>
+    <div class="row"><span class="tag t2">常见错误</span>① by providing 方式状语不调整语序，译成“赢得信任通过提供……”——中文要提前；② showcase 认不出，误当名词“展示柜”；③ on-time delivery 漏译“按时”，只译“送货”扣采分点。</div></div>
+ </div>
+</section>
+
+<footer>跨境电商英语 · 期中考试难点串讲 · 考前串讲 &amp; 考后讲评两用</footer>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===id));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.p===id));
+  window.scrollTo({top:0});
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.p));
+if(location.hash){const t=document.querySelector(location.hash);if(t)show(t.id);}
+function tgBox(btn,id){
+  const box=document.getElementById(id);
+  const open=box.classList.toggle('show');
+  btn.classList.toggle('open',open);
+  btn.textContent=open?'收起':'参考译文';
+}
+function speak(w){
+  const u=new SpeechSynthesisUtterance(w.replace(/[^A-Za-z' \-]/g,''));
+  u.lang='en-US';u.rate=.85;
+  speechSynthesis.cancel();speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>
