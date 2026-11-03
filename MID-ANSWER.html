@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境电商英语 · 期中试卷讲评</title>
+<style>
+:root{--ink:#1c2333;--sub:#5b6478;--line:#e3e8f2;--blue:#2f5fe0;--blue-d:#1d46b8;--green:#0e9f6e;--bg:#f4f6fb;--gold:#b45309}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
+header{background:linear-gradient(120deg,#0f766e,#2f5fe0 60%,#7c2d92);color:#fff;padding:32px 20px 24px;text-align:center}
+header h1{font-size:1.6rem}
+header p{opacity:.92;margin-top:6px;font-size:.95rem}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 60px}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);display:flex;justify-content:center;gap:6px;padding:10px 6px;flex-wrap:wrap}
+nav button{border:1px solid var(--line);background:#fff;color:var(--sub);padding:8px 14px;border-radius:999px;cursor:pointer;font-size:.92rem}
+nav button.on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:600}
+.page{display:none;padding-top:22px;scroll-margin-top:70px}
+.page.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-bottom:18px;box-shadow:0 1px 3px rgba(30,50,90,.05)}
+.card h2{font-size:1.18rem;color:var(--blue-d);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h2::before{content:"";width:5px;height:20px;border-radius:3px;background:linear-gradient(#0f766e,#2f5fe0)}
+.note{color:var(--sub);font-size:.9rem}
+.q{border-top:1px dashed var(--line);padding:12px 2px 8px;margin-top:10px}
+.q:first-of-type{border-top:none}
+.qno{font-weight:700;color:var(--blue-d);margin-right:6px}
+.qtext{font-size:.98rem}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin:8px 0 4px}
+@media(max-width:640px){.opts{grid-template-columns:1fr}}
+.opt{padding:5px 10px;border-radius:8px;background:#f7f9fd;font-size:.93rem}
+.opt b{color:var(--blue-d);margin-right:6px}
+.opt.hit{background:#e8f7f0;border-color:#b7e4d0}
+.opt.was{opacity:.55}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+button.ans{border:1px solid var(--blue);color:var(--blue);background:#fff;border-radius:999px;padding:4px 16px;cursor:pointer;font-size:.86rem}
+button.ans:hover,button.ans.open{background:var(--blue);color:#fff}
+button.mini{border:1px solid var(--line);color:var(--sub);background:#fff;border-radius:999px;padding:4px 14px;cursor:pointer;font-size:.84rem}
+button.mini:hover{border-color:var(--blue);color:var(--blue)}
+.ansbox{display:none;margin-top:8px;background:#eefaf3;border:1px solid #b7e4d0;border-radius:10px;padding:10px 14px;font-size:.93rem}
+.ansbox.show{display:block;animation:fade .2s}
+.ansbox .aw{color:var(--green);font-weight:700}
+.ansbox .an{color:var(--sub);margin-top:4px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.92rem}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+th{background:#e6f4f2;color:#0f766e}
+.abtn{color:var(--blue);cursor:pointer;font-weight:600;text-decoration:underline dotted}
+.ansline{display:none;color:var(--green);font-weight:600}
+.ansline.show{display:inline}
+.kw{color:#7c2d92}
+.blankkw{border-bottom:2px solid #7c2d92;color:#7c2d92;font-weight:700;padding:0 8px}
+.passage p{margin:8px 0;font-size:.97rem}
+.nw{background:#fdeaea;border-bottom:2px solid #e05252;cursor:pointer;padding:0 2px;border-radius:3px}
+.nw::after{content:attr(data-cn);display:none;margin-left:6px;color:#c0392b;font-size:.85rem;font-weight:600}
+.nw.on::after{display:inline}
+.pwchip{display:inline-block;background:#e8f1fd;border:1px solid #ccd8f5;border-radius:8px;padding:2px 10px;margin:3px 6px 0 0;font-size:.88rem}
+.pwchip i{color:var(--sub);font-style:normal;margin-left:4px}
+.cb{border-bottom:2px solid var(--blue);cursor:pointer;font-weight:700;color:var(--blue);padding:0 2px}
+.cb::after{content:" → " attr(data-ans);display:none;color:var(--green)}
+.cb.on::after{display:inline}
+.chip{display:inline-block;background:#eef2fc;border:1px solid #ccd8f5;color:var(--blue-d);border-radius:999px;padding:3px 13px;margin:3px 6px 0 0;font-size:.9rem}
+.g{display:flex;gap:8px;padding:6px 2px;border-top:1px dotted var(--line);font-size:.93rem}
+.g .gw{font-weight:700;color:#0f766e;min-width:130px}
+.g .gsep{color:var(--sub)}
+.g .gcn{color:var(--sub)}
+.cw{color:#0f766e;font-size:1.05rem}
+.ipa{color:var(--sub);font-size:.88rem;margin:0 6px}
+.pos{background:#f3e8ff;color:#7c2d92;border-radius:6px;padding:0 8px;font-size:.85rem;margin-right:6px}
+.row{display:flex;gap:8px;margin-top:6px;font-size:.92rem;align-items:flex-start}
+.tag{flex:0 0 auto;border-radius:6px;padding:0 8px;font-size:.82rem;color:#fff;margin-top:3px}
+.t1{background:#c0392b}.t2{background:#b45309}.t3{background:#0e9f6e}
+.tr-cn{font-size:1rem;margin:2px 0}
+.hint{color:var(--gold);font-size:.9rem}
+.en-sent{font-size:.97rem;margin:4px 0;padding:9px 13px;background:#f7f9fd;border-left:3px solid var(--blue);border-radius:0 8px 8px 0}
+.phrow{margin-top:6px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.88rem;color:var(--sub);margin:6px 0}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:4px}
+.sw1{background:#fdeaea;border-bottom:2px solid #e05252}
+.sw2{background:#eef2fc;border:1px solid #ccd8f5}
+footer{text-align:center;color:var(--sub);font-size:.85rem;padding:26px 0 10px}
+@media print{nav{display:none}.page{display:block!important;page-break-after:always}.ansbox{display:block!important}.ansline{display:inline!important}button{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<header>
+ <h1>跨境电商英语 · 期中试卷讲评</h1>
+ <p>全卷逐题讲评 ｜ 生词与词组高亮 ｜ 阅读理解 · 选词填空重点精讲 —— 全部带答案按钮</p>
+</header>
+<nav>
+ <button data-p="p1" class="on">① 答案速查</button>
+ <button data-p="p2">② 词汇 1—35</button>
+ <button data-p="p3">③ 翻译 36—45</button>
+ <button data-p="p4">④ 阅读理解 46—50 ★</button>
+ <button data-p="p5">⑤ 选词填空 51—60 ★</button>
+ <button data-p="p6">⑥ 写作 61</button>
+</nav>
+<div class="wrap">
+
+<section class="page on" id="p1">
+ <div class="card">
+  <h2>全卷答案速查</h2>
+  <p class="note">先自己订正，再点「显示」核对。六大题分值：词汇 35 分 ｜ 汉译英 15 分 ｜ 英译汉 15 分 ｜ 阅读 10 分 ｜ 选词填空 10 分 ｜ 写作 15 分 = 100 分。</p>
+  <h3>一、词汇（1—35，每题 1 分）</h3>
+  <div class="btnrow"><button class="mini" onclick="showAns('va',true)">显示全部</button><button class="mini" onclick="showAns('va',false)">收起</button></div>
+  <table id="va"><tr><th>题号</th><th>答案</th></tr>
+   <tr><td>1—10</td><td class="ansline">A　D　B　C　A　D　B　C　A　D</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>11—20</td><td class="ansline">B　C　A　D　B　C　A　D　B　C</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>21—30</td><td class="ansline">A　D　B　C　A　D　B　C　A　D</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>31—35</td><td class="ansline">B　C　A　B　C</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr></table>
+  <h3>二、汉译英（36—40，每题 3 分）</h3>
+  <table id="vb"><tr><th>题号</th><th>参考答案（关键词）</th></tr>
+   <tr><td>36</td><td class="ansline">cosmetics ... promote / sell skin-care products</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>37</td><td class="ansline">settle the payment ... third-party payment platform, which can reduce the risk</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>38</td><td class="ansline">Big companies dominate the low-end price range / market</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>39</td><td class="ansline">store best-selling products in overseas warehouses in order to shorten the delivery time</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>40</td><td class="ansline">Slow customs clearance has become a bottleneck in the development of...</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr></table>
+  <h3>三、英译汉（41—45，每题 3 分）</h3>
+  <table id="vc"><tr><th>题号</th><th>采分关键词</th></tr>
+   <tr><td>41</td><td class="ansline">refers to ｜ in which 定语从句 ｜ customs areas 关境</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>42</td><td class="ansline">be concentrated on ｜ multi-level distribution ｜ while 表对比</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>43</td><td class="ansline">take ... to new heights ｜ not the only vital considerations ｜ crucial to</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>44</td><td class="ansline">tuyere industry 风口行业 ｜ reshuffling 洗牌 ｜ be concentrated on</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>45</td><td class="ansline">allow sb to do ｜ earn trust ｜ on-time delivery</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr></table>
+  <h3>四、阅读理解（46—50，每题 2 分）</h3>
+  <table id="vd"><tr><th>题号</th><th>答案</th></tr>
+   <tr><td>46—50</td><td class="ansline">B　C　A　C　B</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr></table>
+  <h3>五、选词填空（51—60，每题 1 分）</h3>
+  <table id="ve"><tr><th>题号</th><th>答案</th></tr>
+   <tr><td>51—55</td><td class="ansline">category　represent　forecast　high-quality　aspect</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr>
+   <tr><td>56—60</td><td class="ansline">complicated　profitable　boost　reflect　currently</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr></table>
+  <h3>六、写作（61，15 分）</h3>
+  <table id="vf"><tr><th>要点</th></tr>
+   <tr><td class="ansline">内容要点齐全（名称、外观与颜色、功能、适用人群、热卖原因）、语言准确、结构清晰、字数达标；少于 100 词酌情扣分。</td><td><span class="abtn" onclick="tgLine(this)">显示</span></td></tr></table>
+ </div>
+</section>
+
+<section class="page" id="p2">
+ <div class="card">
+  <h2>词汇 1—35 逐题讲评</h2>
+  <p class="note"><span class="kw">紫色加粗</span>为该题<b>考点词</b>（或其所在位置）。先回忆自己当时选了什么，再点「答案」核对解析。</p>
+  <div class="q"><div class="qtext"><span class="qno">1.</span>The Chinese for <b class="kw">“definition”</b> is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>定义</span><span class="opt" data-o="B"><b>B.</b>分类</span><span class="opt" data-o="C"><b>C.</b>描述</span><span class="opt" data-o="D"><b>D.</b>结论</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,1)">答案</button></div>
+      <div class="ansbox" id="v1"><span class="aw">答案：A. 定义</span><div class="an">definition n. 定义；释义。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">2.</span>Sellers publish product information on the e-commerce <span class="blankkw">______</span>, and buyers place orders there.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>plank</span><span class="opt" data-o="B"><b>B.</b>plateau</span><span class="opt" data-o="C"><b>C.</b>program</span><span class="opt" data-o="D"><b>D.</b>platform</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,2)">答案</button></div>
+      <div class="ansbox" id="v2"><span class="aw">答案：D. platform</span><div class="an">platform n. 平台；e-commerce platform 电商平台。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">3.</span>Which definition matches the word <b class="kw">settlement</b>?</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>the act of carrying goods from one place to another</span><span class="opt" data-o="B"><b>B.</b>the act of paying what is owed and completing a payment</span><span class="opt" data-o="C"><b>C.</b>a formal agreement between two companies</span><span class="opt" data-o="D"><b>D.</b>the money that a seller returns to a buyer</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,3)">答案</button></div>
+      <div class="ansbox" id="v3"><span class="aw">答案：B. settlement</span><div class="an">settlement n. 结算；清偿。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">4.</span><b class="kw">“"零售" in English is ______.”</b> in English is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>bargain</span><span class="opt" data-o="B"><b>B.</b>discount</span><span class="opt" data-o="C"><b>C.</b>retail</span><span class="opt" data-o="D"><b>D.</b>purchase</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,4)">答案</button></div>
+      <div class="ansbox" id="v4"><span class="aw">答案：C. retail</span><div class="an">retail n./v. 零售；retail e-commerce 零售电商（B2C/C2C）。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">5.</span>Before the goods enter another country, they must go through <span class="blankkw">______</span> at the border.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>customs clearance</span><span class="opt" data-o="B"><b>B.</b>cash flow</span><span class="opt" data-o="C"><b>C.</b>brand awareness</span><span class="opt" data-o="D"><b>D.</b>market research</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,5)">答案</button></div>
+      <div class="ansbox" id="v5"><span class="aw">答案：A. customs clearance</span><div class="an">customs clearance 清关；通关。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">6.</span>The Chinese for <b class="kw">“commodity inspection”</b> is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>商品分类</span><span class="opt" data-o="B"><b>B.</b>货物运输</span><span class="opt" data-o="C"><b>C.</b>质量认证</span><span class="opt" data-o="D"><b>D.</b>商品检验</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,6)">答案</button></div>
+      <div class="ansbox" id="v6"><span class="aw">答案：D. 商品检验</span><div class="an">commodity inspection 商品检验。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">7.</span>Which definition matches the word <b class="kw">ecosystem</b>?</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>a company that sells goods to other companies</span><span class="opt" data-o="B"><b>B.</b>all the players and links that work together in an industry</span><span class="opt" data-o="C"><b>C.</b>a tax paid on imported goods</span><span class="opt" data-o="D"><b>D.</b>a small shop that sells directly to customers</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,7)">答案</button></div>
+      <div class="ansbox" id="v7"><span class="aw">答案：B. ecosystem</span><div class="an">ecosystem n. 生态系统；指平台、物流、支付等构成的整体。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">8.</span>In traditional trade, the import and export process is <span class="blankkw">______</span>, with too many documents and links.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>comfortable</span><span class="opt" data-o="B"><b>B.</b>customary</span><span class="opt" data-o="C"><b>C.</b>cumbersome</span><span class="opt" data-o="D"><b>D.</b>competitive</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,8)">答案</button></div>
+      <div class="ansbox" id="v8"><span class="aw">答案：C. cumbersome</span><div class="an">cumbersome adj. 累赘的；繁琐的。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">9.</span>Products sold in the EU must be <span class="blankkw">______</span> with CE safety standards.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>compliant</span><span class="opt" data-o="B"><b>B.</b>reliant</span><span class="opt" data-o="C"><b>C.</b>similar</span><span class="opt" data-o="D"><b>D.</b>familiar</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,9)">答案</button></div>
+      <div class="ansbox" id="v9"><span class="aw">答案：A. compliant</span><div class="an">be compliant with 符合……；compliant adj. 顺从的；符合的。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">10.</span>The Chinese for <b class="kw">“transfer”</b> is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>运输；配送</span><span class="opt" data-o="B"><b>B.</b>交换；退换</span><span class="opt" data-o="C"><b>C.</b>转换；翻译</span><span class="opt" data-o="D"><b>D.</b>转移；转账</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,10)">答案</button></div>
+      <div class="ansbox" id="v10"><span class="aw">答案：D. 转移；转账</span><div class="an">transfer v. 转移；转账；wire transfer 电汇。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">11.</span><b class="kw">“"前所未有的" in English is ______.”</b> in English is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>unexpected</span><span class="opt" data-o="B"><b>B.</b>unprecedented</span><span class="opt" data-o="C"><b>C.</b>unnecessary</span><span class="opt" data-o="D"><b>D.</b>unfinished</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,11)">答案</button></div>
+      <div class="ansbox" id="v11"><span class="aw">答案：B. unprecedented</span><div class="an">unprecedented adj. 前所未有的；空前的。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">12.</span>Beginners should learn to <span class="blankkw">______</span> B2B from B2C models.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>dispute</span><span class="opt" data-o="B"><b>B.</b>display</span><span class="opt" data-o="C"><b>C.</b>distinguish</span><span class="opt" data-o="D"><b>D.</b>distribute</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,12)">答案</button></div>
+      <div class="ansbox" id="v12"><span class="aw">答案：C. distinguish</span><div class="an">distinguish A from B 区分 A 和 B。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">13.</span>Overseas buyers can <span class="blankkw">______</span> the packaging and print their own logo on it.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>customize</span><span class="opt" data-o="B"><b>B.</b>circulate</span><span class="opt" data-o="C"><b>C.</b>calculate</span><span class="opt" data-o="D"><b>D.</b>celebrate</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,13)">答案</button></div>
+      <div class="ansbox" id="v13"><span class="aw">答案：A. customize</span><div class="an">customize v. 定制；customized products 定制产品。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">14.</span>Which definition matches the word <b class="kw">solid</b>?</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>very small and easy to carry</span><span class="opt" data-o="B"><b>B.</b>cheap but of low quality</span><span class="opt" data-o="C"><b>C.</b>new and not yet tested</span><span class="opt" data-o="D"><b>D.</b>reliable and strong; based on a good foundation</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,14)">答案</button></div>
+      <div class="ansbox" id="v14"><span class="aw">答案：D. solid</span><div class="an">solid adj. 可靠的；坚实的；a solid reputation 良好的声誉。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">15.</span><b class="kw">“"中间人；中介" in English is ______.”</b> in English is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>intermediate</span><span class="opt" data-o="B"><b>B.</b>intermediary</span><span class="opt" data-o="C"><b>C.</b>international</span><span class="opt" data-o="D"><b>D.</b>internal</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,15)">答案</button></div>
+      <div class="ansbox" id="v15"><span class="aw">答案：B. intermediary</span><div class="an">intermediary n. 中介；中间人。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">16.</span>Traditional trade uses exhibitions and mail to <span class="blankkw">______</span> product information.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>dominate</span><span class="opt" data-o="B"><b>B.</b>deliver</span><span class="opt" data-o="C"><b>C.</b>disseminate</span><span class="opt" data-o="D"><b>D.</b>demand</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,16)">答案</button></div>
+      <div class="ansbox" id="v16"><span class="aw">答案：C. disseminate</span><div class="an">disseminate v. 传播；散布（信息）。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">17.</span>Which definition matches the word <b class="kw">complementary</b>?</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>useful together because each makes the other better</span><span class="opt" data-o="B"><b>B.</b>completely the same in function</span><span class="opt" data-o="C"><b>C.</b>more expensive than other products</span><span class="opt" data-o="D"><b>D.</b>difficult to understand</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,17)">答案</button></div>
+      <div class="ansbox" id="v17"><span class="aw">答案：A. complementary</span><div class="an">complementary adj. 互补的。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">18.</span>The Chinese for <b class="kw">“integration”</b> is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>分配；分发</span><span class="opt" data-o="B"><b>B.</b>谈判；协商</span><span class="opt" data-o="C"><b>C.</b>投资；融资</span><span class="opt" data-o="D"><b>D.</b>整合；一体化</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,18)">答案</button></div>
+      <div class="ansbox" id="v18"><span class="aw">答案：D. 整合；一体化</span><div class="an">integration n. 整合；一体化。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">19.</span><b class="kw">“"批发商" in English is ______.”</b> in English is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>retailer</span><span class="opt" data-o="B"><b>B.</b>wholesaler</span><span class="opt" data-o="C"><b>C.</b>manufacturer</span><span class="opt" data-o="D"><b>D.</b>consumer</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,19)">答案</button></div>
+      <div class="ansbox" id="v19"><span class="aw">答案：B. wholesaler</span><div class="an">wholesaler n. 批发商；wholesale 批发的。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">20.</span>The Chinese for <b class="kw">“shipment”</b> is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>船运公司</span><span class="opt" data-o="B"><b>B.</b>港口费用</span><span class="opt" data-o="C"><b>C.</b>装运；货物</span><span class="opt" data-o="D"><b>D.</b>运输保险</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,20)">答案</button></div>
+      <div class="ansbox" id="v20"><span class="aw">答案：C. 装运；货物</span><div class="an">shipment n. 装运；运输的货物。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">21.</span>The bank will <span class="blankkw">______</span> your RMB into dollars when the buyer pays.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>convert</span><span class="opt" data-o="B"><b>B.</b>convey</span><span class="opt" data-o="C"><b>C.</b>convince</span><span class="opt" data-o="D"><b>D.</b>connect</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,21)">答案</button></div>
+      <div class="ansbox" id="v21"><span class="aw">答案：A. convert</span><div class="an">convert A into B 把 A 兑换/转换为 B。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">22.</span>Many small businesses have seen an <span class="blankkw">______</span> in overseas orders since they joined the platform.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>upkeep</span><span class="opt" data-o="B"><b>B.</b>update</span><span class="opt" data-o="C"><b>C.</b>upgrade</span><span class="opt" data-o="D"><b>D.</b>upsurge</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,22)">答案</button></div>
+      <div class="ansbox" id="v22"><span class="aw">答案：D. upsurge</span><div class="an">upsurge n. 急剧上升；猛涨；an upsurge in ……方面的激增。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">23.</span>The Chinese for <b class="kw">“awareness”</b> is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>广告；宣传</span><span class="opt" data-o="B"><b>B.</b>意识；认知</span><span class="opt" data-o="C"><b>C.</b>关注；兴趣</span><span class="opt" data-o="D"><b>D.</b>品牌；商标</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,23)">答案</button></div>
+      <div class="ansbox" id="v23"><span class="aw">答案：B. 意识；认知</span><div class="an">awareness n. 意识；认知；brand awareness 品牌知名度。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">24.</span>As a responsible seller, you must take the <span class="blankkw">______</span> to deliver the product on time and safely.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>ability</span><span class="opt" data-o="B"><b>B.</b>activity</span><span class="opt" data-o="C"><b>C.</b>accountability</span><span class="opt" data-o="D"><b>D.</b>authority</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,24)">答案</button></div>
+      <div class="ansbox" id="v24"><span class="aw">答案：C. accountability</span><div class="an">accountability n. 责任；take the accountability 承担责任。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">25.</span>Successful sellers offer cost-effective products that are <span class="blankkw">______</span> the preferences of local customers.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>in line with</span><span class="opt" data-o="B"><b>B.</b>in place of</span><span class="opt" data-o="C"><b>C.</b>in charge of</span><span class="opt" data-o="D"><b>D.</b>in need of</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,25)">答案</button></div>
+      <div class="ansbox" id="v25"><span class="aw">答案：A. in line with</span><div class="an">in line with 与……一致；符合；be in line with local preferences。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">26.</span>Which definition matches the word <b class="kw">barrier</b>?</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>a small shop that sells goods directly to customers</span><span class="opt" data-o="B"><b>B.</b>the money you pay when goods enter a country</span><span class="opt" data-o="C"><b>C.</b>a person who buys goods in large quantities</span><span class="opt" data-o="D"><b>D.</b>something that makes it difficult for people to trade or communicate</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,26)">答案</button></div>
+      <div class="ansbox" id="v26"><span class="aw">答案：D. barrier</span><div class="an">barrier n. 障碍；壁垒；barriers of international trade 国际贸易壁垒。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">27.</span>The Chinese for <b class="kw">“sustainability”</b> is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>生产能力</span><span class="opt" data-o="B"><b>B.</b>可持续性</span><span class="opt" data-o="C"><b>C.</b>服务水平</span><span class="opt" data-o="D"><b>D.</b>市场规模</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,27)">答案</button></div>
+      <div class="ansbox" id="v27"><span class="aw">答案：B. 可持续性</span><div class="an">sustainability n. 可持续性；business sustainability 企业可持续经营。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">28.</span>The seller offers <span class="blankkw">______</span> products: good quality at a low price.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>cost-free</span><span class="opt" data-o="B"><b>B.</b>costly</span><span class="opt" data-o="C"><b>C.</b>cost-effective</span><span class="opt" data-o="D"><b>D.</b>careless</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,28)">答案</button></div>
+      <div class="ansbox" id="v28"><span class="aw">答案：C. cost-effective</span><div class="an">cost-effective adj. 性价比高的；划算的。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">29.</span>A solid <span class="blankkw">______</span> helps cross-border stores gain repeat customers.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>reputation</span><span class="opt" data-o="B"><b>B.</b>repetition</span><span class="opt" data-o="C"><b>C.</b>regulation</span><span class="opt" data-o="D"><b>D.</b>reservation</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,29)">答案</button></div>
+      <div class="ansbox" id="v29"><span class="aw">答案：A. reputation</span><div class="an">reputation n. 名声；声誉。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">30.</span>The Chinese for <b class="kw">“implement”</b> is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>改进；提高</span><span class="opt" data-o="B"><b>B.</b>暗示；意味着</span><span class="opt" data-o="C"><b>C.</b>进口；输入</span><span class="opt" data-o="D"><b>D.</b>实施；执行</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,30)">答案</button></div>
+      <div class="ansbox" id="v30"><span class="aw">答案：D. 实施；执行</span><div class="an">implement v. 实施；执行。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">31.</span>Which definition matches the word <b class="kw">obstacle</b>?</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>a person who buys goods in large quantities</span><span class="opt" data-o="B"><b>B.</b>a difficulty that makes it hard for you to achieve something</span><span class="opt" data-o="C"><b>C.</b>a tax paid when goods enter a country</span><span class="opt" data-o="D"><b>D.</b>a step in the production process</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,31)">答案</button></div>
+      <div class="ansbox" id="v31"><span class="aw">答案：B. obstacle</span><div class="an">obstacle n. 障碍；an obstacle to doing sth。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">32.</span><b class="kw">“"占主导地位" in English is ______.”</b> in English is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>donate</span><span class="opt" data-o="B"><b>B.</b>decline</span><span class="opt" data-o="C"><b>C.</b>dominate</span><span class="opt" data-o="D"><b>D.</b>distribute</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,32)">答案</button></div>
+      <div class="ansbox" id="v32"><span class="aw">答案：C. dominate</span><div class="an">dominate v. 支配；占主导地位。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">33.</span>Only when <span class="blankkw">______</span> a clear goal can great efforts help people give full play to their potential.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>combined with</span><span class="opt" data-o="B"><b>B.</b>compared with</span><span class="opt" data-o="C"><b>C.</b>crowded with</span><span class="opt" data-o="D"><b>D.</b>covered with</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,33)">答案</button></div>
+      <div class="ansbox" id="v33"><span class="aw">答案：A. combined with</span><div class="an">be combined with 与……相结合；only + 状语从句置句首，主句部分倒装。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">34.</span>The fast development of the Chinese market has <span class="blankkw">______</span> the growth of cross-border e-commerce.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>belonged to</span><span class="opt" data-o="B"><b>B.</b>contributed to</span><span class="opt" data-o="C"><b>C.</b>referred to</span><span class="opt" data-o="D"><b>D.</b>objected to</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,34)">答案</button></div>
+      <div class="ansbox" id="v34"><span class="aw">答案：B. contributed to</span><div class="an">contribute to 促进；有助于。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">35.</span><b class="kw">“"意识到" in English is ______.”</b> in English is ______.</div>
+      <div class="opts"><span class="opt" data-o="A"><b>A.</b>be afraid of</span><span class="opt" data-o="B"><b>B.</b>be proud of</span><span class="opt" data-o="C"><b>C.</b>be aware of</span><span class="opt" data-o="D"><b>D.</b>be tired of</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgV(this,35)">答案</button></div>
+      <div class="ansbox" id="v35"><span class="aw">答案：C. be aware of</span><div class="an">be aware of 意识到；be aware that … 也可。</div></div></div>
+ </div>
+</section>
+
+<section class="page" id="p3">
+ <div class="card">
+  <h2>汉译英 36—40 讲评</h2>
+  <p class="note">点「参考答案」后，绿色区域下方列出了本题必须写对的<b>词组</b>——这些都是判卷采分点。</p>
+  <div class="q"><div class="qno">第 36 题</div>
+    <div class="tr-cn">化妆品行业常常找一些漂亮的模特来推销护肤品。</div><div class="hint">提示词：<b>（promote）</b></div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'cn36')">参考答案</button></div>
+    <div class="ansbox" id="cn36"><span class="aw">The cosmetics industry often finds some beautiful models to sell / promote skin-care products.</span><div class="an">评分：cosmetics 正确使用（1 分）；industry / models 表达（1 分）；promote 或 sell + skin-care products（1 分）。</div>
+    <div class="phrow"><span class="pwchip">cosmetics <i>n. 化妆品（复数形式）</i></span>　<span class="pwchip">promote <i>v. 推销；促销</i></span>　<span class="pwchip">skin-care products <i>护肤品</i></span></div></div></div>
+<div class="q"><div class="qno">第 37 题</div>
+    <div class="tr-cn">我们通过第三方支付平台结算货款，这样可以降低风险。</div><div class="hint">提示词：<b>（settle the payment）</b></div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'cn37')">参考答案</button></div>
+    <div class="ansbox" id="cn37"><span class="aw">We settle the payment through a third-party payment platform, which can reduce the risk.</span><div class="an">评分：settle the payment 结算货款；which 引导非限制性定语从句。</div>
+    <div class="phrow"><span class="pwchip">settle the payment <i>结算货款</i></span>　<span class="pwchip">third-party payment platform <i>第三方支付平台</i></span>　<span class="pwchip">which can... <i>非限制性定语从句，指代整句</i></span></div></div></div>
+<div class="q"><div class="qno">第 38 题</div>
+    <div class="tr-cn">大公司在低端价格领域占主导地位。</div><div class="hint">提示词：<b>（dominate）</b></div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'cn38')">参考答案</button></div>
+    <div class="ansbox" id="cn38"><span class="aw">Big companies dominate the low-end price range / market.</span><div class="an">评分：dominate 正确变位（1 分）；big companies / large companies（1 分）；the low-end price range/market（1 分）。</div>
+    <div class="phrow"><span class="pwchip">dominate <i>v. 主导；支配</i></span>　<span class="pwchip">the low-end price range <i>低端价格区间</i></span></div></div></div>
+<div class="q"><div class="qno">第 39 题</div>
+    <div class="tr-cn">卖家通常把畅销产品存放在海外仓库，以便缩短交货时间。</div><div class="hint">提示词：<b>（in order to）</b></div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'cn39')">参考答案</button></div>
+    <div class="ansbox" id="cn39"><span class="aw">Sellers usually store best-selling products in overseas warehouses in order to shorten the delivery time.</span><div class="an">评分：in order to 表目的；shorten the delivery time。</div>
+    <div class="phrow"><span class="pwchip">best-selling products <i>畅销产品</i></span>　<span class="pwchip">overseas warehouses <i>海外仓库</i></span>　<span class="pwchip">in order to <i>为了（表目的）</i></span>　<span class="pwchip">shorten the delivery time <i>缩短交货时间</i></span></div></div></div>
+<div class="q"><div class="qno">第 40 题</div>
+    <div class="tr-cn">缓慢的清关已经成为跨境电商发展中的一个瓶颈。</div><div class="hint">提示词：<b>（bottleneck）</b></div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'cn40')">参考答案</button></div>
+    <div class="ansbox" id="cn40"><span class="aw">Slow customs clearance has become a bottleneck in the development of cross-border e-commerce.</span><div class="an">评分：现在完成时 has become；a bottleneck in the development of。</div>
+    <div class="phrow"><span class="pwchip">customs clearance <i>清关；海关放行</i></span>　<span class="pwchip">has become <i>现在完成时</i></span>　<span class="pwchip">bottleneck <i>n. 瓶颈</i></span>　<span class="pwchip">in the development of <i>在……的发展中</i></span></div></div></div>
+ </div>
+ <div class="card">
+  <h2>英译汉 41—45 讲评</h2>
+  <p class="note">先自己口头译一遍再对答案；评分栏就是阅卷时逐个核对的采分点。</p>
+  <div class="q"><div class="qno">第 40 题</div>
+    <div class="en-sent">Cross-border e-commerce refers to an international business activity in which trading entities from different customs areas conduct transactions, complete payment and settlement, and deliver goods through cross-border logistics, based on e-commerce platforms.</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'en0')">参考译文</button></div>
+    <div class="ansbox" id="en0"><span class="aw">跨境电商是指不同关境的交易主体，基于电子商务平台开展交易、完成支付与结算，并通过跨境物流送达商品的一种国际商业活动。</span><div class="an">评分：refers to 定义句式（1 分）；in which 定语从句（1 分）；trading entities / customs areas / payment and settlement 等术语（1 分）。</div></div></div>
+<div class="q"><div class="qno">第 41 题</div>
+    <div class="en-sent">Traditional foreign trade is mainly concentrated on large quantities of goods, and then the goods enter into a multi-level distribution by overseas logistics companies, while cross-border e-commerce is directly facing the end customers.</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'en1')">参考译文</button></div>
+    <div class="ansbox" id="en1"><span class="aw">传统外贸主要集中在大宗货物上，随后货物经海外物流公司进行多级分销，而跨境电商则直接面对终端客户。</span><div class="an">评分：be concentrated on 集中于（1 分）；multi-level distribution 多级分销（1 分）；while 表对比（1 分）。</div></div></div>
+<div class="q"><div class="qno">第 42 题</div>
+    <div class="en-sent">Cross-border e-commerce can take your business to new heights, but payment methods, taxes, and logistics and delivery are not the only vital considerations. Understanding the local market of your targeted country, customs, culture, and preferences is also crucial to your cross-border e-commerce business.</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'en2')">参考译文</button></div>
+    <div class="ansbox" id="en2"><span class="aw">跨境电商能把你的业务推向新的高度，但支付方式、税费和物流配送并非唯一需要考虑的关键因素。了解目标国家的本地市场、海关、文化以及偏好，对跨境电商业务同样至关重要。</span><div class="an">评分：take ... to new heights 推向新高度（1 分）；not the only vital considerations（1 分）；crucial to 对……至关重要（1 分）。</div></div></div>
+<div class="q"><div class="qno">第 43 题</div>
+    <div class="en-sent">Any tuyere industry will experience a process of reshuffling. In the future the overall resources of the cross-border e-commerce industry will be further concentrated on the large platforms and big sellers.</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'en3')">参考译文</button></div>
+    <div class="ansbox" id="en3"><span class="aw">任何风口行业都会经历一个洗牌的过程。未来，跨境电商行业的整体资源将进一步向大平台和大卖家集中。</span><div class="an">评分：tuyere industry 风口行业（1 分）；reshuffling 洗牌（1 分）；be concentrated on 集中于（1 分）。</div></div></div>
+<div class="q"><div class="qno">第 44 题</div>
+    <div class="en-sent">Cross-border e-commerce allows businesses to showcase their range of products and earn trust of their target customers by providing good customer service and on-time delivery.</div>
+    <div class="btnrow"><button class="ans" onclick="tgBox(this,'en4')">参考译文</button></div>
+    <div class="ansbox" id="en4"><span class="aw">跨境电商使企业能够展示其产品系列，并通过提供良好的客户服务和准时交付来赢得目标客户的信任。</span><div class="an">评分：allow sb to do 使……能够（1 分）；earn trust 赢得信任（1 分）；on-time delivery 准时交付（1 分）。</div></div></div>
+ </div>
+</section>
+
+<section class="page" id="p4">
+ <div class="card">
+  <h2>阅读理解 46—50 · 原文精讲</h2>
+  <div class="legend"><span><span class="sw sw1"></span>红色 = 生词，<b>点击可显示词义</b></span></div>
+  <div class="passage"><p>When people talk about shopping across borders, they usually think of cheap goods and fast delivery. In fact, the most important change of the past ten years is not the price but the way a small seller <span class="nw" data-cn="触达一位客户">reaches a customer</span> eight thousand kilometres away.</p><p>In the old model, a factory sold to an <span class="nw" data-cn="出口商">exporter</span>, the <span class="nw" data-cn="出口商">exporter</span> sold to a <span class="nw" data-cn="批发商">wholesaler</span>, and the <span class="nw" data-cn="批发商">wholesaler</span> sold to a <span class="nw" data-cn="零售商">retailer</span>. Every step added a <span class="nw" data-cn="利润空间；加价">margin</span> and took time. A platform <span class="nw" data-cn="省去其中大部分环节">cuts most of these steps</span>: the seller lists the goods, the buyer <span class="nw" data-cn="把钱存入">pays into</span> an <span class="nw" data-cn="第三方托管账户">escrow account</span>, and the platform <span class="nw" data-cn="放款；释放">release</span>s the money only after the parcel is <span class="nw" data-cn="确认">confirm</span>ed as received.</p><p>Payment is the second <span class="nw" data-cn="支柱">pillar</span>. Because the two sides use different currencies and often do not trust each other, third-party payment services hold the money in the middle. <span class="nw" data-cn="结算">Settlement</span> becomes <span class="nw" data-cn="只需几天时间">a matter of a few days</span> instead of a <span class="nw" data-cn="信用证">letter of credit</span> that may take weeks to <span class="nw" data-cn="结清；兑现">clear</span>.</p><p><span class="nw" data-cn="物流">Logistics</span> decides whether the promise can be kept. A parcel that crosses three borders may pass through several <span class="nw" data-cn="海关">customs</span> points, and one missing <span class="nw" data-cn="单证；文件">document</span> can stop the whole journey. This is why experienced sellers <span class="nw" data-cn="把热卖品备在海外仓">keep popular items in overseas warehouses</span>, even though <span class="nw" data-cn="仓储；存储">storage</span> there costs more than at home.</p><p>None of this makes cross-border selling easy. Rules on tax, product safety and personal data are becoming stricter in almost every market, and a seller who <span class="nw" data-cn="忽视">ignore</span>s them will lose the account, not just the order. The winners of the next few years will be those who treat <span class="nw" data-cn="合规">compliance</span>, <span class="nw" data-cn="物流">logistics</span> and service <span class="nw" data-cn="当作一个整体系统，而非三项各自独立的成本">as one system rather than three separate costs</span>.</p></div>
+  <h3>生词 · 词组表（点击「显示释义」逐个核对）</h3>
+  <div class="btnrow"><button class="mini" onclick="showG(true)">全部展开</button><button class="mini" onclick="showG(false)">全部收起</button></div>
+  <div id="gloss" style="display:none"><div class="q g"><span class="gw">exporter</span><span class="gsep">—</span><span class="gcn">出口商</span></div><div class="q g"><span class="gw">wholesaler</span><span class="gsep">—</span><span class="gcn">批发商</span></div><div class="q g"><span class="gw">retailer</span><span class="gsep">—</span><span class="gcn">零售商</span></div><div class="q g"><span class="gw">margin</span><span class="gsep">—</span><span class="gcn">利润空间；加价</span></div><div class="q g"><span class="gw">escrow account</span><span class="gsep">—</span><span class="gcn">第三方托管账户</span></div><div class="q g"><span class="gw">release</span><span class="gsep">—</span><span class="gcn">放款；释放</span></div><div class="q g"><span class="gw">confirm</span><span class="gsep">—</span><span class="gcn">确认</span></div><div class="q g"><span class="gw">pillar</span><span class="gsep">—</span><span class="gcn">支柱</span></div><div class="q g"><span class="gw">currency</span><span class="gsep">—</span><span class="gcn">货币</span></div><div class="q g"><span class="gw">settlement</span><span class="gsep">—</span><span class="gcn">结算</span></div><div class="q g"><span class="gw">letter of credit</span><span class="gsep">—</span><span class="gcn">信用证</span></div><div class="q g"><span class="gw">clear</span><span class="gsep">—</span><span class="gcn">结清；兑现</span></div><div class="q g"><span class="gw">logistics</span><span class="gsep">—</span><span class="gcn">物流</span></div><div class="q g"><span class="gw">customs</span><span class="gsep">—</span><span class="gcn">海关</span></div><div class="q g"><span class="gw">document</span><span class="gsep">—</span><span class="gcn">单证；文件</span></div><div class="q g"><span class="gw">overseas warehouse</span><span class="gsep">—</span><span class="gcn">海外仓库</span></div><div class="q g"><span class="gw">storage</span><span class="gsep">—</span><span class="gcn">仓储；存储</span></div><div class="q g"><span class="gw">compliance</span><span class="gsep">—</span><span class="gcn">合规</span></div><div class="q g"><span class="gw">ignore</span><span class="gsep">—</span><span class="gcn">忽视</span></div><div class="q g"><span class="gw">separate</span><span class="gsep">—</span><span class="gcn">分开的；各自的</span></div><div class="q g"><span class="gw">reaches a customer</span><span class="gsep">—</span><span class="gcn">触达一位客户</span></div><div class="q g"><span class="gw">cuts most of these steps</span><span class="gsep">—</span><span class="gcn">省去其中大部分环节</span></div><div class="q g"><span class="gw">pays into</span><span class="gsep">—</span><span class="gcn">把钱存入</span></div><div class="q g"><span class="gw">a matter of a few days</span><span class="gsep">—</span><span class="gcn">只需几天时间</span></div><div class="q g"><span class="gw">keep popular items in overseas warehouses</span><span class="gsep">—</span><span class="gcn">把热卖品备在海外仓</span></div><div class="q g"><span class="gw">as one system rather than three separate costs</span><span class="gsep">—</span><span class="gcn">当作一个整体系统，而非三项各自独立的成本</span></div></div>
+  <h3>逐题解析（含原文定位）</h3>
+  <div class="q"><div class="qtext"><span class="qno">46.</span>Which of the following best states the main idea of the passage?</div>
+    <div class="opts"><span class="opt" data-o="A"><b>A.</b>Cheap prices are the only reason why cross-border shopping has grown.</span><span class="opt" data-o="B"><b>B.</b>Cross-border selling has been reshaped by platforms, payment and logistics, and success now depends on treating the whole system as one.</span><span class="opt" data-o="C"><b>C.</b>Small sellers cannot survive because platforms control all the traffic.</span><span class="opt" data-o="D"><b>D.</b>Overseas warehouses are the single most important factor in cross-border trade.</span></div>
+    <div class="btnrow"><button class="ans" onclick="tgR(this,0)">答案与定位</button></div>
+    <div class="ansbox" id="r0"><span class="aw">答案：B</span><div class="an">全文主旨：平台、支付、物流重塑了跨境销售，今后取胜靠把合规、物流、服务当作一个系统。A、C、D 都是以偏概全或过于绝对。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">47.</span>How does a platform protect the buyer according to Paragraph 2?</div>
+    <div class="opts"><span class="opt" data-o="A"><b>A.</b>It pays the seller before the goods are sent.</span><span class="opt" data-o="B"><b>B.</b>It checks the quality of every parcel itself.</span><span class="opt" data-o="C"><b>C.</b>It keeps the payment in an escrow account and releases it after the goods are confirmed.</span><span class="opt" data-o="D"><b>D.</b>It asks the buyer to sign a letter of credit.</span></div>
+    <div class="btnrow"><button class="ans" onclick="tgR(this,1)">答案与定位</button></div>
+    <div class="ansbox" id="r1"><span class="aw">答案：C</span><div class="an">第二段：the buyer pays into an escrow account, and the platform releases the money only after the parcel is confirmed as received。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">48.</span>Why do sellers use third-party payment services?</div>
+    <div class="opts"><span class="opt" data-o="A"><b>A.</b>Because the two sides use different currencies and often do not trust each other.</span><span class="opt" data-o="B"><b>B.</b>Because banks refuse to serve cross-border sellers.</span><span class="opt" data-o="C"><b>C.</b>Because it is the only way to avoid paying tax.</span><span class="opt" data-o="D"><b>D.</b>Because overseas buyers cannot open a bank account.</span></div>
+    <div class="btnrow"><button class="ans" onclick="tgR(this,2)">答案与定位</button></div>
+    <div class="ansbox" id="r2"><span class="aw">答案：A</span><div class="an">第三段首句：Because the two sides use different currencies and often do not trust each other...</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">49.</span>What can be inferred about overseas warehouses from Paragraph 4?</div>
+    <div class="opts"><span class="opt" data-o="A"><b>A.</b>They are cheaper than storing goods at home.</span><span class="opt" data-o="B"><b>B.</b>They remove the need for customs clearance.</span><span class="opt" data-o="C"><b>C.</b>They shorten delivery time at a higher storage cost.</span><span class="opt" data-o="D"><b>D.</b>They are only used for slow-selling products.</span></div>
+    <div class="btnrow"><button class="ans" onclick="tgR(this,3)">答案与定位</button></div>
+    <div class="ansbox" id="r3"><span class="aw">答案：C</span><div class="an">第四段末句：keep popular items in overseas warehouses, even though storage there costs more than at home —— 推断为“缩短时效但仓储成本更高”。</div></div></div>
+<div class="q"><div class="qtext"><span class="qno">50.</span>What does the author mean by “treat compliance, logistics and service as one system”?</div>
+    <div class="opts"><span class="opt" data-o="A"><b>A.</b>A seller should spend more on advertising than on service.</span><span class="opt" data-o="B"><b>B.</b>These three areas should be planned and managed together rather than counted as separate costs.</span><span class="opt" data-o="C"><b>C.</b>Compliance is less important than delivery speed.</span><span class="opt" data-o="D"><b>D.</b>Each area should be handled by a different company.</span></div>
+    <div class="btnrow"><button class="ans" onclick="tgR(this,4)">答案与定位</button></div>
+    <div class="ansbox" id="r4"><span class="aw">答案：B</span><div class="an">末段：treat... as one system rather than three separate costs，即三者要统筹管理，而不是各自当作一项成本。</div></div></div>
+ </div>
+</section>
+
+<section class="page" id="p5">
+ <div class="card">
+  <h2>选词填空 51—60 · 原文精讲</h2>
+  <p class="note">词库：<span style="color:#888">category / represent / forecast / high-quality / aspect / complicated / profitable / boost / reflect / currently</span>。<b>点击文中蓝色空格</b>可直接显示该空答案。</p>
+  <div class="passage"><p>How to Choose a Product That Sells</p>
+<p>For a new cross-border seller, choosing the right product is more important than choosing the right price. Before you spend money on ads, study the market.</p>
+<p>First, look at each <span class="cb" data-n="1">（1）______</span> on the platform, such as kitchen tools, pet supplies or skin care. Find the small group of products that <span class="cb" data-n="2">（2）______</span> the fastest growth, and <span class="cb" data-n="3">（3）______</span> their sales for the next six months. Do not trust a single number.</p>
+<p>Second, check the quality. Buyers can compare many shops in a few seconds, so <span class="cb" data-n="4">（4）______</span> products win in the long run. Every <span class="cb" data-n="5">（5）______</span> of the listing matters: the photos, the title and the size chart. If the design is too <span class="cb" data-n="6">（6）______</span>, customers will leave the page. A simple product is often more <span class="cb" data-n="7">（7）______</span> than a clever one.</p>
+<p>Third, improve your page. Clear photos and honest descriptions can <span class="cb" data-n="8">（8）______</span> sales, and the reviews will <span class="cb" data-n="9">（9）______</span> what buyers really think. <span class="cb" data-n="10">（10）______</span>, more than half of the orders come from mobile phones, so test the page on a phone before you launch.</p></div>
+  <div class="btnrow"><button class="mini" onclick="showC(true)">显示全部答案</button><button class="mini" onclick="showC(false)">全部收起</button></div>
+  <h3>逐空词汇讲解（51—60）</h3>
+  <div class="q"><div class="qtext"><span class="qno">51.</span>
+      <b class="cw">category</b> <span class="ipa">/ˈkætəɡəri/</span> <span class="pos">n.</span> <b>类别；品类</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>空格后举例 kitchen tools, pet supplies or skin care——都是“品类”。</div></div><div class="q"><div class="qtext"><span class="qno">52.</span>
+      <b class="cw">represent</b> <span class="ipa">/ˌreprɪˈzent/</span> <span class="pos">v.</span> <b>代表；体现</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>体现最快增长，主语是复数 products，动词用原形。</div></div><div class="q"><div class="qtext"><span class="qno">53.</span>
+      <b class="cw">forecast</b> <span class="ipa">/ˈfɔːkɑːst/</span> <span class="pos">v.</span> <b>预测</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>forecast their sales 预测销量；过去式/过去分词同形 forecast。</div></div><div class="q"><div class="qtext"><span class="qno">54.</span>
+      <b class="cw">high-quality</b> <span class="ipa">/ˌhaɪ ˈkwɒləti/</span> <span class="pos">adj.</span> <b>优质的</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>复合形容词修饰 products，比较级用 higher-quality。</div></div><div class="q"><div class="qtext"><span class="qno">55.</span>
+      <b class="cw">aspect</b> <span class="ipa">/ˈæspekt/</span> <span class="pos">n.</span> <b>方面</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>every aspect of the listing 商品页的每个方面。</div></div><div class="q"><div class="qtext"><span class="qno">56.</span>
+      <b class="cw">complicated</b> <span class="ipa">/ˈkɒmplɪkeɪtɪd/</span> <span class="pos">adj.</span> <b>复杂的</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>描述流程/问题用 complicated，不要与 completed 混拼。</div></div><div class="q"><div class="qtext"><span class="qno">57.</span>
+      <b class="cw">profitable</b> <span class="ipa">/ˈprɒfɪtəbl/</span> <span class="pos">adj.</span> <b>有利可图的</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>profit + -able；a profitable product 赚钱的产品。</div></div><div class="q"><div class="qtext"><span class="qno">58.</span>
+      <b class="cw">boost</b> <span class="ipa">/buːst/</span> <span class="pos">v.</span> <b>提升；推动</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>boost sales / boost growth 提升销量。</div></div><div class="q"><div class="qtext"><span class="qno">59.</span>
+      <b class="cw">reflect</b> <span class="ipa">/rɪˈflekt/</span> <span class="pos">v.</span> <b>反映</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>reflect the real demand 反映真实需求。</div></div><div class="q"><div class="qtext"><span class="qno">60.</span>
+      <b class="cw">currently</b> <span class="ipa">/ˈkʌrəntli/</span> <span class="pos">adv.</span> <b>目前</b></div>
+      <div class="row"><span class="tag t3">判断思路</span>current 的副词形式，句首或句中修饰动词。</div></div>
+ </div>
+</section>
+
+<section class="page" id="p6">
+ <div class="card">
+  <h2>写作 61 · 题目与范文</h2>
+  <div class="en-sent" style="white-space:pre-wrap">请以 “A Best-selling Cross-border E-commerce Product” 为题，用英语介绍一样跨境电商热卖产品，字数不少于 120 词。
+提示要点：① 产品名称（name）与品类；② 外观与颜色（appearance and colour）；③ 主要功能或特点（functions / features）；④ 适用人群或使用场景（target users / scenes）；⑤ 热卖原因，如价格、物流或售后服务（why it sells well）。</div>
+  <div class="btnrow"><button class="ans" onclick="tgBox(this,'wmodel')">显示范文</button></div>
+  <div class="ansbox" id="wmodel"><span class="aw" style="display:block;font-weight:400;color:var(--ink)">One of the <span class="nw" data-cn="畅销的">best-selling</span> products on cross-border platforms this year is a <span class="nw" data-cn="便携的">portable</span> mini blender. It is a small <span class="nw" data-cn="厨房电器">kitchen appliance</span>, about the size of a water bottle, and it <span class="nw" data-cn="有……几种款式/颜色">comes in</span> white, pink and light blue. The body is made of <span class="nw" data-cn="食品级塑料">food-grade plastic</span> with a <span class="nw" data-cn="不锈钢刀片">stainless-steel blade</span>, so it is light and easy to carry. Its main function is to make juice, smoothies and baby food in less than thirty seconds. It has a <span class="nw" data-cn="充电电池">rechargeable battery</span>, which can be used about twenty times after one charge, and the cup can be washed directly under the tap. It <span class="nw" data-cn="受……欢迎">is popular with</span> office workers, students and young parents, because they can enjoy fresh drinks at work, in the dormitory or while travelling. The product sells well for three reasons. First, it is cheap: most buyers pay less than twenty dollars. Second, it is small and light, so the <span class="nw" data-cn="运费">shipping cost</span> is low and delivery is fast. Third, sellers offer a <span class="nw" data-cn="一年保修">one-year guarantee</span> and a quick <span class="nw" data-cn="退款">refund</span> if the product is damaged on the way. <span class="nw" data-cn="总之">In short</span>, a good cross-border product must be useful, easy to ship and well supported after the sale. (about 185 words)</span></div>
+  <h3>范文亮点词组（红色词可点击看释义）</h3>
+  <div class="btnrow"><button class="mini" onclick="showHL(true)">全部展开</button><button class="mini" onclick="showHL(false)">收起</button></div>
+  <div id="hl" style="display:none"><div class="q g"><span class="gw">portable</span><span class="gsep">—</span><span class="gcn">便携的</span></div><div class="q g"><span class="gw">kitchen appliance</span><span class="gsep">—</span><span class="gcn">厨房电器</span></div><div class="q g"><span class="gw">comes in</span><span class="gsep">—</span><span class="gcn">有……几种款式/颜色</span></div><div class="q g"><span class="gw">food-grade plastic</span><span class="gsep">—</span><span class="gcn">食品级塑料</span></div><div class="q g"><span class="gw">stainless-steel blade</span><span class="gsep">—</span><span class="gcn">不锈钢刀片</span></div><div class="q g"><span class="gw">rechargeable battery</span><span class="gsep">—</span><span class="gcn">充电电池</span></div><div class="q g"><span class="gw">is popular with</span><span class="gsep">—</span><span class="gcn">受……欢迎</span></div><div class="q g"><span class="gw">shipping cost</span><span class="gsep">—</span><span class="gcn">运费</span></div><div class="q g"><span class="gw">one-year guarantee</span><span class="gsep">—</span><span class="gcn">一年保修</span></div><div class="q g"><span class="gw">refund</span><span class="gsep">—</span><span class="gcn">退款</span></div><div class="q g"><span class="gw">in short</span><span class="gsep">—</span><span class="gcn">总之</span></div><div class="q g"><span class="gw">best-selling</span><span class="gsep">—</span><span class="gcn">畅销的</span></div></div>
+  <h3>评分要点</h3>
+  <p class="note">内容要点齐全（名称、外观与颜色、功能、适用人群、热卖原因）、语言准确、结构清晰、字数达标各占一定分值；少于 100 词酌情扣分，拼写与语法错误按处累计扣分。</p>
+  <div class="tip" style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;font-size:.92rem;color:#7a4b06"><b>写作五件套模板：</b>① 开头点题 One of the best-selling products ... is ...　② 外观 It is ... / It comes in ... colours　③ 功能 Its main function is to ...　④ 人群 It is popular with ... because ...　⑤ 热卖原因 First / Second / Third + 结尾 In short, ...</div>
+ </div>
+</section>
+
+<footer>跨境电商英语 · 期中试卷讲评 · 对照订正，重点复盘阅读与选词填空</footer>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===id));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.p===id));
+  window.scrollTo({top:0});
+}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.p));
+if(location.hash){const t=document.querySelector(location.hash);if(t)show(t.id);}
+function tgBox(btn,id){
+  const box=document.getElementById(id);
+  const open=box.classList.toggle('show');
+  btn.classList.toggle('open',open);
+  btn.textContent=open?'收起':'参考答案';
+}
+function tgV(btn,i){
+  const box=document.getElementById('v'+i);
+  const open=box.classList.toggle('show');
+  btn.classList.toggle('open',open);
+  btn.textContent=open?'收起':'答案';
+  const q=btn.closest('.q');
+  q.querySelectorAll('.opt').forEach(o=>{
+    const hit=o.dataset.o===box.querySelector('.aw').textContent.trim().replace('答案：','')[0];
+    o.classList.toggle('hit',open&&hit);
+    o.classList.toggle('was',open&&!hit);
+  });
+}
+function tgR(btn,k){
+  const box=document.getElementById('r'+k);
+  const open=box.classList.toggle('show');
+  btn.classList.toggle('open',open);
+  btn.textContent=open?'收起':'答案与定位';
+  const q=btn.closest('.q');
+  q.querySelectorAll('.opt').forEach(o=>{
+    const hit=o.dataset.o===box.querySelector('.aw').textContent.trim().replace('答案：','')[0];
+    o.classList.toggle('hit',open&&hit);
+    o.classList.toggle('was',open&&!hit);
+  });
+}
+function tgLine(el){
+  const line=el.parentElement.parentElement.querySelector('.ansline');
+  const open=line.classList.toggle('show');
+  el.textContent=open?'收起':'显示';
+}
+function showAns(tid,open){
+  document.querySelectorAll('#'+tid+' .ansline').forEach(l=>l.classList.toggle('show',open));
+  document.querySelectorAll('#'+tid+' .abtn').forEach(a=>a.textContent=open?'收起':'显示');
+}
+/* 生词点击显义 */
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('nw')) e.target.classList.toggle('on');
+  if(e.target.classList.contains('cb')) e.target.classList.toggle('on');
+});
+/* 选词填空：给每个空挂答案 */
+(function(){
+  const ANS=['category', 'represent', 'forecast', 'high-quality', 'aspect', 'complicated', 'profitable', 'boost', 'reflect', 'currently'];
+  document.querySelectorAll('.cb').forEach(el=>{
+    const n=parseInt(el.dataset.n)-1;
+    el.dataset.ans=ANS[n]||'';
+  });
+})();
+function showC(open){document.querySelectorAll('.cb').forEach(el=>el.classList.toggle('on',open));}
+function showG(open){const g=document.getElementById('gloss');g.style.display=open?'block':'none';}
+function showHL(open){const g=document.getElementById('hl');g.style.display=open?'block':'none';}
+</script>
+</body>
+</html>
