@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Part 3.2　阅读理解与课堂活动</title>
+<style>
+:root{--pri:#2563eb;--ok:#16a34a;--warn:#dc2626;--bg:#f6f8fb;--card:#fff;--tx:#1e293b;--sub:#64748b;--line:#e2e8f0;--soft:#eff6ff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--tx);line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:14px}
+header{background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;border-radius:14px;padding:22px 24px;margin-bottom:12px}
+header h1{font-size:22px;margin-bottom:6px}
+header p{opacity:.92;font-size:13px}
+nav{position:sticky;top:0;z-index:9;background:var(--bg);padding:8px 0;display:flex;gap:8px;flex-wrap:wrap}
+nav button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:14px;cursor:pointer;color:var(--tx)}
+nav button.on{background:var(--pri);border-color:var(--pri);color:#fff;font-weight:600}
+.page{display:none;padding-top:16px}
+.page.show{display:block}
+h2{font-size:19px;margin:14px 0 10px;color:#0f172a}
+h3{font-size:16px;margin:18px 0 8px;color:var(--pri)}
+.note{font-size:13px;color:var(--sub);margin:6px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px}
+.q{display:flex;gap:10px;margin-bottom:14px}
+.qno{min-width:30px;height:30px;border-radius:50%;background:var(--soft);color:var(--pri);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}
+.opts{display:grid;grid-template-columns:1fr;gap:4px;margin:6px 0}
+.opts span{padding:5px 10px;border-radius:8px;background:#f8fafc;border:1px solid var(--line);font-size:14px}
+.opts span.right{background:#ecfdf5;border-color:var(--ok);color:#065f46;font-weight:600}
+.opts span.dim{opacity:.55}
+.btnrow{margin-top:6px}
+button.ans,button.mini{border:none;border-radius:8px;padding:6px 14px;font-size:13px;cursor:pointer;background:var(--pri);color:#fff;margin-right:8px}
+button.mini{background:#64748b}
+button.ans.on{background:var(--ok)}
+.ansbox{display:none;margin-top:8px;padding:10px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;font-size:14px}
+.ansbox.show{display:block}
+.aw{font-weight:700;color:var(--ok)}
+.loc{margin-top:6px;padding:8px 10px;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;color:#92400e;font-size:13px}
+.an{color:var(--sub);font-size:13px;margin-top:4px}
+.tf span.t{background:#ecfdf5;border-color:var(--ok);font-weight:700}
+.tf span.f{background:#fef2f2;border-color:var(--warn);font-weight:700}
+.activity{border-left:4px solid var(--pri)}
+.badge{display:inline-block;background:var(--pri);color:#fff;border-radius:6px;padding:2px 10px;font-size:12px;margin-bottom:8px}
+.orderitem{padding:8px 12px;background:#f8fafc;border:1px solid var(--line);border-radius:8px;margin:5px 0;font-size:14px}
+.pcard{padding:10px 14px;background:#f8fafc;border:1px solid var(--line);border-radius:10px;margin:6px 0;cursor:pointer;font-size:14px}
+.pcard .reveal{display:none;margin-top:6px;padding:8px 10px;border-radius:8px;background:#eff6ff;color:#1e40af;font-size:13px}
+.pcard.open .reveal{display:block}
+.wordbank{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.wordbank b{background:var(--soft);color:var(--pri);border:1px solid #bfdbfe;border-radius:999px;padding:3px 12px;font-size:13px;font-weight:600}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft);color:#1e3a8a}
+.exsent{background:#f8fafc;border-left:3px solid var(--pri);padding:8px 12px;border-radius:0 8px 8px 0;margin:6px 0;font-size:14px}
+.exsent .cn{color:var(--sub);font-size:13px;margin-top:2px}
+.nw{color:#dc2626;font-weight:600;cursor:help;border-bottom:1px dotted #f87171}
+.frame{background:#fffbeb;border:1px dashed #f59e0b;border-radius:10px;padding:12px 14px;font-size:14px;color:#78350f}
+.speak{border:none;background:none;cursor:pointer;font-size:15px}
+textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:10px;padding:10px;font-size:14px;font-family:inherit;resize:vertical}
+.wc{font-size:12px;color:var(--sub);text-align:right;margin-top:3px}
+@media(max-width:640px){.wrap{padding:10px}.q{flex-direction:row}}
+@media print{nav{display:none}.page{display:block!important}.ansbox{display:block!important}button{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+ <h1>Part 3.2　Store, Product and Title Description · 阅读理解与课堂活动</h1>
+ <p>配套课文 Text A（店铺描述）／Text B（产品描述）／Text C（标题描述）· 全部题目附答案与原文定位 · 写作工坊含思路、提示词与例句</p>
+</header>
+<nav>
+ <button data-p="p1" class="on">① 阅读 · Text A</button>
+ <button data-p="p2">② 阅读 · Text B</button>
+ <button data-p="p3">③ 阅读 · Text C</button>
+ <button data-p="p4">④ 课堂活动</button>
+ <button data-p="p5">⑤ 写作工坊 · 店铺介绍</button>
+ <button data-p="p6">⑥ 写作工坊 · 产品介绍</button>
+</nav>
+
+<div class="page show" id="p1">
+ <h2>阅读理解 · Text A　Store Description 店铺描述</h2>
+ <p class="note">先独立完成，再点「答案」核对。每题均附原文定位句，训练“回文定位”习惯。</p>
+ <div class="card"><h3>Ⅰ. 选择题（Multiple Choice）</h3><div id="ra_mc"></div></div>
+ <div class="card"><h3>Ⅱ. 判断题（True or False）</h3><div id="ra_tf"></div></div>
+</div>
+
+<div class="page" id="p2">
+ <h2>阅读理解 · Text B　Product Description 产品描述</h2>
+ <p class="note">重点关注产品结构三分法（burst sells / flow-increase / profitable）与 FAB 法。</p>
+ <div class="card"><h3>Ⅰ. 选择题（Multiple Choice）</h3><div id="rb_mc"></div></div>
+ <div class="card"><h3>Ⅱ. 判断题（True or False）</h3><div id="rb_tf"></div></div>
+</div>
+
+<div class="page" id="p3">
+ <h2>阅读理解 · Text C　Title Description 标题描述</h2>
+ <p class="note">重点关注标题三件套（core words / attribute words / long tail keywords）与平台规则。</p>
+ <div class="card"><h3>Ⅰ. 选择题（Multiple Choice）</h3><div id="rc_mc"></div></div>
+ <div class="card"><h3>Ⅱ. 判断题（True or False）</h3><div id="rc_tf"></div></div>
+</div>
+
+<div class="page" id="p4">
+ <h2>课堂活动 · Classroom Activities</h2>
+ <p class="note">四个活动由易到难，可按课堂时间选做 2—3 个。点击卡片/按钮核对。</p>
+
+ <div class="card activity">
+  <span class="badge">活动 1 · 店铺描述拼图（个人 3 分钟）</span>
+  <p style="font-size:14px;margin-bottom:6px">下面是一个<b>商家店铺描述</b>的 4 个句子，但顺序被打乱了。请按 Text A 中商家店铺描述的<b>合理行文顺序</b>重新排列（先想再点）：</p>
+  <div id="act_order"></div>
+  <div class="btnrow"><button class="ans" onclick="tgBox(this,'ord_ans')">显示正确顺序</button></div>
+  <div class="ansbox" id="ord_ans"><span class="aw">② → ④ → ③ → ①　（公司简介 → 经营理念 → 供货物流售后 → 图片增信，对应 Text A 第 2 段行文顺序）</span></div>
+ </div>
+
+ <div class="card activity">
+  <span class="badge">活动 2 · 信息侦探（ pair work 5 分钟）</span>
+  <p style="font-size:14px;margin-bottom:6px">回到教材 Sunveno 品牌案例，两人一组：一人说出店铺描述五要素（Logo / Brand Story / Brand Positioning / Brand Products / Brand Concept），另一人在案例中找出<b>对应的英文证据句</b>并朗读。点击下方核对每要素的“证据句”：</p>
+  <div id="act_detect"></div>
+  <div class="btnrow"><button class="mini" onclick="tgAll('detect',this)">全部展开 / 收起</button></div>
+ </div>
+
+ <div class="card activity">
+  <span class="badge">活动 3 · 产品结构分配（小组 PK 6 分钟）</span>
+  <p style="font-size:14px;margin-bottom:6px">你是店铺运营。下面 6 个产品该归入哪个结构位（burst sell / flow-increase / profitable）？先小组讨论，再<b>点击卡片</b>揭晓答案与理由。分对最多的小组获胜！</p>
+  <div id="act_classify"></div>
+ </div>
+
+ <div class="card activity">
+  <span class="badge">活动 4 · 标题工坊（个人 5 分钟）</span>
+  <p style="font-size:14px;margin-bottom:6px">用“核心词 + 属性词 + 长尾词”为下列产品各组装一个标题（核心词开头，字符数不超限，不堆砌）：</p>
+  <div class="wordbank" id="act_bank"></div>
+  <div class="btnrow"><button class="ans" onclick="tgBox(this,'title_ref')">显示参考标题</button></div>
+  <div class="ansbox" id="title_ref"><span class="aw">参考（不唯一，合理即可）：</span>
+   <div style="margin-top:6px;font-size:14px"></div>
+   <div class="an">检查点：核心词是否在前 5 个词内？属性词是否区分了不同产品？有没有堆砌敏感词（cheap 等）？</div>
+  </div>
+ </div>
+</div>
+
+<div class="page" id="p5">
+ <h2>写作工坊 ①　How to Introduce Your Online Store 店铺介绍</h2>
+ <p class="note">写之前先回答四个问题——答案齐了，店铺描述就写完了。</p>
+
+ <div class="card"><h3>一、审题思路 · 四问定位法</h3><div id="shop_q"></div></div>
+
+ <div class="card"><h3>二、提示词与实用例句弹药库</h3><p class="note">🔊 可点击朗读。写作用词从这里取，不要自己造。</p><div id="shop_ph"></div></div>
+
+ <div class="card"><h3>三、写作框架（基础版 · 填空成文）</h3>
+  <p class="note">下不了笔？先把框架填满，再润色连接。</p>
+  <div class="frame">Welcome to our store! We are ________（定位：一家专营……的店铺）. Our business scope covers ________（主营品类）. All products are ________（优势：工厂直供/专利认证）, so our prices are ________ and the quality is ________. We offer ________（退货政策）, and the products will be delivered within ________（发货时间）. If you have any problems, please ________（售后动作）. Follow us to get ________（结尾：优惠券/新品信息）!</div>
+ </div>
+
+ <div class="card"><h3>四、课堂任务与互评</h3>
+  <p style="font-size:14px">课堂任务（10 分钟）：以小组为单位，为你们自选的一家店铺写一段 80—100 词的店铺描述。要求：包含 Q1—Q4 四个要素，至少使用提示词库中的 5 个词组。写完后组内互换，用评分表互评。</p>
+  <div style="margin:10px 0"><button class="ans" onclick="tgBox(this,'shop_ws')">打开草稿区</button></div>
+  <div class="ansbox" id="shop_ws"><textarea id="shopArea" placeholder="Write your store description here (80-100 words)..."></textarea><div class="wc" id="shopWc">0 words</div></div>
+  <table><tr><th>评分维度</th><th>要求</th></tr><tr><td><b>内容完整 40%</b></td><td>四要素齐全（定位/业务范围/优势/售后保障），信息真实具体，有证据（证书、实拍、年限）</td></tr><tr><td><b>语言准确 30%</b></td><td>词汇词组使用得当（business scope, return policy 等），无中式英语，拼写正确</td></tr><tr><td><b>结构与语气 30%</b></td><td>分段或句序合理（先身份后实力再保障），人称统一用 we/our，语气热情专业</td></tr></table>
+ </div>
+
+ <div class="card"><h3>五、参考例文</h3>
+  <p class="note">红色词组<b>鼠标悬停</b>可看中文释义；先自己写，再对照例文找差距。</p>
+  <div class="exsent" style="border-left-color:#16a34a"><b>例文 1 · 商家店铺（digital products，约 105 词）</b><button class="mini" style="margin-left:10px" onclick="speak('Welcome to TechStar! Established in 2015, we are a professional cross-border e-commerce store specializing in digital products. Our business scope covers phone cases, chargers, Bluetooth earphones and other smart accessories, and we release new products every season. All products are directly supplied by our own factory, so our prices are competitive and the quality is credible. We have passed ISO9001 certification and own 3 patent certificates. We offer a 30-day return policy and 24/7 after-sales service; the products will be delivered within 48 hours. Follow our social media accounts to get the latest news and coupons — Don\'t hesitate, start your shopping journey now!')">🔊 朗读</button><button class="mini" onclick="tgBox(this,'smod0cn')">中文译文</button><div style="margin-top:8px;font-size:14px">Welcome to <b class="nw" title="店名">TechStar</b>! Established in 2015, we are a professional cross-border e-commerce store <b class="nw" title="专营">specializing in</b> digital products. Our <b class="nw" title="业务范围">business scope</b> covers phone cases, chargers, Bluetooth earphones and other smart accessories, and we <b class="nw" title="上新">release new products</b> every season. All products are <b class="nw" title="工厂直供">directly supplied by our own factory</b>, so our prices are <b class="nw" title="有竞争力的">competitive</b> and the quality is <b class="nw" title="可信的">credible</b>. We have passed <b class="nw" title="认证">ISO9001 certification</b> and own 3 patent certificates. We offer a 30-day <b class="nw" title="退货政策">return policy</b> and 24/7 <b class="nw" title="售后服务">after-sales service</b>; the products will be <b class="nw" title="48小时内发货">delivered within 48 hours</b>. Follow our social media accounts to get the latest news and <b class="nw" title="优惠券">coupons</b> — Don't hesitate, start your shopping journey now!</div><div class="ansbox" id="smod0cn" style="background:#f8fafc;border-color:var(--line)"><span style="color:#334155">欢迎来到 TechStar！我们成立于 2015 年，是一家专营数码产品的跨境电商店铺。业务范围涵盖手机壳、充电器、蓝牙耳机及智能配件，每季上新。所有产品工厂直供，价格有竞争力、品质可信。我们已通过 ISO9001 认证并拥有 3 项专利。提供 30 天退货政策与全天候售后服务，48 小时内发货。关注我们的社媒账号获取最新资讯和优惠券——别犹豫，现在就开始购物之旅吧！</span></div><div class="an" style="margin-top:8px"><b>亮点解析：</b><ul style="margin:4px 0 0 18px"><li>四问齐全：定位（第 1—2 句）→ 业务范围（第 2 句）→ 优势实力（第 3—4 句）→ 物流售后（第 5 句），最后促销收尾。</li><li>优势有证据：不只是 best quality，而是 ISO9001 认证 + 3 项专利 + 工厂直供。</li><li>红色词全部来自上方提示词库——例文就是提示词库的“组装成品”。</li></ul></div></div><div class="exsent" style="border-left-color:#16a34a"><b>例文 2 · 个人店铺（mom & baby，约 90 词）</b><button class="mini" style="margin-left:10px" onclick="speak('Hi and welcome to Sunny Baby! We are a personal store focusing on mom & baby products. Our cute and warm store decoration will make you feel at home. Our main products are baby carriers, mummy bags and milk storage bags, all carefully selected from reliable suppliers. Every product is checked one by one before shipping. If you have any questions, just message us — we will reply within 12 hours. New buyers can get a registration coupon for the first order. Enjoy your shopping!')">🔊 朗读</button><button class="mini" onclick="tgBox(this,'smod1cn')">中文译文</button><div style="margin-top:8px;font-size:14px">Hi and welcome to <b class="nw" title="店名">Sunny Baby</b>! We are a <b class="nw" title="个人店铺">personal store</b> focusing on mom & baby products. Our <b class="nw" title="温馨可爱的">cute and warm</b> store decoration will make you feel at home. Our main products are baby carriers, mummy bags and milk storage bags, all <b class="nw" title="精心挑选">carefully selected</b> from reliable suppliers. Every product is <b class="nw" title="逐一检查">checked one by one</b> before shipping. If you have any questions, just message us — we will <b class="nw" title="12小时内回复">reply within 12 hours</b>. New buyers can get a <b class="nw" title="注册优惠券">registration coupon</b> for the first order. Enjoy your shopping!</div><div class="ansbox" id="smod1cn" style="background:#f8fafc;border-color:var(--line)"><span style="color:#334155">欢迎来到 Sunny Baby！我们是一家专注母婴产品的个人店铺。温馨可爱的店铺装修让您有宾至如归的感觉。主营婴儿背带、妈咪包和储奶袋，均从可靠供应商精心挑选。每件产品发货前逐一检查。有任何问题请随时私信，我们 12 小时内回复。新买家首单可领注册优惠券。祝您购物愉快！</span></div><div class="an" style="margin-top:8px"><b>亮点解析：</b><ul style="margin:4px 0 0 18px"><li>个人店铺写法更简洁（呼应 Text A：personal store 描述 concise、注重装修），用装修与色彩替代公司资质。</li><li>保障不减配：虽是个人店，仍写了检查流程 + 12 小时回复 + 首单优惠券。</li><li>语气亲切（Hi / Enjoy your shopping!），与商家店的专业口吻形成对比——两种文风都值得模仿。</li></ul></div></div>
+ </div>
+</div>
+
+<div class="page" id="p6">
+ <h2>写作工坊 ②　How to Write a Product Description 产品介绍</h2>
+ <p class="note">产品描述的灵魂是 FAB：Feature 特征 → Advantage 优势 → Benefit 买家利益。</p>
+
+ <div class="card"><h3>一、FAB 思路表</h3><div id="prod_fab"></div></div>
+
+ <div class="card"><h3>二、产品介绍五步法</h3><div id="prod_steps"></div></div>
+
+ <div class="card"><h3>三、提示词与实用例句</h3><p class="note">🔊 可点击朗读。对照课文沙发案例，每个例句都有出处。</p><div id="prod_ph"></div></div>
+
+ <div class="card"><h3>四、课堂任务（三选一）</h3>
+  <p style="font-size:14px">课堂任务（12 分钟）：从下面三选一，用 FAB 法写一段 100 词左右的产品介绍。要求：开场钩子 + 至少 2 组 FAB + 1 句规格 + 结尾 CTA。写完朗读给同桌听，同桌扮演买家：能否只看描述就产生购买欲望？</p>
+  <div id="prod_choices"></div>
+  <div style="margin:10px 0"><button class="ans" onclick="tgBox(this,'prod_ws')">打开草稿区</button></div>
+  <div class="ansbox" id="prod_ws"><textarea id="prodArea" placeholder="Write your product description here (about 100 words)..."></textarea><div class="wc" id="prodWc">0 words</div></div>
+  <table><tr><th>评分维度</th><th>要求</th></tr><tr><td><b>FAB 结构 40%</b></td><td>F/A/B 三层齐全且顺序合理，利益点站在买家角度</td></tr><tr><td><b>信息真实具体 30%</b></td><td>有材质/尺寸等具体信息，不夸大（truthfully describe, 避免 not as described 纠纷）</td></tr><tr><td><b>语言与体验 30%</b></td><td>100—300 词之间、分段清晰、简单易懂，有钩子和 CTA</td></tr></table>
+ </div>
+
+ <div class="card"><h3>五、参考例文</h3>
+  <p class="note">红色词组<b>鼠标悬停</b>可看中文释义；对照 FAB 分层，看自己写的缺了哪层。</p>
+  <div class="exsent" style="border-left-color:#16a34a"><b>例文 · 保温杯 Smart Thermal Bottle（FAB 标注版，约 120 词）</b><button class="mini" style="margin-left:10px" onclick="speak('Are you still worried that your coffee gets cold too fast? If so, this Smart Thermal Bottle is highly recommended to you.  Feature 特征】【Made of food-grade 304 stainless steel, it measures 26 cm and holds 500 ml. The leak-proof lid comes with a one-touch button. Advantage 优势】【Unlike the normal bottle, it keeps drinks hot for up to 12 hours, and you\'ll never worry about spills in your bag. Benefit 利益】【Perfect for office, travel and outdoor sports — it saves your time and gives you a warm drink anytime, anywhere. Specifications: 500 ml / 26 cm / Silver, White, Pink. So what are you waiting for? Don\'t hesitate, add it to your cart and enjoy free shipping now!')">🔊 朗读</button><button class="mini" onclick="tgBox(this,'pmod0cn')">中文译文</button><div style="margin-top:8px;font-size:14px">Are you still worried that your coffee <b class="nw" title="变凉太快">gets cold too fast</b>? If so, this Smart Thermal Bottle is <b class="nw" title="强烈推荐">highly recommended</b> to you.<br><br><b><b class="nw" title="由……制成">Feature 特征】</b>【Made of</b> food-grade 304 stainless steel, it measures 26 cm and holds 500 ml. The <b class="nw" title="防漏杯盖">leak-proof lid</b> comes with a <b class="nw" title="一键开关">one-touch button</b>.<br><b><b class="nw" title="与普通杯子不同">Advantage 优势】</b>【Unlike the normal bottle</b>, it keeps drinks hot for <b class="nw" title="长达12小时">up to 12 hours</b>, and you'll <b class="nw" title="不必担心洒漏">never worry about spills</b> in your bag.<br><b><b class="nw" title="非常适合">Benefit 利益】</b>【Perfect for</b> office, travel and outdoor sports — it saves your time and gives you a warm drink <b class="nw" title="随时随地">anytime, anywhere</b>.<br>Specifications: 500 ml / 26 cm / Silver, White, Pink.<br>So what are you waiting for? <b class="nw" title="别犹豫">Don't hesitate</b>, <b class="nw" title="加入购物车">add it to your cart</b> and enjoy <b class="nw" title="包邮">free shipping</b> now!</div><div class="ansbox" id="pmod0cn" style="background:#f8fafc;border-color:var(--line)"><span style="color:#334155">还在担心咖啡凉得太快吗？如果是，这款智能保温杯强烈推荐给您。食品级 304 不锈钢制成，高 26 厘米、容量 500 毫升；防漏杯盖带一键开关。与普通杯子不同，它能保温长达 12 小时，放包里绝不用担心洒漏。办公、旅行、户外运动都非常适合——为您节省时间，随时随地喝上一口热饮。规格：500 毫升 / 26 厘米 / 银、白、粉三色。还等什么？别犹豫，加入购物车，现在下单即享包邮！</span></div><div class="an" style="margin-top:8px"><b>亮点解析：</b><ul style="margin:4px 0 0 18px"><li>结构即范文：Feature → Advantage → Benefit 三层清晰标注，写作时照此分层即可。</li><li>开场是问句钩子（Are you still worried that...?），结尾是 CTA（What are you waiting for?）——首尾都抓人。</li><li>例句与课文沙发案例同源：unlike the normal... / never worry about... / perfect for... / don't hesitate 全部可迁移。</li></ul></div></div>
+ </div>
+</div>
+
+</div>
+<script>
+const D = {"ra_mc": [["According to Text A, cross-border e-commerce stores can be divided into ________.", ["business stores and personal stores", "online stores and offline stores", "big stores and small stores", "Chinese stores and foreign stores"], 0, "In general, cross-border e-commerce stores can be divided into business stores and personal stores.", "首段第二句直接给出分类答案。"], ["Which type of store description is usually more concise and pays more attention to store decoration?", ["The business store description", "The personal store description", "The platform description", "The product description"], 1, "The description of personal stores is relatively concise, and focuses more on the store decoration.", "personal store 描述更简洁，更注重店铺装修（visual marketing tools）。"], ["What does a business store description generally begin with?", ["A return policy", "A company profile", "A product list", "A discount coupon"], 1, "The business store description generally begins with a company profile, such as company history, main business scope, awards or patent certificate...", "公司简介放在最前：history / business scope / awards / patents / well-known customers。"], ["Which of the following is NOT mentioned in the business store description of Text A?", ["Supply channels and logistics", "Real shots of the factory", "Return policy and after-sales contact", "Tax registration number of the company"], 3, "the store description will also introduce the supply channels, logistics, delivery time, return policy, contact information for after-sales service, etc.", "原文提到供货渠道、物流、交货时间、退货政策、售后联系方式，未提及税务登记号。"], ["When deciding the overall style and color of the store, we should consider if they are consistent with ________.", ["the platform's rules", "our main business scope or brand image", "the buyers' ages", "the logistics company"], 1, "we should take full consideration if the selected style and color is consistent with our main business scope or brand image.", "母婴店粉色白色可爱温馨、数码店蓝黑简洁商务——都是围绕业务范围与品牌形象。"], ["Why does the seller add pictures such as real shots of the factory in the store description?", ["To make the store more credible", "To make the page load faster", "To save the cost of design", "To follow the platform rules"], 0, "the seller can also add some pictures properly, such as real shots of the factory... to make the store more credible.", "工厂实拍、包装流程实拍 → 提升店铺可信度。"]], "ra_tf": [["Shop sign appears at the top of the home page.", "T", "Shop sign appears at the top of home page. 店招位于首页顶部，可放入店名、主营产品信息和链接。"], ["The pictures used in picture rotation can be in different sizes.", "F", "the size and proportion of pictures for the use of picture rotation must be uniform. 轮播图尺寸比例必须统一。"], ["A store can add more than one module of recommended products.", "T", "A store can add more than one module of recommended products. 除热销推荐外还可加新品/季节品推荐。"]], "rb_mc": [["According to Text B, products most suitable for cross-border e-commerce sales are ________.", ["large, heavy and cheap", "small, light and with high added value", "expensive and luxurious", "fresh and perishable"], 1, "products that are suitable for cross-border e-commerce sales have the following characteristics: small, light and high added value.", "“small and beautiful”（小而美）产品最适合跨境电商。"], ["Which type of products is the main source of profits for a shop?", ["Burst sells", "Flow-increase products", "Profitable products", "New products"], 2, "profitable products are the main source of profits for shops.", "burst sells 和 flow-increase 产品价格低、利润薄，利润主要靠 profitable products。"], ["How many burst sells are recommended for one store?", ["Only 1-2 burst sells", "About 5 burst sells", "10 or more", "As many as possible"], 0, "it is recommended that shops only set 1-2 burst sells per store.", "爆款利润小甚至无利润，每店只设 1—2 个，用来带流量带订单。"], ["The “FAB” method refers to ________.", ["Fast, Accurate, Beautiful", "Feature, Advantage and Benefit", "Free, Amount, Best", "Feature, Amount, Benefit"], 1, "Follow the “FAB” method, which refers to Feature, Advantage and Benefit.", "F=特征 A=优势 B=利益点，是产品描述的核心方法。"], ["Why should the seller reserve discount space for profitable products?", ["Because their page views are too large", "So that they can discount them during the flow peak or promotion period", "Because the platform requires it", "Because buyers never pay full price"], 1, "The seller should reserve discount space for this kind of products, so the seller can discount them during the flow peak of platform or promotion period.", "利润款浏览量不大但单件利润高，预留折扣空间以便流量高峰/大促时打折。"], ["What will happen if the product description includes too many pictures?", ["The loading time will be too long and affect the buyer's decision making", "The title will be too long", "The products will be sold out quickly", "Nothing will happen"], 0, "Do not include too many pictures, otherwise the loading time will be too long... best between 10-12 pictures.", "图片过多加载慢，影响买家决策，最好 10—12 张。"]], "rb_tf": [["Burst sells are usually the main source of profits for shops.", "F", "burst sells are not the source of profits for shops... the profit margins are small, even no profit margins. 爆款带流量不赚钱。"], ["Product descriptions should generally be between 100-300 words.", "T", "Be as simple as possible in the product description, generally between 100-300 words. 简洁为宜。"], ["Flow-increase products and burst sells help shops grow rapidly in the early stage.", "T", "If shops choose flow-increase products and burst sells reasonably, it will help shops grow rapidly in the early stage. 合理组合助力店铺早期成长。"]], "rc_mc": [["When buyers select products on third-party platforms, they often search through ________.", ["pictures", "keywords", "prices", "reviews"], 1, "When buyers select products on third-party cross-border e-commerce platforms, they often search through keywords.", "买家靠关键词搜索商品，所以标题本质上是产品关键词的集合。"], ["Title description generally consists of ________.", ["core words, attribute words and long tail keywords", "logo, slogan and brand story", "price, weight and color", "pictures, videos and texts"], 0, "title description consists of core words, attribute words, long tail keywords and so on.", "标题三件套：核心词 + 属性词 + 长尾词。"], ["Which of the following is a long tail keyword (flow word)?", ["dress", "red", "free shipping", "cotton"], 2, "Long tail keywords, also known as flow words... such as “plus size”, “free shipping”, “wholesale”.", "长尾词与产品本身关系不大但能带来浏览量：plus size / free shipping / wholesale。"], ["How many characters can a product title have on AliExpress and DHgate respectively?", ["128 and 140", "140 and 128", "120 and 130", "128 and 150"], 0, "the title of products on AliExpress can be set up to 128 characters, but DHgate allows 140 characters.", "AliExpress 128 字符，DHgate 140 字符。"], ["Where should the core words be placed in a title?", ["At the end of the title", "As early as possible, best in the first five words", "Anywhere is fine", "In the middle of the title"], 1, "Try to put core words as early as possible, best in the first five words.", "核心词越靠前越好，最好出现在前五个词。"], ["According to Text C, for the same category of products, we can use ________ to produce high-quality titles quickly.", ["title templates", "translation tools", "the same title", "longer titles"], 0, "for the same category of products, we can use title templates. That is, the core words stay the same, change attribute words accordingly...", "标题模板 = 核心词不变 + 属性词相应变化 + 替换长尾词。"]], "rc_tf": [["We should pile up as many keywords as possible in the title.", "F", "Do not pile up keywords. 关键词堆砌违反平台规则。"], ["“Cheap” and “fake” are sensitive words and should be avoided in the title.", "T", "Avoid the use of sensitive words, such as cheap, fake and so on. 敏感词会降低权重甚至违规。"], ["When using a title template, the core words should stay the same.", "T", "the core words stay the same, change attribute words accordingly, and replace the long tail keywords. 核心词固定。"]], "order": [["①", "Show real shots of the factory and the packaging process."], ["②", "Begin with a company profile: history, main business scope, awards or patents."], ["③", "Introduce supply channels, logistics, delivery time, return policy and after-sales contact."], ["④", "Add a brief introduction of the business philosophy or corporate culture."]], "detect": [["Logo", "SUNVENO — Focus on mom & baby travel product.", "品牌名 + 一句定位语，放在店招/Logo 区。"], ["Brand Story", "Established in 2007... more than ten years of development.", "以成立时间 + 发展历程讲品牌故事，结尾落在经营理念 Innovation, Quality, Service, Gratitude。"], ["Brand Positioning", "Focus on mom & baby travel product... more than 2,000 physical cooperation shops.", "定位 + 渠道实力（主流电商平台 + 2000 家实体合作店）。"], ["Brand Products", "MAKING MOM LIFE EASIER — DIAPER BAG / BELLY BANDS SHAPERS / BABY CARRIER / BABY STUFF.", "一句 slogan + 产品系列大写排列，直观醒目。"], ["Brand Concept", "We adhere to independent design and excellent quality... high brand awareness in the industry.", "独立设计 + 优秀品质 + 行业口碑，升华品牌理念。"]], "classify": [["10-dollar phone case with huge traffic but nearly no profit", "Burst sell 爆款", "高流量高曝光低利润 → 每店 1—2 个，靠低价+折扣引流"], ["High-margin leather handbag, few page views but 40% profit each order", "Profitable product 利润款", "浏览量不大、单件利润高 → 预留折扣空间，大促时打折"], ["Cheap data cable that brings extra page views, price kept low", "Flow-increase product 引流款", "低价带来浏览量 → 每店约 5 个，帮助店铺早期成长"], ["Brand earphone with patent certificate, sold at a good price", "Profitable product 利润款", "有专利、有品质 → 利润主要来源"], ["Seasonal Christmas lights sold at a discount during promotion", "Profitable product 利润款", "季节品+预留折扣空间，流量高峰打折促销"], ["1-dollar nail clipper promoted in the store's front page", "Burst sell 爆款", "低价爆款，短期带来大量 page views 和订单"]], "title_core": ["Women's Dress", "Bluetooth Earphone", "Baby Diaper Bag"], "title_attr": ["Red / Black / Blue", "Long Sleeve / Short Sleeve", "Summer / Spring", "Large / Small"], "title_tail": ["Plus Size", "Free Shipping", "Wholesale", "Hot Sale", "2026 New"], "title_ref": ["2026 Fashion Women's Dress Long Sleeve Red Plus Size Free Shipping", "Bluetooth Earphone Mini Wireless Black Hot Sale Wholesale 2026 New", "Baby Diaper Bag Large Capacity Blue Waterproof Free Shipping"], "shop_q": [["Q1 · Who are we? 我们是谁？", "店铺定位与开场：business store or personal store? 什么品牌？成立多久？", "Welcome to our store! Established in 2015, we are a professional cross-border e-commerce store."], ["Q2 · What do we sell? 卖什么？", "主营业务范围 business scope：品类、产品系列、上新频率", "Our business scope covers digital products, phone accessories and smart home devices."], ["Q3 · Why trust us? 凭什么信我们？", "优势与实力：工厂直供、认证证书、专利、实拍图、多年经验", "All products are directly supplied by our own factory, and we have passed ISO9001 certification."], ["Q4 · What guarantee? 有什么保障？", "物流与售后：delivery time、return policy、after-sales service、客服响应", "We offer a 30-day return policy and 24/7 after-sales service."]], "shop_ph": [["开场与定位", "Welcome to our store! / Thank you for visiting!", "We are mainly specialized in... / Established in..., our store focuses on..."], ["业务范围", "business scope / main products / a variety of / a series of / release new products", "Our business scope covers... The main products of our store are..."], ["优势实力", "directly supplied by the factory / patent certificate / certification / credible / competitive price / well-known customers", "...make our store more credible. / Our prices are competitive and the quality is credible."], ["物流售后", "return policy / delivery time / after-sales service / be delivered within... / reply within...", "The products will be delivered within 48 hours. / We will reply within 12 hours."], ["促销结尾", "coupon / follow our social media accounts / add it to your cart / Don't hesitate", "Follow us to get the latest news and coupons! / Don't hesitate, start your shopping journey now!"]], "fab": [["F · Feature 特征", "客观说明产品是什么：材质、尺寸、颜色、功能", "made of... / weighs... / measures... / comes with... / designed with...", "This sofa is made of board sponge with a cotton and linen surface, measuring 194×126×89 cm."], ["A · Advantage 优势", "对比/强调比同类产品好在哪里", "unlike the normal... / more... than... / never have to worry about... / easy to...", "Unlike the normal leather sofa, the cushions are nice and firm — you'll never have to worry about sinking in."], ["B · Benefit 利益", "给买家带来什么好处：省钱省空间省时间、体验更好", "perfect for... / save your space / suitable for... / bring you... / help you...", "Perfect for small apartments — it saves your space and anyone can install it in 10 minutes."]], "psteps": [["第 1 步 · 钩子开场", "用一个问题或一句推荐抓住注意力", "Are you looking for a comfortable sofa for your family? If so, this Double Chaise Longue is highly recommended to you."], ["第 2 步 · FAB 主体", "按 F→A→B 顺序写 2—3 组，每组 2—3 句", "【FIRM & COMFORTABLE】The cushions you sit on are nice and firm. The more you sit in it the better."], ["第 3 步 · 规格参数", "尺寸/颜色/材质/承重等，列表呈现更清晰", "Product Dimensions: 194×126×89 cm; Color: Beige; Material: Cotton and Linen"], ["第 4 步 · 保障信息", "物流、售后、包装说明", "The product is packed in two packages. If you have just received one, please wait patiently or contact us."], ["第 5 步 · 行动号召 CTA", "催单收尾，营造紧迫感", "So what are you waiting for? Don't hesitate, it's worth buying!"]], "prod_ph": [["材质做工", "be made of / high-quality material / fine workmanship", "The bag is made of waterproof nylon with fine workmanship."], ["尺寸容量", "measure... cm / weigh... kg / large capacity / space saving", "It measures 20×15×8 cm and weighs only 300 g — space saving for travel."], ["功能体验", "easy to install / easy to carry / reversible design / multi usage / user-friendly", "It is easy to install in 10 minutes without any tools."], ["适用场景", "perfect for... / suitable for... / ideal for...", "Perfect for a small apartment, upstairs, loft and more."], ["对比优势", "unlike the normal... / better than... / never worry about...", "Unlike the normal umbrella, this one will never be turned inside out by the wind."], ["催单收尾", "highly recommended / worth buying / Don't hesitate / add it to your cart", "Don't hesitate, add it to your cart and enjoy free shipping!"]], "pchoices": [["🌡️ 保温杯 Smart Thermal Bottle", "提示：304 stainless steel / keeps drinks hot for 12 hours / leak-proof lid / 500 ml / perfect for office and travel"], ["🎧 蓝牙耳机 Mini Bluetooth Earphone", "提示：mini and light / noise cancelling / 8-hour battery / easy to pair / ideal for sports"], ["🐶 宠物窝 Cozy Pet Bed", "提示：soft plush / machine washable / anti-slip bottom / four seasons / give your pet a warm home"]]};
+
+/* 标签切换 */
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
+  document.getElementById(b.dataset.p).classList.add('show');
+  window.scrollTo(0,0);
+});
+if(location.hash&&document.getElementById(location.hash.slice(1))){
+  document.querySelector('nav button[data-p="'+location.hash.slice(1)+'"]').click();
+}
+
+/* 朗读 */
+function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.replace(/【[^】]*】/g,''));u.lang='en-US';u.rate=.9;speechSynthesis.speak(u);}catch(e){}}
+
+/* 答案按钮 */
+function tgBox(btn,id){const bx=document.getElementById(id);const on=bx.classList.toggle('show');btn.classList.toggle('on',on);btn.textContent=on?'收起答案':btn.dataset.label||'显示答案';}
+document.querySelectorAll('button.ans').forEach(b=>{if(!b.dataset.label)b.dataset.label=b.textContent;});
+function tgAll(pre,btn){document.querySelectorAll('[id^="'+pre+'"]').forEach(x=>x.classList.toggle('show'));}
+
+/* 渲染选择题（初始不标答案，点按钮后才高亮） */
+function renderMC(list,el,pre){
+  let h='';
+  list.forEach((q,i)=>{
+    h+=`<div class="q"><div class="qno">${i+1}</div><div style="flex:1" id="${pre}q${i}">
+      <div>${q[0]}</div><div class="opts">`+
+      q[1].map((o,j)=>`<span data-j="${j}">${'ABCD'[j]}. ${o}</span>`).join('')+
+      `</div><div class="btnrow"><button class="ans" onclick="tgMC(this,'${pre}${i}','${pre}q${i}',${q[2]})">答案与定位</button></div>
+      <div class="ansbox" id="${pre}${i}"><span class="aw">正确答案：${'ABCD'[q[2]]}</span>
+      <div class="loc">📍 原文定位：${q[3]}</div><div class="an">解析：${q[4]}</div></div></div></div>`;
+  });
+  document.getElementById(el).innerHTML=h;
+}
+function tgMC(btn,boxId,qId,ri){
+  const box=document.getElementById(boxId);
+  const on=box.classList.toggle('show');
+  btn.classList.toggle('on',on);
+  btn.textContent=on?'收起答案':'答案与定位';
+  if(on){
+    const spans=document.getElementById(qId).querySelectorAll('.opts span');
+    spans.forEach(s=>{ if(+s.dataset.j===ri){s.classList.add('right');}else{s.classList.add('dim');} });
+  }
+}
+/* 渲染判断题 */
+function renderTF(list,el,pre){
+  let h='';
+  list.forEach((q,i)=>{
+    const T=q[1]==='T';
+    h+=`<div class="q"><div class="qno">${i+1}</div><div style="flex:1">
+      <div>${q[0]}</div><div class="opts tf"><span class="${T?'t':'f'}">${T?'T（正确）':'F（错误）'}</span></div>
+      <div class="btnrow"><button class="ans" onclick="tgBox(this,'${pre}${i}')">答案与依据</button></div>
+      <div class="ansbox" id="${pre}${i}"><span class="aw">${q[1]}</span>
+      <div class="loc">📍 原文依据：${q[2]}</div></div></div></div>`;
+  });
+  document.getElementById(el).innerHTML=h;
+}
+renderMC(D.ra_mc,'ra_mc','ram');renderTF(D.ra_tf,'ra_tf','rat');
+renderMC(D.rb_mc,'rb_mc','rbm');renderTF(D.rb_tf,'rb_tf','rbt');
+renderMC(D.rc_mc,'rc_mc','rcm');renderTF(D.rc_tf,'rc_tf','rct');
+
+/* 活动1 排序 */
+document.getElementById('act_order').innerHTML=D.order.map(o=>`<div class="orderitem">${o[0]}　${o[1]}</div>`).join('');
+/* 活动2 侦探 */
+document.getElementById('act_detect').innerHTML=D.detect.map((d,i)=>
+  `<div class="q"><div class="qno">${i+1}</div><div style="flex:1"><div><b>${d[0]}</b></div>
+   <div class="btnrow"><button class="ans" onclick="tgBox(this,'det${i}')">证据句</button></div>
+   <div class="ansbox" id="det${i}">🔊 <button class="speak" onclick="speak('${d[2].replace(/'/g,"\\'")}')">▶</button> ${d[1]}<div class="an">${d[2]}</div></div></div></div>`).join('');
+/* 活动3 分类 */
+document.getElementById('act_classify').innerHTML=D.classify.map((c,i)=>
+  `<div class="pcard" onclick="this.classList.toggle('open')">${i+1}. ${c[0]}
+   <div class="reveal"><b>✅ ${c[1]}</b> — ${c[2]}</div></div>`).join('');
+/* 活动4 词库 */
+document.getElementById('act_bank').innerHTML=
+  '<b>核心词：</b>'+D.title_core.map(w=>`<b>${w}</b>`).join('')+'<br>'+
+  '<b>属性词：</b>'+D.title_attr.map(w=>`<b>${w}</b>`).join('')+'<br>'+
+  '<b>长尾词：</b>'+D.title_tail.map(w=>`<b>${w}</b>`).join('');
+/* 参考标题 */
+(function(){const el=document.querySelector('#title_ref div');if(el){el.innerHTML=D.title_ref.map(t=>`<div class="exsent">${t} <button class="speak" onclick="speak('${t.replace(/'/g,"\\'")}')">🔊</button></div>`).join('');}})();
+
+/* 写作工坊：店铺 */
+document.getElementById('shop_q').innerHTML=D.shop_q.map((q,i)=>
+  `<div class="exsent" style="border-left-color:#16a34a"><b>${q[0]}</b><div class="cn">思路：${q[1]}</div>
+   <div style="margin-top:4px">🔊 <button class="speak" onclick="speak('${q[2].replace(/'/g,"\\'")}')">▶</button> <i>${q[2]}</i></div></div>`).join('');
+document.getElementById('shop_ph').innerHTML=D.shop_ph.map(p=>
+  `<div class="exsent"><b>${p[0]}</b>　<span style="color:#64748b;font-size:13px">词组：${p[1]}</span>
+   <div style="margin-top:4px">🔊 <button class="speak" onclick="speak('${p[2].replace(/'/g,"\\'")}')">▶</button> <i>${p[2]}</i></div></div>`).join('');
+
+/* 写作工坊：产品 */
+document.getElementById('prod_fab').innerHTML=D.fab.map(f=>
+  `<div class="exsent"><b>${f[0]}</b><div class="cn">思路：${f[1]}</div>
+   <div style="margin-top:4px;color:#1e40af;font-size:13px"><b>提示词：</b>${f[2]}</div>
+   <div style="margin-top:4px">🔊 <button class="speak" onclick="speak('${f[3].replace(/'/g,"\\'")}')">▶</button> <i>例：${f[3]}</i></div></div>`).join('');
+document.getElementById('prod_steps').innerHTML=D.psteps.map((s,i)=>
+  `<div class="exsent" style="border-left-color:#16a34a"><b>第 ${i+1} 步</b>　${s[0]}
+   <div class="cn">${s[1]}</div>
+   <div style="margin-top:4px">🔊 <button class="speak" onclick="speak('${s[2].replace(/'/g,"\\'")}')">▶</button> <i>${s[2]}</i></div></div>`).join('');
+document.getElementById('prod_ph').innerHTML=D.prod_ph.map(p=>
+  `<div class="exsent"><b>${p[0]}</b>　<span style="color:#64748b;font-size:13px">提示词：${p[1]}</span>
+   <div style="margin-top:4px">🔊 <button class="speak" onclick="speak('${p[2].replace(/'/g,"\\'")}')">▶</button> <i>${p[2]}</i></div></div>`).join('');
+document.getElementById('prod_choices').innerHTML=D.pchoices.map(c=>
+  `<div class="exsent" style="border-left-color:#f59e0b"><b>${c[0]}</b><div class="cn">${c[1]}</div></div>`).join('');
+
+/* 字数统计 */
+function bindWc(areaId,wcId){const a=document.getElementById(areaId);if(!a)return;a.addEventListener('input',()=>{const w=a.value.trim();document.getElementById(wcId).textContent=(w?w.split(/\s+/).length:0)+' words';});}
+bindWc('shopArea','shopWc');bindWc('prodArea','prodWc');
+</script>
+</body>
+</html>
